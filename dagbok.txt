@@ -29,3 +29,16 @@ Dagur: Gera stöðurit
 Hildur: Gera klasarit
 Júlíus: Gera stöðurit
 
+Dagur 4:
+28 nóvember
+
+Anna: byrja á wireframe
+Brynjar: Klasarit
+Dagur: Stöðurit
+Hildur: Klasarit
+Júlíus: Stöðurit
+
+eftir kl 12:
+Fara öll yfir og klára wireframe
+fara yfir skýrslu
+fínpússa
