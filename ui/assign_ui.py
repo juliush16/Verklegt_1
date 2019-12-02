@@ -3,7 +3,7 @@ def menu():
     while choice_str != 'q':
         print('\n---Assign eployees to a voyage---\n')
         print('Press "1" to assign pilots to a voyage')
-        print('Press "2" to assign flight attendant')
+        print('Press "2" to assign flight attendant to a voyage')
         print('Press "3" to change crew member information')
         print('Press "q" to Quit\n')
         choice_str = input('Choose an option: ')
