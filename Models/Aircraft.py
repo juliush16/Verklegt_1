@@ -3,4 +3,11 @@ class Aircraft:
         self.__planeInsignia = planeInsignia
         self.__planeTypeId = planeTypeId 
 
-    def __str__():
+    def __str__(self):
+        return ("{}".format(self.__planeInsignia))
+
+    def get_planInsignia(self):
+        return self.__planeInsignia
+    
+    def get_planeTypeId(self):
+        return self.__planeTypeId
