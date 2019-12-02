@@ -13,9 +13,9 @@ def MainMenu():
         choice_str = input('Choose an option: ')
 
         if choice_str == 'q':
-            pass
+            choice_str = 'q'
         elif choice_str == '1':
-            pass
+            choice_str = mv_ui.menu()
         elif choice_str == '2':
             choice_str = a_ui.menu()
 
