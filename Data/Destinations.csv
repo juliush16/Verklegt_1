@@ -1,5 +1,6 @@
-Longyearbyen,4*60
-Nuuk,3*60
-Kulusuk,2*60
-Thorshavn,1*60
-Tingwall,2*60
+Location,flight time,voyage time
+Longyearbyen,4,9
+Nuuk,3,7
+Kulusuk,2,5
+Thorshavn,1,3
+Tingwall,2,5
