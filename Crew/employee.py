@@ -1,3 +1,5 @@
+## Clasi til þess að búa til tilvik af starfsmanni
+
 class Employee:
 
     def __init__(self,SSN, name, role,rank,licence = None):
