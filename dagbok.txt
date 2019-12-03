@@ -61,5 +61,5 @@ Dagur 7:
 Anna: Byrja á Datetime.
 Dagur: Repository (sækja upplýsingarnar úr fileum) . Búa til Voyage Klasann. 
 Brynjar: Repository (sækja upplýsingarnar úr fileum) fyrir AirCraftType
-Júlíus: 
+Júlíus: Búa til Model fyrir Destination
 Hildur: Bæta við tengiliðum og upplýsingum fyrir áfangastaði. Repostitory fyrir 

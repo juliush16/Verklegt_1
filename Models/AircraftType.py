@@ -16,10 +16,10 @@ class Aircraftype:
             pass
 
     def get_plane_type_id(self):
-        return self.__planeTypeId
+        return self.__plane_type_id
     
     def get_plane_type(self):
-        return self.__planeType
+        return self.__plane_type
 
     def get_model(self):
         return self.__model
@@ -28,16 +28,16 @@ class Aircraftype:
         return self.__capacity
     
     def get_empty_weight(self):
-        return self.__emptyWeight
+        return self.__empty_weight
     
     def get_max_takeoff_weight(self):
-        return self.__maxTakeoffWeight
+        return self.__max_takeoff_weight
     
     def get_unit_thrust(self):
-        return self.__unitThrust
+        return self.__unit_thrust
     
     def get_service_ceiling(self):
-        return self.__serviceCeiling
+        return self.__service_ceiling
     
     def get_length(self):
         return self.__length
@@ -47,3 +47,4 @@ class Aircraftype:
 
     def get_wingspan(self):
         return self.__wingspan
+
