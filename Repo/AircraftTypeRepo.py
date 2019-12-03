@@ -48,3 +48,9 @@ class AirCraftTypeRepo:
                     self.__aircraft.append(new_aircraft)
         return self.__aircraft
 
+    def all_aircrafts(self):
+        return_list = []
+        all_aircrafts = self.get_aircraft()
+        for car in all_aircrafts:
+            return_list.append(Aircraftype)
+        return return_list
