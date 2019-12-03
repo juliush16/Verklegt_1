@@ -1,9 +1,9 @@
 #flightNumber,departingFrom,arrivingAt,departure,arrival 
 class Upcomingflights:
-    def __init__(self,flightNumber,departingFrom,arrivingAt,departure,arrival):
-        self.__flightNumber = flightNumber
-        self.__departingFrom = departingFrom
-        self.__arrivingAt = arrivingAt
+    def __init__(self,flight_number,departing_from,arriving_at,departure,arrival):
+        self.__flight_number = flight_number
+        self.__departing_from = departing_from
+        self.__arriving_at = arriving_at
         self.__departure = departure
         self.__arrival = arrival
 
