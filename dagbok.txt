@@ -55,3 +55,11 @@ Fórum yfir Github og hvernig því átti að vera háttað, þeir sem ekki kunn
 Dagur byrjaði að búa til Main menu, employee clasa.
 Júlíus byrjaði á því að búa til clasa fyrir flugvélar. 
 Anna, Hildur og Brynjar settu saman plan fyrir hvað þarf að gera. 
+
+Dagur 7:
+3.desember
+Anna: Byrja á Datetime.
+Dagur: Repository (sækja upplýsingarnar úr fileum) 
+Brynjar: Repository (sækja upplýsingarnar úr fileum) fyrir AirCraftType
+Júlíus: 
+Hildur: Bæta við tengiliðum og upplýsingum fyrir áfangastaði. Repostitory fyrir 
