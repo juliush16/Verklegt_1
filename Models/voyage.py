@@ -1,15 +1,15 @@
 class Voyage:
 
-    def __init__(self,flight_number, departingFrom, ArrivingAt, departure, arrival, aircraftID,captain = None, copilot = None, flight_service_manager = None, flight_attendants = None):
+    def __init__(self,flight_number, departing_from, arriving_at, departure, arrival, aircraft_id,captain = None, copilot = None, flight_service_manager = None, flight_attendants = None):
         self.flight_number = flight_number
-        self.departing_From = departing_from
-        self.arrivingAt = Arriving_at
+        self.departing_from = departing_from
+        self.arriving_at = arriving_at
         self.departure = departure
         self.arrival = arrival
-        self.aircraft_ID = aircraftID
+        self.aircraft_id = aircraft_id
         self.captain = captain
         self.copilot = copilot
-        self.fsm = flight_service_manager
+        self.flight_service_manager = flight_service_manager
         self.flight_attendants = flight_attendants
 
 
