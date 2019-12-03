@@ -3,6 +3,7 @@ def menu():
     while choice_str != 'q':
         print('\n-----Make a voyage-----\n')
         print('Press "1" to make a new voyage')
+        print('Press "2" to list all airplanes')
         print('Press "q" to Quit\n')
         choice_str = input('Choose an option: ')
 
@@ -16,6 +17,3 @@ def menu():
 
 def create_new_voyage():
     input('Create new voyage? : ')
-
-if __name__ == "__main__":
-    menu()

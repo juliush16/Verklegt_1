@@ -39,13 +39,10 @@ class AirCraftTypeRepo:
                     length = line[8]
                     height = line[9]
                     wingspan = line[10]
-                    availability = "True"
+                    # availability = "True"
                     new_aircraft = Aircraftype(plane_type_id, plane_type, model,
                         capacity,empty_weight,max_takeoff_weight, unit_thrust, service_ceiling,
-                        length, height, wingspan, eval(availability))
+                        length, height, wingspan)
                     self.__aircraft.append(new_aircraft)
         return self.__aircraft
 
-
-
-    
