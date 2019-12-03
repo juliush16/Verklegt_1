@@ -59,7 +59,7 @@ Anna, Hildur og Brynjar settu saman plan fyrir hvað þarf að gera.
 Dagur 7:
 3.desember
 Anna: Byrja á Datetime.
-Dagur: Repository (sækja upplýsingarnar úr fileum) 
+Dagur: Repository (sækja upplýsingarnar úr fileum) . Búa til Voyage Klasann. 
 Brynjar: Repository (sækja upplýsingarnar úr fileum) fyrir AirCraftType
 Júlíus: 
 Hildur: Bæta við tengiliðum og upplýsingum fyrir áfangastaði. Repostitory fyrir 
