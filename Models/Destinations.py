@@ -8,7 +8,7 @@ class Destinations:
         self.__phonenumber = phonenumber 
 
     def __str__(self): #
-        pass
+        return ("{} {} {} {} {} {}".format(self.__Location,self.__Airport,self.__flight_time,self.__voyage_time,self.__contact,self.__phonenumber))
 
     def get_Location(self):
         return self.__Location
@@ -28,3 +28,7 @@ class Destinations:
     def get_phonenumber(self):
         return self.__phonenumber
 
+
+if __name__ == "__main__":
+    d = Destinations('Reykjavik','keflavikurflugvollur','3','4','Sigmar marteinn','8209322')
+    print(d)
