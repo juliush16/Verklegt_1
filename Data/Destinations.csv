@@ -1,6 +1,13 @@
 Location,Airport,flight time,voyage time,contact,phonenumber
 Norway,Longyearbyen,4,9,Jakob Haland,+4759165432
+<<<<<<< HEAD
 Greenland,Nuuk,3,7
 Greenland,Kulusuk,2,5
 Faroe Island,Thorshavn,1,3,Eva Hansen,+2988499355
 Scotland,Tingwall,2,5,Olivia Smith,+441234567899
+=======
+Greenland,Nuuk,3,7, Aarut Maalat,
+Greenland,Kulusuk,2,5,Detlef Paajuk,
+Faroe Island,Thorshavn,1,3
+Scotland,Tingwall,2,5
+>>>>>>> 2ee7c9d9805d5526206b327fa5f7a2038f7f1217
