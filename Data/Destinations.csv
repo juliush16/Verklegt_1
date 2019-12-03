@@ -1,5 +1,5 @@
-Location,Airport,flight time,voyage time
-Norway,Longyearbyen,4,9
+Location,Airport,flight time,voyage time,contact,phonenumber
+Norway,Longyearbyen,4,9,Jakob Haland,+4759165432
 Greenland,Nuuk,3,7
 Greenland,Kulusuk,2,5
 Faroe Island,Thorshavn,1,3
