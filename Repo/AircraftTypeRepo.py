@@ -1,3 +1,4 @@
+
 from Models.AircraftType import Aircraftype
 import csv
 
@@ -6,7 +7,9 @@ class AirCraftTypeRepo:
     def __init__(self):
         self.__aircraft = []
 
-    def add_aircraft_type(self, aircraftype):
+    def add_aircraft_type(self, aircraftype,not_in_delete = True):
+        if not_in_delete == True:
+            self.__aircraft.append(aircraftype)
         with open("./data/AircraftType.csv", "a+") as aircraft_type_file:
             plane_type_id = aircraftype.get_planeTypeId()
             plane_type = aircraftype.get_plane_type()
