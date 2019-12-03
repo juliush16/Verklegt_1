@@ -1,7 +1,7 @@
 class Destinations:
     def __init__(self,Location,Airport,flight_time,voyage_time,contact,phonenumber):
         self.__Location = Location
-        self.__Airport = Airport
+        self.__Airport = airport
         self.__flight_time = flight_time 
         self.__voyage_time = voyage_time
         self.__contact = contact #nafn
