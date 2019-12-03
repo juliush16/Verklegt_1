@@ -42,12 +42,21 @@ class AirCraftTypeRepo:
                     length = line[8]
                     height = line[9]
                     wingspan = line[10]
+<<<<<<< HEAD
                     new_aircraft = Aircraftype(plane_type_id, plane_type, model,
                         capacity,empty_weight,max_takeoff_weight, unit_thrust, service_ceiling,
                         length, height, wingspan,)
+=======
+                    # availability = "True"
+                    new_aircraft = Aircraftype(plane_type_id, plane_type, model,
+                        capacity,empty_weight,max_takeoff_weight, unit_thrust, service_ceiling,
+                        length, height, wingspan)
+>>>>>>> 9832eee4af77b2cd163853e21b5440306aed9ad0
                     self.__aircraft.append(new_aircraft)
         return self.__aircraft
 
+<<<<<<< HEAD
+=======
     def all_aircrafts(self):
         return_list = []
         all_aircrafts = self.get_aircraft()
@@ -58,3 +67,4 @@ class AirCraftTypeRepo:
     
 
     
+>>>>>>> 60b5fbeb94aa0a40f9731f0d42ffc5beed4fa82d
