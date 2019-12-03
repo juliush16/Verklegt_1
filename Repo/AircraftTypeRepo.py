@@ -1,6 +1,7 @@
-
+import os
 from Models.AircraftType import Aircraftype
 import csv
+clear = lambda: os.system('cls')
 
 class AirCraftTypeRepo:
 
@@ -49,6 +50,17 @@ class AirCraftTypeRepo:
     def all_aircrafts(self):
         return_list = []
         all_aircrafts = self.get_aircraft()
-        for car in all_aircrafts:
+        for aircraft in all_aircrafts:
             return_list.append(Aircraftype)
         return return_list
+    
+    def delete_aircraft(self, plane_type_id):
+        all_aircrafts = self.get_aircraft()
+        for index, aircraft in enumerate(all_aircrafts):
+            if Aircraftype.get_plane_type_id() == plane_type_id:
+                all_aircrafts.pop(index)
+        with open("./Data/AircraftType.csv", "w", encoding = "utf-8") as aircraft_type_file:
+            aircraft_type_file.truncate()
+            for aircraft in all_aircrafts:
+                self.add_aircraft_type(aircraft, False)
+        clear()
