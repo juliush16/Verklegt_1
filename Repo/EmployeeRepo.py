@@ -8,7 +8,6 @@ class EmployeeRepo:
         self.__employee = []
 
     def add_employee(self, employee):
-
         with open("./data/Employee.csv", "a+") as employee_file:
             SSN = employee.get_SSN()
             name = employee.get_name()
@@ -46,9 +45,12 @@ class EmployeeRepo:
             all_employee_list.append(Employee)
         return all_employee_list
 
-
+    def update_employee(self):  #passa að breyta ekki nafni og kt
+        pass
     
-
+    def get_available_employees(self): #Sýna starfsmenn sem hafa ekki unnið þennan dag og geta farið i vinnuferð
+        pass
             
-            
+    def get_employee_for_voyage(self): #Manna vinnuferð, 2 flugmenn og 1 flugþjónn
+        pass
 

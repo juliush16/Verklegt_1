@@ -1,5 +1,5 @@
 
-from Models.voyagge import Voyage
+from Models.voyage import Voyage
 import csv
 
 class VoyageRepo:
@@ -8,7 +8,6 @@ class VoyageRepo:
         self.__voyage = []
 
     def add_voyage(self, voyage):
-
         with open("./data/Destinations2.csv", "a+") as voyage_file:
             flight_number = voyage.get_flight_number()
             departing_from = voyage.get_departing_from()
@@ -52,7 +51,7 @@ class VoyageRepo:
             all_voyage_list.append(Voyage)
         return all_voyage_list
 
-
+    
     
 
             
