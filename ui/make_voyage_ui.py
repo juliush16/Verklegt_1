@@ -1,3 +1,4 @@
+from Repo.AircraftTypeRepo import AirCraftType as aircraft
 def menu():
     choice_str = ''
     while choice_str != 'q':
@@ -13,6 +14,8 @@ def menu():
             create_new_voyage()
             choice_str = 'q'
             return choice_str
+        elif choice_str == '2':
+            aircraft.list_aircraft_types()
 
 
 def create_new_voyage():

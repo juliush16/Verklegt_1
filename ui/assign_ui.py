@@ -1,3 +1,5 @@
+
+
 def menu():
     choice_str = ''
     while choice_str != 'q':
