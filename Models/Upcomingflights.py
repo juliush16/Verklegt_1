@@ -25,5 +25,5 @@ class Upcomingflights:
         return self.__arrival
 
     def __str__(self):
-        return ("{}{}{}{}{}".format(self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,self.__arrival))
+        return ("{:<15}{:<15}{:<15}{:<25}{:<25}".format(self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,self.__arrival))
 

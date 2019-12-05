@@ -1,5 +1,5 @@
 from Repo.EmployeeRepo import EmployeeRepo as Emp_Repo
-from Repo.voyageRepo import VoyageRepo as Voy_Repo
+from Repo.UpcomingVoyageRepo import VoyageRepo as Voy_Repo
 
 def menu():
     choice_str = ''
