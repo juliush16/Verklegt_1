@@ -40,32 +40,31 @@ def reg_employee_menu():
     new_emp_name = input('Enter employee name :').capitalize()
 
     new_emp_role = ""
-    while new_emp_role != '1' or '2':
+    new_emp_rank = "" 
+    while new_emp_role != '1' or '2': #1 er pilot og 2 er cabin crew
         new_emp_role = input('Choose an option for employee role\n1:Pilot\n2:Cabincrew\n')
         if new_emp_role == '1':
             new_emp_role = "Pilot"
+            while new_emp_role != '1' or '2': #pilot rank (captain or copilot)
+                new_emp_rank = input('Choose an option for employee rank\n1:Captain\n2:Copilot\n')
+                if new_emp_rank == '1':
+                    new_emp_rank = 'Captain'
+                elif new_emp_rank == '2':
+                    new_emp_rank = "Copilot"
+                break
             break
         elif new_emp_role == '2':
             new_emp_role = "Cabincrew"
+            while new_emp_rank != '1' or '2': #cabincrew rank (flight service manager og flight attendant)
+                new_emp_rank = input('Choose an option for employee rank\n1:Flight Service Manager\n2:Flight Attendant\n')
+                if new_emp_rank == '1':
+                    new_emp_rank = "Flight Service Manager"
+                elif new_emp_rank == '2':
+                    new_emp_rank = "Flight Attendant"
+                break
             break
 
-    new_emp_rank = ""
-    while new_emp_rank != '1' or '2' or '3' or '4':
-        new_emp_rank = input('Choose an option for employee rank\n1:Captain\n2:Copilot\n3:Flight Service Manager\n4:Flight Attendant\n')
-        if new_emp_rank == '1':
-            new_emp_rank = "Captain"
-            break
-        elif new_emp_rank == '2':
-            new_emp_rank = "Copilot"
-            break
-        elif new_emp_rank == '3':
-            new_emp_rank = "Flight Service Manager"
-            break
-        elif new_emp_rank == '4':
-            new_emp_rank = "Flight Attendant"
-            break
-
-    new_emp_licence = input('Enter employee licence :')
+    new_emp_licence = input('Enter employee licence :') #á bara við pilot, pilot velur á milli flugvélar / cabincrew skrifast N/A
     new_emp_address = input('Enter employee address :').capitalize()
     new_emp_phonenumber = input('Enter employee phone number :')
     new_emp_email = input('Enter employee email :')
