@@ -64,33 +64,33 @@ class EmployeeRepo:
         for pilot in all_pilots:
             print(pilot)
 
-    def get_all_captains(self):
-        all_captains_list = []
-        all_employees = self.get_employee()
-        all_captains_list.append(all_employees[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
-        for employee in all_employees:
-            if employee.rank == 'Captain':
-                all_captains_list.append(employee)
-        return all_captains_list
+    # def get_all_captains(self):
+    #     all_captains_list = []
+    #     all_employees = self.get_employee()
+    #     all_captains_list.append(all_employees[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
+    #     for employee in all_employees:
+    #         if employee.rank == 'Captain':
+    #             all_captains_list.append(employee)
+    #     return all_captains_list
 
-    def print_all_captains(self):
-        all_captains = self.get_all_captains()
-        for captain in all_captains:
-            print(captain)
+    # def print_all_captains(self):
+    #     all_captains = self.get_all_captains()
+    #     for captain in all_captains:
+    #         print(captain)
 
-    def get_all_copilots(self):
-        all_copilots_list = []
-        all_employees = self.get_employee()
-        all_copilots_list.append(all_employees[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
-        for employee in all_employees:
-            if employee.rank == 'Copilot':
-                all_copilots_list.append(employee)
-        return all_copilots_list
+    # def get_all_copilots(self):
+    #     all_copilots_list = []
+    #     all_employees = self.get_employee()
+    #     all_copilots_list.append(all_employees[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
+    #     for employee in all_employees:
+    #         if employee.rank == 'Copilot':
+    #             all_copilots_list.append(employee)
+    #     return all_copilots_list
 
-    def print_all_copilots(self):
-        all_copilots = self.get_all_copilots()
-        for copilot in all_copilots:
-            print(copilot)
+    # def print_all_copilots(self):
+    #     all_copilots = self.get_all_copilots()
+    #     for copilot in all_copilots:
+    #         print(copilot)
 
     def get_all_cabin_crew(self):
         all_crew_list = []
@@ -106,38 +106,55 @@ class EmployeeRepo:
         for crew_member in all_cabin_crew:
             print(crew_member)
 
-    def get_all_flight_service_managers(self):
-        all_fsm_list = []
-        all_crew = self.get_all_cabin_crew()
-        all_fsm_list.append(all_crew[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
-        for crew_member in all_crew:
-            if crew_member.rank == 'Flight Service Manager':
-                all_fsm_list.append(crew_member)
-        return all_fsm_list
+    # def get_all_flight_service_managers(self):
+    #     all_fsm_list = []
+    #     all_crew = self.get_all_cabin_crew()
+    #     all_fsm_list.append(all_crew[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
+    #     for crew_member in all_crew:
+    #         if crew_member.rank == 'Flight Service Manager':
+    #             all_fsm_list.append(crew_member)
+    #     return all_fsm_list
 
-    def print_all_flight_service_managers(self):
-        all_fsm = self.get_all_flight_service_managers()
-        for fsm in all_fsm:
-            print(fsm)
+    # def print_all_flight_service_managers(self):
+    #     all_fsm = self.get_all_flight_service_managers()
+    #     for fsm in all_fsm:
+    #         print(fsm)
 
 
-    def get_all_flight_attendants(self):
-        all_flight_attendants_list = []
-        all_crew = self.get_all_cabin_crew()
-        all_flight_attendants_list.append(all_crew[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
-        for crew_member in all_crew:
-            if crew_member.rank == 'Flight Attendant':
-                all_flight_attendants_list.append(crew_member)
-        return all_flight_attendants_list
+    # def get_all_flight_attendants(self):
+    #     all_flight_attendants_list = []
+    #     all_crew = self.get_all_cabin_crew()
+    #     all_flight_attendants_list.append(all_crew[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
+    #     for crew_member in all_crew:
+    #         if crew_member.rank == 'Flight Attendant':
+    #             all_flight_attendants_list.append(crew_member)
+    #     return all_flight_attendants_list
 
-    def print_all_flight_attendants(self):
-        all_flight_attendants = self.get_all_flight_attendants()
-        for flight_attendant in all_flight_attendants:
-            print(flight_attendant)
+    # def print_all_flight_attendants(self):
+    #     all_flight_attendants = self.get_all_flight_attendants()
+    #     for flight_attendant in all_flight_attendants:
+    #         print(flight_attendant)
 
     def create_new_employee(self,ssn,name,role,rank,licence,address,phonenumber,email):
         new_emp = Employee(ssn,name,role,rank,licence,address,phonenumber,email)
         self.add_employee(new_emp)
+
+    def get_by_ssn(self, ssn):
+        ret_string = ''
+        all_employees = self.get_employee()
+        for employee in all_employees:
+            if employee.ssn == ssn:
+                ret_string += '\n' + str(employee)
+
+        if ret_string != '':
+            temp_str = ret_string
+            ret_string = str(all_employees[0])
+            ret_string += temp_str
+            return ret_string
+        
+        else:
+            return 'Employee not found!'
+
         
     def __str__(self):
         string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format
