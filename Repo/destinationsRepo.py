@@ -44,7 +44,7 @@ class DestinationsRepo:
 
     def print_all_destinations(self):
         all_destinations = self.all_destinations()
-        for employee in all_destinations:
+        for destination in all_destinations:
             print(destination)
 
 

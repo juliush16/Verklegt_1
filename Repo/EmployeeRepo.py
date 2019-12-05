@@ -214,8 +214,6 @@ class EmployeeRepo:
 
 
   
-    def update_employee(self):  #passa að breyta ekki nafni og kt
-        pass
     
     def get_available_employees(self): #Sýna starfsmenn sem hafa ekki unnið þennan dag og geta farið i vinnuferð
         pass
