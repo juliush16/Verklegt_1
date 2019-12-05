@@ -210,7 +210,7 @@ class EmployeeRepo:
                         print("Current email: {}".format(edit_employee.get_email()))
                         new_email = input("Enter new email: ")
                         edit_employee.set_email(new_email)
-                        print("Email changed to: {}".format(edit_email.get_email()))
+                        print("Email changed to: {}".format(new_email.get_email()))
 
 
   
