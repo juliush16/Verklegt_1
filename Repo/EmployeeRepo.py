@@ -135,16 +135,16 @@ class EmployeeRepo:
         for flight_attendant in all_flight_attendants:
             print(flight_attendant)
 
-    def create_new_employee(self,ssn,name,role,rank,license,address,phonenumber,email):
+    def create_new_employee(self,ssn,name,role,rank,licence,address,phonenumber,email):
         new_emp = Employee(ssn,name,role,rank,licence,address,phonenumber,email)
         self.add_employee(new_emp)
         
     def __str__(self):
-        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format("Ssn:", "Name:", 
-            "Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
+        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format
+        ("Ssn:", "Name:","Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
         employeelist = self.get_employee()
-        for car in employeelist:
-            string += str(Employee) + "\n"
+        for employee in employeelist:
+            string += str(employee) + "\n"
         return string
 
 
