@@ -165,10 +165,10 @@ class EmployeeRepo:
         return string
 
 
-    def update_employee(self, SSN):  #passa að breyta ekki nafni og kt
+    def update_employee(self, ssn):  #passa að breyta ekki nafni og kt
         all_employee = self.get_employee()
         for employee in all_employee:
-            if employee.get_SSN == SSN:
+            if employee.get_ssn == ssn:
                 edit_employee = employee
                 empl_string = "{},{},{},{},{},{}".format("Role: ","Rank: ","Licence: ","Address: ","Phonenumber: ", "Email: ")
                 print("{}{}\n".format(empl_string, edit_employee))
