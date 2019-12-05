@@ -138,9 +138,9 @@ class EmployeeRepo:
     def __str__(self):
         string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format("Ssn:", "Name:", 
             "Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
-        carlist = self.get_cars()
-        for car in carlist:
-            string += str(car) + "\n"
+        employeelist = self.get_employee()
+        for car in employeelist:
+            string += str(Employee) + "\n"
         return string
 
 
