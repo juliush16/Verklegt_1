@@ -9,7 +9,7 @@ class EmployeeRepo:
 
     def add_employee(self, employee):
         with open("./data/Employee.csv", "a+") as employee_file:
-            SSN = employee.get_ssn_str()
+            ssn = employee.get_ssn_str()
             name = employee.get_name_str()
             role = employee.get_role()
             rank = employee.get_rank()
@@ -17,7 +17,7 @@ class EmployeeRepo:
             adress =  employee.get_adress()
             phonenumber = employee.get_phonenumber()
             email = employee.get_email()
-            employee_file.write("{},{},{},{},{},{},{},{},\n".format(SSN,name,
+            employee_file.write("{},{},{},{},{},{},{},{},\n".format(ssn,name,
             role,rank,licence,adress,phonenumber,email))
 
     def get_employee(self):
@@ -25,7 +25,7 @@ class EmployeeRepo:
             with open("./Data/Employee.csv", "r", encoding = "utf-8") as employee_file:
                 employee_reader = csv.reader(employee_file)
                 for line in employee_reader:
-                    SSN = line[0]
+                    ssn = line[0]
                     name = line[1]
                     role = line[2]
                     rank = line[3]
@@ -33,7 +33,7 @@ class EmployeeRepo:
                     adress = line[5]
                     phonenumber = line[6]
                     email = line[7]
-                    new_employee = Employee(SSN, name, role, rank,licence,
+                    new_employee = Employee(ssn, name, role, rank,licence,
                     adress, phonenumber, email)
                     self.__employee.append(new_employee)
         return self.__employee
@@ -165,6 +165,55 @@ class EmployeeRepo:
         return string
 
 
+    def update_employee(self, SSN):  #passa að breyta ekki nafni og kt
+        all_employee = self.get_employee()
+        for employee in all_employee:
+            if employee.get_SSN == SSN:
+                edit_employee = employee
+                empl_string = "{},{},{},{},{},{}".format("Role: ","Rank: ","Licence: ","Address: ","Phonenumber: ", "Email: ")
+                print("{}{}\n".format(empl_string, edit_employee))
+                print("1. Edit Role\n2. Edit Rank\n"
+                    "3. Edit Licence\n4. Edit Address\n5. Edit Phonenumber\n"
+                    "5. Edit Email\n6. Return to Main Menu") 
+                while True:
+                    choice = int(input("What do you want to edit? "))
+                    if choice < 1 or choice > 5:
+                        print("Choice invalid! Try again")
+                    else:
+                        break
+                while True:
+                    if choice == 1:
+                        print("Current role: {}".format(edit_employee.get_role()))
+                        new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
+                        edit_employee.set_role(new_role)
+                        print("Role changed to: {}".format(edit_employee.get_role()))
+                        break
+                    if choice == 2:
+                        print("Current licence: {}".format(edit_employee.get_licence()))
+                        new_licence = input("Enter new licence: ")  #Kannski breyta hér að það er bara hægt að velja um ákv. licence
+                        edit_employee.set_licence(new_licence)
+                        print("Licence changed to: {}".format(edit_employee.get_licence()))
+                        break
+                    if choice == 3:
+                        print("Current address: {}".format(edit_employee.get_adress()))
+                        new_adress = input("Enter new address: ")
+                        edit_employee.set_adress(new_adress)
+                        print("Address changed to: {}".format(edit_employee.get_adress()))
+                        break
+                    if choice == 4:
+                        print("Current Phonenumber: {}".format(edit_employee.get_phonenumber()))
+                        new_phonenumber = input("Enter new phonenumber: ")
+                        edit_employee.set_phonenumber(new_phonenumber)
+                        print("Phonenumber changed to: {}".format(edit_employee.get_phonenumber()))
+                        break
+                    if choice == 5:
+                        print("Current email: {}".format(edit_employee.get_email()))
+                        new_email = input("Enter new email: ")
+                        edit_employee.set_email(new_email)
+                        print("Email changed to: {}".format(new_email.get_email()))
+
+
+  
     def update_employee(self):  #passa að breyta ekki nafni og kt
         pass
     

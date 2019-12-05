@@ -1,7 +1,7 @@
 class Employee:
 
-    def __init__(self,SSN, name, role,rank,licence = None, adress = None, phonenumber = None, email = None):
-        self.ssn = SSN
+    def __init__(self,ssn, name, role,rank,licence = None, adress = None, phonenumber = None, email = None):
+        self.ssn = ssn
         self.name = name
         self.role = role
         self.rank = rank
@@ -38,6 +38,28 @@ class Employee:
     def __str__(self):
         return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format
         (self.ssn,self.name,self.role,self.rank,self.licence,self.adress,self.phonenumber,self.email))
+
+
+#Set föll til að updatea starfsmann:
+
+    def set_role(self,role):
+        self.__role = role
+
+    def set_rank(self,rank):
+        self.__rank = rank
+
+    def set_licence(self, licence):
+        self.__licence = licence
+
+    def set_adress(self, adress):
+        self.__adress = adress
+
+    def set_phonenumber(self, phonenumber):
+        self.__phonenumber = phonenumber
+
+    def set_email(self, email):
+        self.__email = email
+
 
 if __name__ == "__main__":
     Julius = Employee('030196-2449','Julius','Pilot','Captain','NAFokkerF100','Skólagata 1', '777-0000','julius@nan.is')

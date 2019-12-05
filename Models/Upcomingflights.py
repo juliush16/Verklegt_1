@@ -7,17 +7,15 @@ class Upcomingflights:
         self.__departure = departure
         self.__arrival = arrival
 
-    def __str__(self):
-        return ("{}{}{}{}{}".format(self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,self.__arrival))
+    
 
-
-    def get_flightNumber(self):
+    def get_flight_number(self):
         return self.__flight_number
     
-    def get_departingFrom(self):
+    def get_departing_from(self):
         return self.__departing_from
 
-    def get_arrivingAt(self):
+    def get_arriving_at(self):
         return self.__arriving_at
 
     def get_departure(self):
@@ -25,4 +23,7 @@ class Upcomingflights:
     
     def get_arrival(self):
         return self.__arrival
+
+    def __str__(self):
+        return ("{}{}{}{}{}".format(self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,self.__arrival))
 
