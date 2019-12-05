@@ -14,11 +14,11 @@ class EmployeeRepo:
             role = employee.get_role()
             rank = employee.get_rank()
             licence = employee.get_licence()
-            adress =  employee.get_adress()
+            address =  employee.get_address()
             phonenumber = employee.get_phonenumber()
             email = employee.get_email()
             employee_file.write("{},{},{},{},{},{},{},{},\n".format(ssn,name,
-            role,rank,licence,adress,phonenumber,email))
+            role,rank,licence,address,phonenumber,email))
 
     def get_employee(self):
         if self.__employee == []:
@@ -30,11 +30,11 @@ class EmployeeRepo:
                     role = line[2]
                     rank = line[3]
                     licence = line[4]
-                    adress = line[5]
+                    address = line[5]
                     phonenumber = line[6]
                     email = line[7]
                     new_employee = Employee(ssn, name, role, rank,licence,
-                    adress, phonenumber, email)
+                    address, phonenumber, email)
                     self.__employee.append(new_employee)
         return self.__employee
 
@@ -158,7 +158,7 @@ class EmployeeRepo:
         
     def __str__(self):
         string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format
-        ("Ssn:", "Name:","Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
+        ("Ssn:", "Name:","Role:", "Rank:", "Licence:", "address:", "Phonenumber:", "Email:")
         employeelist = self.get_employee()
         for employee in employeelist:
             string += str(employee) + "\n"
@@ -195,10 +195,10 @@ class EmployeeRepo:
                         print("Licence changed to: {}".format(edit_employee.get_licence()))
                         break
                     if choice == 3:
-                        print("Current address: {}".format(edit_employee.get_adress()))
-                        new_adress = input("Enter new address: ")
-                        edit_employee.set_adress(new_adress)
-                        print("Address changed to: {}".format(edit_employee.get_adress()))
+                        print("Current address: {}".format(edit_employee.get_address()))
+                        new_address = input("Enter new address: ")
+                        edit_employee.set_address(new_address)
+                        print("Address changed to: {}".format(edit_employee.get_address()))
                         break
                     if choice == 4:
                         print("Current Phonenumber: {}".format(edit_employee.get_phonenumber()))
