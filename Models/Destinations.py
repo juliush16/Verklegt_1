@@ -7,14 +7,12 @@ class Destinations:
         self.__contact = contact #nafn
         self.__phonenumber = phonenumber 
 
-    def __str__(self): #
-        return ("{} {} {} {} {} {}".format(self.__Location,self.__Airport,self.__flight_time,self.__voyage_time,self.__contact,self.__phonenumber))
-
+    
     def get_Location(self):
-        return self.__Location
+        return self.__location
     
     def get_Airport(self):
-        return self.__Airport
+        return self.__airport
     
     def get_flight_time(self):
         return self.__flight_time
@@ -27,6 +25,10 @@ class Destinations:
 
     def get_phonenumber(self):
         return self.__phonenumber
+
+    def __str__(self): #
+        return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}".format
+        (self.__location,self.__airport,self.__flight_time,self.__voyage_time,self.__contact,self.__phonenumber))
 
 
 if __name__ == "__main__":

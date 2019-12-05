@@ -52,7 +52,14 @@ class VoyageRepo:
         return all_voyage_list
 
     
-    
+    def __str__(self):
+        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}{:<15}{:<15}\n".format
+        ("Flight Number:", "Departing From:", "Arriving At:", "Departure:", "Arrival:", "Aircraft Id:", 
+        "Captein:", "Copilot:","Flight Service Manager:", "Flight Attendants")
+        voyagelist = self.get_voyage()
+        for voyage in voyagelist:
+            string += str(voyage) + "\n"
+        return string
 
             
             

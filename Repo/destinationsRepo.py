@@ -41,3 +41,11 @@ class DestinationsRepo:
         for car in all_destinations:
             return_list.append(Destinations)
         return return_list
+
+    def __str__(self):
+        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}\n".format
+        ("Location:","Airport","Flight Time","Voyage Time","Contact","Phonenumber")
+        destinationslist = self.get_destinations()
+        for destination in destinationslist:
+            string += str(destination) + "\n"
+        return string
