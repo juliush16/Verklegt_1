@@ -58,7 +58,7 @@ class VoyageRepo:
         "Captein:", "Copilot:","Flight Service Manager:", "Flight Attendants")
         voyagelist = self.get_voyage()
         for voyage in voyagelist:
-            string += str(Voyage) + "\n"
+            string += str(voyage) + "\n"
         return string
 
             

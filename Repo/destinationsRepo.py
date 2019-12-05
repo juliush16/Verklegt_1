@@ -47,5 +47,5 @@ class DestinationsRepo:
         ("Location:","Airport","Flight Time","Voyage Time","Contact","Phonenumber")
         destinationslist = self.get_destinations()
         for destination in destinationslist:
-            string += str(Destinations) + "\n"
+            string += str(destination) + "\n"
         return string

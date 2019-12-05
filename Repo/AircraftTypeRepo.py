@@ -60,5 +60,5 @@ class AirCraftTypeRepo:
         "Unit Thrust:", "Service Ceiling:","Length","Height","Wingspan")
         aircrafttypelist = self.get_aircraft()
         for aircraft in aircrafttypelist:
-            string += str(Aircraftype) + "\n"
+            string += str(aircraft) + "\n"
         return string

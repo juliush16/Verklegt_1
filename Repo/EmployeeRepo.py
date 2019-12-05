@@ -144,7 +144,7 @@ class EmployeeRepo:
         ("Ssn:", "Name:","Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
         employeelist = self.get_employee()
         for employee in employeelist:
-            string += str(Employee) + "\n"
+            string += str(employee) + "\n"
         return string
 
 
