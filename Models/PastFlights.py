@@ -1,12 +1,12 @@
 #flightNumber,departingFrom,arrivingAt,departure,arrival,aircraftID,captain,copilot,fsm,fa1,fa2
 class PastFlights:
-    def __init__(self,flightNumber,departingFrom,arrivingAt,departure,arrival,aircraftID,captain,copilot,fsm,fa1,fa2):
-        self.__flightNumber = flightNumber
-        self.__departingFrom = departingFrom
-        self.__arrivingAt = arrivingAt
+    def __init__(self,flight_number,departing_from,arriving_at,departure,arrival,aircraft_id,captain,copilot,fsm,fa1,fa2):
+        self.__flight_number = flight_number
+        self.__departing_from = departing_from
+        self.__arriving_at = arriving_at
         self.__departure = departure 
         self.__arrival = arrival 
-        self.__aircraftID = aircraftID
+        self.__aircraft_id = aircraft_id
         self.__captain = captain
         self.__copilot = copilot
         self.__fsm = fsm
@@ -14,7 +14,8 @@ class PastFlights:
         self.__fa2 = fa2
 
     def __str__(self):
-        return ("{}{}{}{}{}{}{}{}{}{}{}".format(self.__flightNumber,self.__departingFrom,self.__arrivingAt,self.__departure,self.__arrival,self.__arrival,self.__aircraftID,self.__captain,self.__copilot,self.__fsm,self.__fa1,self.__fa2))
+        return ("{}{}{}{}{}{}{}{}{}{}{}".format
+        (self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,self.__arrival,self.__arrival,self.__aircraft_id,self.__captain,self.__copilot,self.__fsm,self.__fa1,self.__fa2))
 
     def get_flightNumber(self):
         return self.__flightNumber
