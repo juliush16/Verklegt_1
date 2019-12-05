@@ -165,6 +165,7 @@ class EmployeeRepo:
         return string
 
 
+<<<<<<< HEAD
     def update_employee(self, SSN):  #passa að breyta ekki nafni og kt
         all_employee = self.get_employee()
         for employee in all_employee:
@@ -214,6 +215,10 @@ class EmployeeRepo:
 
 
   
+=======
+    def update_employee(self):  #passa að breyta ekki nafni og kt
+        pass
+>>>>>>> 14725236f311a1e589b044c9df55a99b581ecd6e
     
     def get_available_employees(self): #Sýna starfsmenn sem hafa ekki unnið þennan dag og geta farið i vinnuferð
         pass
