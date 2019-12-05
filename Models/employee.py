@@ -1,12 +1,12 @@
 class Employee:
 
-    def __init__(self,ssn, name, role,rank,licence = None, adress = None, phonenumber = None, email = None):
+    def __init__(self,ssn, name, role,rank,licence = None, address = None, phonenumber = None, email = None):
         self.ssn = ssn
         self.name = name
         self.role = role
         self.rank = rank
         self.licence = licence
-        self.adress = adress
+        self.address = address
         self.phonenumber = phonenumber
         self.email = email
 
@@ -26,8 +26,8 @@ class Employee:
     def get_licence(self):
         return str(self.licence)
     
-    def get_adress(self):
-        return str(self.adress)
+    def get_address(self):
+        return str(self.address)
     
     def get_phonenumber(self):
         return str(self.phonenumber)
@@ -37,7 +37,7 @@ class Employee:
 
     def __str__(self):
         return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format
-        (self.ssn,self.name,self.role,self.rank,self.licence,self.adress,self.phonenumber,self.email))
+        (self.ssn,self.name,self.role,self.rank,self.licence,self.address,self.phonenumber,self.email))
 
 
 #Set föll til að updatea starfsmann:
@@ -51,8 +51,8 @@ class Employee:
     def set_licence(self, licence):
         self.__licence = licence
 
-    def set_adress(self, adress):
-        self.__adress = adress
+    def set_address(self, address):
+        self.__address = address
 
     def set_phonenumber(self, phonenumber):
         self.__phonenumber = phonenumber
