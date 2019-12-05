@@ -53,3 +53,5 @@ class AirCraftTypeRepo:
         self.get_aircraft()
         for i in range(len(self.__aircraft)):
             print(self.__aircraft[i])
+
+    
