@@ -7,18 +7,18 @@ class Upcomingflights:
         self.__departure = departure
         self.__arrival = arrival
 
-    def __str__(self): #hafa str fall eða returna öllum function með str
-        pass
+    def __str__(self):
+        return ("{}{}{}{}{}".format(self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,self.__arrival))
 
 
     def get_flightNumber(self):
-        return self.__flightNumber
+        return self.__flight_number
     
     def get_departingFrom(self):
-        return self.__departingFrom
+        return self.__departing_from
 
     def get_arrivingAt(self):
-        return self.__arrivingAt
+        return self.__arriving_at
 
     def get_departure(self):
         return self.__departure
