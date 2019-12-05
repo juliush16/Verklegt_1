@@ -9,8 +9,8 @@ class EmployeeRepo:
 
     def add_employee(self, employee):
         with open("./data/Employee.csv", "a+") as employee_file:
-            SSN = employee.get_SSN()
-            name = employee.get_name()
+            SSN = employee.get_ssn_str()
+            name = employee.get_name_str()
             role = employee.get_role()
             rank = employee.get_rank()
             licence = employee.get_licence()
@@ -135,6 +135,9 @@ class EmployeeRepo:
         for flight_attendant in all_flight_attendants:
             print(flight_attendant)
 
+    def create_new_employee(self,ssn,name,role,rank,license,address,phonenumber,email):
+        new_emp = Employee(ssn,name,role,rank,licence,address,phonenumber,email)
+        self.add_employee(new_emp)
 
     def update_employee(self):  #passa að breyta ekki nafni og kt
         pass

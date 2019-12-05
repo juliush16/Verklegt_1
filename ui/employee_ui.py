@@ -1,4 +1,5 @@
 from Repo.EmployeeRepo import EmployeeRepo as Emp_Repo
+from Models.employee import Employee
 def menu():
     choice_str = ''
     while choice_str != 'q':
@@ -18,7 +19,7 @@ def menu():
         if choice_str == 'q':
             return choice_str
         elif choice_str == '1':
-            pass
+            reg_employee_menu()
         elif choice_str == '2':
             temp = Emp_Repo()
             temp.print_all_employees()
@@ -40,3 +41,19 @@ def menu():
         elif choice_str == '8':
             temp = Emp_Repo()
             temp.print_all_flight_attendants()
+
+
+def reg_employee_menu():
+    print('\n-----Register new employee-----\n')
+    new_emp_SSN = input('Enter employee social security number :')
+    new_emp_name = input('Enter employee name :')
+    new_emp_role = input('Enter employee role :')
+    new_emp_rank = input('Enter employee rank :')
+    new_emp_licence = input('Enter employee licence :')
+    new_emp_address = input('Enter employee address :')
+    new_emp_phonenumber = input('Enter employee phone number :')
+    new_emp_email = input('Enter employee email :')
+    new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
+    temp = Emp_Repo()
+    temp.add_employee(new_employee)
+    print('Employee : "',str(new_emp_name),'" has been added!')
