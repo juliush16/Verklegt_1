@@ -12,9 +12,7 @@ class Aircraftype:
         self.__height = height
         self.__wingspan = wingspan
     
-    def __str__(self): #hvað viljum við birta 
-            return ("{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}".format(self.__plane_type_id,self.__plane_type,self.__model,self.__capacity,self.__empty_weight,self.__max_takeoff_weight,self.__unit_thrust,self.__service_ceiling,self.__length,self.__height,self.__wingspan))
-
+   
     def get_plane_type_id(self):
         return self.__plane_type_id
     
@@ -48,3 +46,8 @@ class Aircraftype:
     def get_wingspan(self):
         return self.__wingspan
 
+
+    def __str__(self): #hvað viljum við birta 
+        return ("{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}".format
+        (self.__plane_type_id,self.__plane_type,self.__model,self.__capacity,self.__empty_weight,
+        self.__max_takeoff_weight,self.__unit_thrust,self.__service_ceiling,self.__length,self.__height,self.__wingspan))

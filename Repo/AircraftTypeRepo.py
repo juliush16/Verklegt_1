@@ -54,4 +54,10 @@ class AirCraftTypeRepo:
         for i in range(len(self.__aircraft)):
             print(self.__aircraft[i])
 
-    
+    def __str__(self):
+        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format("Ssn:", "Name:", 
+            "Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
+        employeelist = self.get_employee()
+        for car in employeelist:
+            string += str(Employee) + "\n"
+        return string

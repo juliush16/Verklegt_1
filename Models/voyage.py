@@ -42,3 +42,9 @@ class Voyage:
 
     def get_flight_attendants(self):
         return str(self.flight_attendants)
+
+    def __str__(self):
+        return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}{:<15}{:<15}".format
+        (self.flight_number,self.departing_from,self.arriving_at,
+        self.departure,self.arrival,self.aircraft_id,self.captain,self.copilot,
+        self.flight_service_manager,self.flight_attendants))
