@@ -42,6 +42,11 @@ class DestinationsRepo:
             return_list.append(Destinations)
         return return_list
 
+
+    def create_new_destination(self,ssn,location,airport,flight_time,voyage_time,contact,phonenumber):
+        new_destination = Destinations(ssn,location,airport,flight_time,voyage_time,contact,phonenumber)
+        self.add_employee(new_destination)
+
     def __str__(self):
         string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}\n".format
         ("Location:","Airport","Flight Time","Voyage Time","Contact","Phonenumber")
