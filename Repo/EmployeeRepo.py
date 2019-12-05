@@ -135,7 +135,7 @@ class EmployeeRepo:
         for flight_attendant in all_flight_attendants:
             print(flight_attendant)
 
-    def create_new_employee(self,ssn,name,role,rank,license,address,phonenumber,email):
+    def create_new_employee(self,ssn,name,role,rank,licence,address,phonenumber,email):
         new_emp = Employee(ssn,name,role,rank,licence,address,phonenumber,email)
         self.add_employee(new_emp)
         
