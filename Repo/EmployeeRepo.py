@@ -136,7 +136,7 @@ class EmployeeRepo:
             print(flight_attendant)
 
     def __str__(self):
-        string = "{:<10}{:<15}{:<15}{:<15}{:<15}{:<10}{:<10}{:<10}{:<15}{:<15}\n".format("Ssn:", "Name:", 
+        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format("Ssn:", "Name:", 
             "Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
         carlist = self.get_cars()
         for car in carlist:
