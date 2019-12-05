@@ -165,10 +165,10 @@ class EmployeeRepo:
         return string
 
 
-    def update_employee(self, SSN):  #passa að breyta ekki nafni og kt
+    def update_employee(self, ssn):  #passa að breyta ekki nafni og kt
         all_employee = self.get_employee()
         for employee in all_employee:
-            if employee.get_SSN == SSN:
+            if employee.get_ssn == ssn:
                 edit_employee = employee
                 empl_string = "{},{},{},{},{},{}".format("Role: ","Rank: ","Licence: ","Address: ","Phonenumber: ", "Email: ")
                 print("{}{}\n".format(empl_string, edit_employee))
@@ -214,8 +214,6 @@ class EmployeeRepo:
 
 
   
-    def update_employee(self):  #passa að breyta ekki nafni og kt
-        pass
     
     def get_available_employees(self): #Sýna starfsmenn sem hafa ekki unnið þennan dag og geta farið i vinnuferð
         pass
