@@ -38,7 +38,6 @@ class Employee:
     def __str__(self):
         return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format
         (self.ssn,self.name,self.role,self.rank,self.licence,self.adress,self.phonenumber,self.email))
-<<<<<<< HEAD
 
 
 #Set föll til að updatea starfsmann:
@@ -61,8 +60,6 @@ class Employee:
     def set_email(self, email):
         self.__email = email
 
-=======
->>>>>>> 14725236f311a1e589b044c9df55a99b581ecd6e
 
 if __name__ == "__main__":
     Julius = Employee('030196-2449','Julius','Pilot','Captain','NAFokkerF100','Skólagata 1', '777-0000','julius@nan.is')
