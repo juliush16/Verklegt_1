@@ -42,6 +42,11 @@ class DestinationsRepo:
             return_list.append(Destinations)
         return return_list
 
+    def print_all_destinations(self):
+        all_destinations = self.all_destinations()
+        for employee in all_destinations:
+            print(destination)
+
 
     def create_new_destination(self,ssn,location,airport,flight_time,voyage_time,contact,phonenumber):
         new_destination = Destinations(ssn,location,airport,flight_time,voyage_time,contact,phonenumber)
