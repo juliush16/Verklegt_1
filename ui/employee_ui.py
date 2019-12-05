@@ -34,12 +34,14 @@ def menu():
 
 def reg_employee_menu():
     print('\n-----Register new employee-----\n')
-    new_emp_SSN = input('Enter employee social security number :')
-    new_emp_name = input('Enter employee name :')
-    new_emp_role = input('Enter employee role :')
-    new_emp_rank = input('Enter employee rank :')
+    new_emp_SSN = ""
+    while new_emp_SSN.isdigit() == False:
+        new_emp_SSN = input('Enter employee social security number :')
+    new_emp_name = input('Enter employee name :').capitalize()
+    new_emp_role = input('Enter employee role :').capitalize()
+    new_emp_rank = input('Enter employee rank :').capitalize()
     new_emp_licence = input('Enter employee licence :')
-    new_emp_address = input('Enter employee address :')
+    new_emp_address = input('Enter employee address :').capitalize()
     new_emp_phonenumber = input('Enter employee phone number :')
     new_emp_email = input('Enter employee email :')
     new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
