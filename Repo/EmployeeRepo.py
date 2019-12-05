@@ -140,10 +140,10 @@ class EmployeeRepo:
         self.add_employee(new_emp)
         
     def __str__(self):
-        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format("Ssn:", "Name:", 
-            "Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
+        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format
+        ("Ssn:", "Name:","Role:", "Rank:", "Licence:", "Adress:", "Phonenumber:", "Email:")
         employeelist = self.get_employee()
-        for car in employeelist:
+        for employee in employeelist:
             string += str(Employee) + "\n"
         return string
 
