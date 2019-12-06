@@ -171,7 +171,7 @@ class EmployeeRepo:
         for employee in all_employee:
             if employee.get_ssn_str() == ssn:
                 edit_employee = employee
-                empl_string = ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format(employee.ssn,employee.name,employee.role,employee.rank,employee.licence,employee.adress,employee.phonenumber,employee.email))
+                empl_string = ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format("Role:", "Rank:", "Licence:","Address:","Phonenumber","Email")
                 print(first_line)
                 print(empl_string)
                 print("1. Edit Role\n2. Edit Rank\n"
