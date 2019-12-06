@@ -30,7 +30,7 @@ class Employee:
         return str(self.address)
     
     def get_phonenumber(self):
-        return str(self.phonenumber)
+        return self.phonenumber
 
     def get_email(self):
         return str(self.email)

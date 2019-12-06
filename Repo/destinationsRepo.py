@@ -38,8 +38,8 @@ class DestinationsRepo:
     def all_destinations(self):
         return_list = []
         all_destinations = self.get_destinations()
-        for car in all_destinations:
-            return_list.append(Destinations)
+        for destination in all_destinations:
+            return_list.append(destination)
         return return_list
 
     def print_all_destinations(self):

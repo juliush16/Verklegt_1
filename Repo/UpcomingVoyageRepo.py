@@ -44,7 +44,6 @@ class VoyageRepo:
         all_voyage = self.all_upcoming_voyage()
         for voyage in all_voyage:
             print(voyage)
-    
 
     
     def __str__(self):
