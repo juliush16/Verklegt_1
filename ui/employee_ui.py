@@ -41,8 +41,6 @@ def menu():
 def reg_employee_menu():
     print('\n-----Register new employee-----\n')
     new_emp_SSN = check_ssn()
-    # while new_emp_SSN.isdigit() == False:
-    #     new_emp_SSN = input('Enter employee social security number :')
     new_emp_name = input('Enter employee name :').capitalize()
     new_emp_role =check_role()
     new_emp_rank = check_rank(new_emp_role)
