@@ -1,5 +1,6 @@
 from Repo.EmployeeRepo import EmployeeRepo as Emp_Repo
 from Models.employee import Employee
+from Repo.inputCheck import *
 def menu():
     choice_str = ''
     while choice_str != 'q':
@@ -39,9 +40,9 @@ def menu():
 
 def reg_employee_menu():
     print('\n-----Register new employee-----\n')
-    new_emp_SSN = ""
-    while new_emp_SSN.isdigit() == False:
-        new_emp_SSN = input('Enter employee social security number :')
+    new_emp_SSN = check_ssn()
+    # while new_emp_SSN.isdigit() == False:
+    #     new_emp_SSN = input('Enter employee social security number :')
     new_emp_name = input('Enter employee name :').capitalize()
     new_emp_role = ""
     new_emp_rank = "" 
@@ -57,7 +58,7 @@ def reg_employee_menu():
                 elif new_emp_rank == '2':
                     new_emp_rank = "Copilot"
                 break #fer ut ur while loopunni og i næstu
-            
+
             while new_emp_licence != '1' or '2' or '3': #licence
                 new_emp_licence = input('Choose an option for employee licence\n1:NABAE146\n2:NAFokkerF28\n3:NAFokkerF100\n')
                 if new_emp_licence == '1':
@@ -69,7 +70,7 @@ def reg_employee_menu():
                 break #fer út ur while
             break #fer ut ur if
 
-        elif new_emp_role == '2':
+        elif new_emp_role == '2': #cabincrew 
             new_emp_role = "Cabincrew"
             new_emp_licence = "N/A"
             while new_emp_rank != '1' or '2': #cabincrew rank (flight service manager og flight attendant)
@@ -81,9 +82,8 @@ def reg_employee_menu():
                 break
             break
 
-#    new_emp_licence = input('Enter employee licence :') #á bara við pilot, pilot velur á milli flugvélar / cabincrew skrifast N/A
     new_emp_address = input('Enter employee address :').capitalize()
-    new_emp_phonenumber = input('Enter employee phone number :')
+    new_emp_phonenumber = check_phonenumber()
     new_emp_email = input('Enter employee email :')
     new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
     temp = Emp_Repo()
