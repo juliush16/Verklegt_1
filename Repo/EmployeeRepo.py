@@ -173,17 +173,14 @@ class EmployeeRepo:
         for employee in all_employee:
             if employee.get_ssn_str() == ssn:
                 edit_employee = employee
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 empl_string = ("\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n".format('SSN: ',employee.ssn,'Name: ',employee.name,'Role: ',employee.role,'Rank: ',employee.rank,'Licence: ',employee.licence,'Address: ',employee.address,'Phonenumber: ',employee.phonenumber,'Email: ',employee.email))
                 #empl_string = ("{:<5}{:<10}{:<15}{:<15}{:<10}{:<15}".format("Role:", "Rank:", "Licence:","Address:","Phonenumber","Email")
                 #print(first_line)
-=======
-=======
->>>>>>> 460d8cc1a6ea155a0bcaa396f2f6f67232bfd745
+
                 empl_string = ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format(employee.ssn,employee.name,employee.role,employee.rank,employee.licence,employee.adress,employee.phonenumber,employee.email))
                 print(first_line)
->>>>>>> 460d8cc1a6ea155a0bcaa396f2f6f67232bfd745
+
                 print(empl_string)
                 print("1. Edit Role\n2. Edit Licence\n"
                     "3. Edit address\n4. Edit Phonenumber\n5. Edit email\n"
