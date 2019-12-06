@@ -71,3 +71,14 @@ Dagur: Lista starfsmenn
 Brynjar: Employee Repository
 Júlíus: Voyage Repository
 Hildur: Employee Repository
+
+Dagur 9:
+5. desember
+Anna: Vinnuferðir
+Dagur: Vinnuferðir
+Brynjar: Fara yfir öll Repo og bæta við 
+Júlíus: Voyage Repository
+Hildur: Breyta upplýsingum um starfsfólk
+
+Markmið:
+Reyna klára öll repo og stöðucheck um morguninn kl 10
