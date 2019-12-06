@@ -157,7 +157,7 @@ class EmployeeRepo:
 
         
     def __str__(self):
-        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}\n".format
+        string = "{:<15}{:<10}{:<5}{:<10}{:<15}{:<15}{:<10}{:<15}\n".format
         ("Ssn:", "Name:","Role:", "Rank:", "Licence:", "address:", "Phonenumber:", "Email:")
         employeelist = self.get_employee()
         for employee in employeelist:
@@ -171,7 +171,7 @@ class EmployeeRepo:
         for employee in all_employee:
             if employee.get_ssn_str() == ssn:
                 edit_employee = employee
-                empl_string = ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format(employee.ssn,employee.name,employee.role,employee.rank,employee.licence,employee.adress,employee.phonenumber,employee.email))
+                empl_string = ("{:<15}{:<10}{:<5}{:<10}{:<15}{:<15}{:<10}{:<15}".format(employee.ssn,employee.name,employee.role,employee.rank,employee.licence,employee.adress,employee.phonenumber,employee.email))
                 print(first_line)
                 print(empl_string)
                 print("1. Edit Role\n2. Edit Rank\n"
