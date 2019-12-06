@@ -4,7 +4,7 @@ class Aircraft:
         self.__planeTypeId = planeTypeId 
 
     def __str__(self):
-        return ("{}        {}".format(self.__planeInsignia,self.__planeTypeId))
+        return ("{:<15}{:<15}".format(self.__planeInsignia,self.__planeTypeId))
 
     def get_planInsignia(self):
         return self.__planeInsignia
