@@ -47,7 +47,7 @@ def reg_employee_menu():
     new_emp_licence = check_licence(new_emp_role)
     new_emp_address = input('Enter employee address :').capitalize()
     new_emp_phonenumber = check_phonenumber()
-    new_emp_email = input('Enter employee email :')
+    new_emp_email = check_email()
     new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
     temp = Emp_Repo()
     temp.add_employee(new_employee)

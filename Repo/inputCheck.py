@@ -71,5 +71,10 @@ def check_licence(new_emp_role):
             print("Invalid employe licence try again!")
         return new_emp_licence
 
-
-
+def check_email():
+    new_emp_email = ""
+    while new_emp_email[-7:] != "@nan.is":
+        new_emp_email =  input('Enter employee email :')
+        if new_emp_email[-7:] == "@nan.is":
+            return new_emp_email
+        print("Invalid email try again!")
