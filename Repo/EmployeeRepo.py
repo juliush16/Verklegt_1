@@ -167,11 +167,13 @@ class EmployeeRepo:
 
     def update_employee(self, ssn):  #passa að breyta ekki nafni og kt
         all_employee = self.get_employee()
+        first_line = all_employee[0]
         for employee in all_employee:
-            if employee.get_ssn == ssn:
+            if employee.get_ssn_str() == ssn:
                 edit_employee = employee
-                empl_string = "{},{},{},{},{},{}".format("Role: ","Rank: ","Licence: ","Address: ","Phonenumber: ", "Email: ")
-                print("{}{}\n".format(empl_string, edit_employee))
+                empl_string = ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format(employee.ssn,employee.name,employee.role,employee.rank,employee.licence,employee.adress,employee.phonenumber,employee.email))
+                print(first_line)
+                print(empl_string)
                 print("1. Edit Role\n2. Edit Rank\n"
                     "3. Edit Licence\n4. Edit Address\n5. Edit Phonenumber\n"
                     "5. Edit Email\n6. Return to Main Menu") 

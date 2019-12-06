@@ -9,6 +9,7 @@ def menu():
         print('Press "3" to list all Pilots')
         print('Press "4" to list all Cabin Crew')
         print('Press "5" to find employee by SSN')
+        print('Press "6" to update employee info')
 
         print('Press "q" to Quit\n')
         choice_str = input('Choose an option: ')
@@ -30,6 +31,10 @@ def menu():
             employee_ssn = input('Please input employee SSN :')
             temp = Emp_Repo()
             print(temp.get_by_ssn(employee_ssn))
+        elif choice_str == '6':
+            employee_ssn = input('Please input employee SSN :')
+            temp = Emp_Repo()
+            temp.update_employee(employee_ssn)
 
 
 def reg_employee_menu():
