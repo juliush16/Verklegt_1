@@ -36,7 +36,7 @@ class Employee:
         return str(self.email)
 
     def __str__(self):
-        return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format
+        return ("{:<15}{:<10}{:<5}{:<10}{:<15}{:<15}{:<10}{:<15}".format
         (self.ssn,self.name,self.role,self.rank,self.licence,self.address,self.phonenumber,self.email))
 
 
