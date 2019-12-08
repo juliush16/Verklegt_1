@@ -31,16 +31,7 @@ def create_new_voyage_menu():
     # Aircrafts.print_all_airplanes()
     # airplane = input('Please select an airplane (Type plane insignia) :').capitalize()
     print('\nSelect Destination\n')
-    Destinations = Destinations2Repo()
-    Destinations.print_all_destinations()
-    destination = input('Plese select a destination (Type destination id): ').capitalize()
-    print('\n')
-    departure_date_and_time = input('Please choose a departure date and time (DD/MM/YYYY/HH/MM) :')
-    departure_list = departure_date_and_time.split('/')
-    new_date = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
-    print(new_date)
-
-
-    ## Fyrst velja flugvél, svo áfangastað, svo tíma
+    UpcomingVoyage = VoyageRepo()
+    UpcomingVoyage.make_new_voyage()
 
     

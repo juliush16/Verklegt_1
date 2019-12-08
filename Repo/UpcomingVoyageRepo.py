@@ -1,6 +1,11 @@
 
 from Models.Upcomingflights import Upcomingflights
+from Repo.Destinations2Repo import Destinations2Repo
+from Repo.destinationsRepo import DestinationsRepo
 import csv
+import datetime
+import dateutil
+import random
 
 class VoyageRepo:
 
@@ -44,6 +49,30 @@ class VoyageRepo:
         all_voyage = self.all_upcoming_voyage()
         for voyage in all_voyage:
             print(voyage)
+
+    def generate_flight_number(self):
+        return_str = 'NA'
+        number = random.randint(0,9999)
+        return_str += str(number)
+        return return_str
+
+    def make_new_voyage(self):
+        Destinations2 = Destinations2Repo()
+        Destinations2.print_all_destinations()
+        destination = input('Plese select a destination (Type destination id): ').capitalize()
+        departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
+        departure_list = departure_date_and_time.split('/')
+        departure_date_iso = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
+        arrival_date_iso = departure_date_iso
+        parsed_date = dateutil.parser.parse(arrival_date_iso)
+        destinations_ = DestinationsRepo()
+        parsed_date.hour += destinations_.get_flight_time()
+        self.make_new_flight(destination,departure_date_iso,arrival_date_iso)
+
+    def make_new_flight(self, arriving_at, departure, arrival,departing_from = 'KEF'):
+        flight_num = self.generate_flight_number()
+        new_flight = Upcomingflights(flight_num,departing_from,arriving_at,departure,arrival)
+        self.add_voyage(new_flight)
 
     
     def __str__(self):
