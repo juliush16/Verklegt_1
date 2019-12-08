@@ -1,6 +1,9 @@
 
 from Models.employee import Employee
+from Repo.inputCheck import *
+import os
 import csv
+clear = lambda: os.system('cls')
 
 class EmployeeRepo:
 
@@ -151,7 +154,7 @@ class EmployeeRepo:
             ret_string = str(all_employees[0])
             ret_string += temp_str
             return ret_string
-        
+
         else:
             return 'Employee not found!'
 
@@ -167,26 +170,33 @@ class EmployeeRepo:
 
     def update_employee(self, ssn):  #passa að breyta ekki nafni og kt
         all_employee = self.get_employee()
-        first_line = all_employee[0]
+        #first_line = all_employee[0]
         for employee in all_employee:
             if employee.get_ssn_str() == ssn:
                 edit_employee = employee
-                empl_string = ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}".format(employee.ssn,employee.name,employee.role,employee.rank,employee.licence,employee.adress,employee.phonenumber,employee.email))
-                print(first_line)
+
+                empl_string = ("\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n{}{}\n".format('SSN: ',employee.ssn,'Name: ',employee.name,'Role: ',employee.role,'Rank: ',employee.rank,'Licence: ',employee.licence,'Address: ',employee.address,'Phonenumber: ',employee.phonenumber,'Email: ',employee.email))
+                #empl_string = ("{:<5}{:<10}{:<15}{:<15}{:<10}{:<15}".format("Role:", "Rank:", "Licence:","Address:","Phonenumber","Email")
+                #print(first_line)
+
+            
                 print(empl_string)
-                print("1. Edit Role\n2. Edit Rank\n"
-                    "3. Edit Licence\n4. Edit Address\n5. Edit Phonenumber\n"
-                    "5. Edit Email\n6. Return to Main Menu") 
+                print("1. Edit Role\n2. Edit Licence\n"
+                    "3. Edit address\n4. Edit Phonenumber\n5. Edit email\n"
+                    "6. Return to Main Menu") 
+
                 while True:
                     choice = int(input("What do you want to edit? "))
-                    if choice < 1 or choice > 5:
+                    if choice < 1 or choice > 6:
                         print("Choice invalid! Try again")
+                        clear()
                     else:
                         break
                 while True:
                     if choice == 1:
                         print("Current role: {}".format(edit_employee.get_role()))
-                        new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
+                        new_role = check_role()
+                        #new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
                         edit_employee.set_role(new_role)
                         print("Role changed to: {}".format(edit_employee.get_role()))
                         break
@@ -213,6 +223,10 @@ class EmployeeRepo:
                         new_email = input("Enter new email: ")
                         edit_employee.set_email(new_email)
                         print("Email changed to: {}".format(new_email.get_email()))
+                    if choice == 6:
+                        break
+
+
 
 
   
