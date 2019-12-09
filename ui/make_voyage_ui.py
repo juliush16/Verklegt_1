@@ -2,6 +2,7 @@ from Repo.UpcomingVoyageRepo import VoyageRepo
 from Repo.AircraftRepo import AirCraftRepo
 from Repo.Destinations2Repo import Destinations2Repo
 from Repo.destinationsRepo import DestinationsRepo
+from Repo.inputCheck import *
 import datetime
 
 def menu():
@@ -43,8 +44,9 @@ def create_new_voyage_menu():
     print('\nSelect Destination\n')
     Destinations = Destinations2Repo()
     Destinations.print_all_destinations()
-    destination = input('Plese select a destination (Type destination id): ').capitalize()
-    print('\n')
+    # destination = input('Plese select a destination (Type destination id): ').capitalize()
+    # print('\n')
+    new_destination = check_destination()
     departure_date_and_time = input('Please choose a departure date and time (DD/MM/YYYY/HH/MM) :')
     if(departure_date_and_time == ""):
         departure_date_and_time = "09/12/2019/18/30"
@@ -60,5 +62,3 @@ def create_new_voyage_menu():
     ## Fyrst velja flugvél, svo áfangastað, svo tíma
     UpcomingVoyage = VoyageRepo()
     UpcomingVoyage.make_new_voyage()
-
-    
