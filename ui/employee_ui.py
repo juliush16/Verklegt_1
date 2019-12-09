@@ -1,66 +1,93 @@
-from Repo.EmployeeRepo import EmployeeRepo as Emp_Repo
+from Logic.Employee_logic import EmployeeLogic
+from Repo.EmployeeRepo import EmployeeRepo
 from Models.employee import Employee
 from Repo.inputCheck import *
-def menu():
-    choice_str = ''
-    while choice_str != 'q':
-        print('\n-----Register or list employees-----\n')
-        print('Press "1" to register a new employee ')
-        print('Press "2" to list all Employees ')
-        print('Press "3" to list all Pilots')
-        print('Press "4" to list all Cabin Crew')
-        print('Press "5" to find employee by SSN')
-        print('Press "6" to update employee info')
 
-        print('Press "q" to Quit\n')
-        choice_str = input('Choose an option: ')
-
-        if choice_str == 'q':
-            return choice_str
-        elif choice_str == '1':
-            reg_employee_menu()
-        elif choice_str == '2':
-            temp = Emp_Repo()
-            temp.print_all_employees()
-        elif choice_str == '3':
-            temp = Emp_Repo()
-            temp.print_all_pilots()
-        elif choice_str == '4':
-            temp = Emp_Repo()
-            temp.print_all_cabin_crew()
-        elif choice_str == '5':
-            employee_ssn = input('Please input employee SSN :')
-            temp = Emp_Repo()
-            print(temp.get_by_ssn(employee_ssn))
-        elif choice_str == '6':
-            employee_ssn = input('Please input employee SSN :')
-            temp = Emp_Repo()
-            temp.update_employee(employee_ssn)
-
-
-def reg_employee_menu():
-    print('\n-----Register new employee-----\n')
-    new_emp_SSN = check_ssn()
-    new_emp_name = input('Enter employee name :').capitalize()
-    print('- - - - - - - - - - - - - - - - - - - - - - - - - -')
-    new_emp_role =check_role()
-    new_emp_rank = check_rank(new_emp_role)
-    new_emp_licence = check_licence(new_emp_role)
-    new_emp_address = input('Enter employee address :').capitalize()
-    new_emp_phonenumber = check_phonenumber()
-    new_emp_email = check_email()
-    new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
-    temp = Emp_Repo()
-    temp.add_employee(new_employee)
-    print('Employee : "',str(new_emp_name),'" has been added!')
+class EmployeeUI:
 
 
 
+    def menu(self):
+        choice_str = ''
+        while choice_str != 'q':
+            print('\n-----Register or list employees-----\n')
+            print('Press "1" to register a new employee ')
+            print('Press "2" to list all Employees ')
+            print('Press "3" to list all Pilots')
+            print('Press "4" to list all Cabin Crew')
+            print('Press "5" to find employee by SSN')
+            print('Press "6" to update employee info')
+
+            print('Press "q" to Quit\n')
+            choice_str = input('Choose an option: ')
+
+            if choice_str == 'q':
+                return choice_str
+            elif choice_str == '1':
+                self.reg_employee_menu()
+            elif choice_str == '2':
+                self.print_all_employees()
+            elif choice_str == '3':
+                self.print_all_pilots()
+            elif choice_str == '4':
+                self.print_all_cabin_crew()
+            elif choice_str == '5':
+                employee_ssn = input('Please input employee SSN :')
+                print(EmployeeLogic().get_by_ssn(employee_ssn))
+            elif choice_str == '6':
+                employee_ssn = input('Please input employee SSN :')
+                EmployeeLogic().update_employee(employee_ssn)
 
 
+    def reg_employee_menu(self):
+        print('\n-----Register new employee-----\n')
+        new_emp_SSN = check_ssn()
+        new_emp_name = input('Enter employee name :').capitalize()
+        print('- - - - - - - - - - - - - - - - - - - - - - - - - -')
+        new_emp_role = check_role()
+        new_emp_rank = check_rank(new_emp_role)
+        new_emp_licence = check_licence(new_emp_role)
+        new_emp_address = input('Enter employee address :').capitalize()
+        new_emp_phonenumber = check_phonenumber()
+        new_emp_email = check_email()
+        new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
+        EmployeeRepo().add_employee(new_employee)
+        print('Employee : "',str(new_emp_name),'" has been added!')
 
+    def print_all_employees(self):
+        all_employees = EmployeeLogic().all_employees()
+        for employee in all_employees:
+            print(employee)
 
+    def print_all_pilots(self):
+        all_pilots = EmployeeLogic().get_all_pilots()
+        for pilot in all_pilots:
+            print(pilot)
 
+    def print_all_captains(self):
+        all_captains = EmployeeLogic().get_all_captains()
+        for captain in all_captains:
+            print(captain)
+    
+    def print_all_copilots(self):
+        all_copilots = EmployeeLogic().get_all_copilots()
+        for copilot in all_copilots:
+            print(copilot)
+
+    def print_all_cabin_crew(self):
+        all_cabin_crew = EmployeeLogic().get_all_cabin_crew()
+        for crew_member in all_cabin_crew:
+            print(crew_member)
+
+    def print_all_flight_service_managers(self):
+        all_fsm = EmployeeLogic().get_all_flight_service_managers()
+        for fsm in all_fsm:
+            print(fsm)
+
+    def print_all_flight_attendants(self):
+        all_flight_attendants = EmployeeLogic().get_all_flight_attendants()
+        for flight_attendant in all_flight_attendants:
+            print(flight_attendant)
 
 
 

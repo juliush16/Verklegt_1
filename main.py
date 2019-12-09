@@ -1,2 +1,2 @@
-from ui.main_ui import MainMenu
-MainMenu()
+from ui.main_ui import Main
+Main().MainMenu()
