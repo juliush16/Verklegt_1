@@ -19,7 +19,7 @@ class DestinationsRepo:
             airport,flight_time,voyage_time,contact,phonenumber))
 
     def get_destinations(self):
-        if self.__aircraft == []:
+        if self.__destination == []:
             with open("./Data/destinations.csv", "r", encoding = "utf-8") as destinations_file:
                 destination_reader = csv.reader(destinations_file)
                 for line in destination_reader:
@@ -28,8 +28,7 @@ class DestinationsRepo:
                     flight_time = line[2]
                     voyage_time = line[3]
                     contact = line[4]
-                    phonenumber = line[5]
-                
+                    phonenumber = line[5]    
                     new_destination = Destinations(location, airport, 
                     flight_time, voyage_time, contact, phonenumber)
                     self.__destination.append(new_destination)
@@ -46,6 +45,13 @@ class DestinationsRepo:
         all_destinations = self.all_destinations()
         for destination in all_destinations:
             print(destination)
+
+    def get_flight_time(self,destination):
+        all_destinations = self.all_destinations()
+        for dest in all_destinations:
+            if dest.__location == destination:
+                return int(dest.__flight_time)
+        
 
     def create_new_destination(self,location,airport,flight_time,voyage_time,contact,phonenumber):
         new_destination = Destinations(location,airport,flight_time,voyage_time,contact,phonenumber)
