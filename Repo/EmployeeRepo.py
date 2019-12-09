@@ -1,5 +1,5 @@
 
-from Models.employee import Employee
+from Models.employee import *
 from Repo.inputCheck import *
 import os
 import csv
@@ -168,6 +168,7 @@ class EmployeeRepo:
         return string
 
 
+#breyta maili, address, phonenumber
     def update_employee(self, ssn):  #passa að breyta ekki nafni og kt
         all_employee = self.get_employee()
         #first_line = all_employee[0]
@@ -195,11 +196,14 @@ class EmployeeRepo:
                 while True: #
                     if choice == 1:
                         print("Current role: {}".format(edit_employee.get_role()))
+                        print("Current rank: {}".format(edit_employee.get_rank()))
                         new_role = check_role()
                         new_rank = check_rank()
                         #new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
                         edit_employee.set_role(new_role)
+                        edit_employee.set_rank(new_rank)
                         print("Role changed to: {}".format(edit_employee.get_role()))
+                        print("Role changed to: {}".format(edit_employee.get_rank()))
                         break
                     if choice == 2:
                         print("Current licence: {}".format(edit_employee.get_licence()))
@@ -215,15 +219,18 @@ class EmployeeRepo:
                         break
                     if choice == 4:
                         print("Current Phonenumber: {}".format(edit_employee.get_phonenumber()))
-                        new_phonenumber = input("Enter new phonenumber: ")
+                        new_phonenumber = check_phonenumber()
+                        #new_phonenumber = input("Enter new phonenumber: ")
                         edit_employee.set_phonenumber(new_phonenumber)
                         print("Phonenumber changed to: {}".format(edit_employee.get_phonenumber()))
                         break
                     if choice == 5:
                         print("Current email: {}".format(edit_employee.get_email()))
-                        new_email = input("Enter new email: ")
+                        #new_email = input("Enter new email: ")
+                        new_email = check_email()
                         edit_employee.set_email(new_email)
-                        print("Email changed to: {}".format(new_email.get_email()))
+                        print("Email changed to: {}".format(edit_employee.get_email()))
+                        break
                     if choice == 6:
                         break
 
