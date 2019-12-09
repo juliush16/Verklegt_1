@@ -9,6 +9,7 @@ def menu():
         print('Press "1" to make a new voyage')
         print('Press "2" to list all upcoming voyages')
         print('Press "3" to list all past voyages')
+        print('Press "4" to change contact information')
         print('Press "q" to Quit\n')
         choice_str = input('Choose an option: ')
 
@@ -20,6 +21,12 @@ def menu():
         elif choice_str == '2':
             temp = VoyageRepo()
             temp.print_all_upcoming_voyage()
+        elif choice_str == '3':
+            pass
+        elif choice_str == '4':
+            destinations_location = input("Please input contact location: ")
+            #Klára
+        
 
 
 

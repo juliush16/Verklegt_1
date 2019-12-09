@@ -1,6 +1,7 @@
 
 from Models.Destinations import Destinations
 import csv
+clear = lambda: os.system('cls')
 
 class DestinationsRepo:
 
@@ -65,3 +66,34 @@ class DestinationsRepo:
         for destination in destinationslist:
             string += str(destination) + "\n"
         return string
+
+    def update_contact(self, location):
+        all_location = self.get_destinations()
+        for contact in all_location:
+            if destinations.get_Location() == location:
+                edit_contact = contact
+
+                contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',destinations.contact,'Phonenumber: ',destinations.phonenumber))
+                print(contact_string)
+                print("1. Edit Contact\n2. Edit Phonenumber\n3. Return to Main Menu\n")
+
+                while True:
+                    choice = int(input("What do you want to edit?"))
+                    if choice < 1 or choice > 3:
+                        print("Choice invalid! Try again")
+                        clear()
+                    else:
+                        break
+                while True:
+                    if choice == 1:
+                        print("Current contact name: {}".format(edit_contact.get_contact()))
+                        new_contact = input("Enter new contact name: ")
+                        edit_contact.set_contact(new_contact)
+                        break
+                    if choice == 2:
+                        print("Current phonenumber: {}".format(edit_contact.get_phonenumber()))
+                        new_phonenumber = input("Enter new phonenumber: ")
+                        edit_contact.set_phonenumber(new_phonenumber)
+                        break
+                    if choice == 3:
+                        break
