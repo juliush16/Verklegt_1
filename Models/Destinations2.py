@@ -1,5 +1,3 @@
-
-
 class Destinations2:
 
     def __init__(self,id, destination):

@@ -8,7 +8,7 @@ def MainMenu():
     choice_str = ''
     while choice_str != 'q':
         print('Welcome!')
-        print('Press "1" to Make a voyage')
+        print('Press "1" for Voyage menu')
         print('Press "2" to Assign eployees to a voyage')
         print('Press "3" to register or list employees ')
         print('Press "q" to Quit\n')
