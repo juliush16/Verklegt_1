@@ -1,5 +1,5 @@
 
-from Models.employee import *
+from Models.employee import Employee
 from Repo.inputCheck import *
 import os
 import csv
@@ -198,10 +198,10 @@ class EmployeeRepo:
                         print("Current role: {}".format(edit_employee.get_role()))
                         print("Current rank: {}".format(edit_employee.get_rank()))
                         new_role = check_role()
-                        new_rank = check_rank()
+                        #new_rank = check_rank()
                         #new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
                         edit_employee.set_role(new_role)
-                        edit_employee.set_rank(new_rank)
+                        #edit_employee.set_rank(new_rank)
                         print("Role changed to: {}".format(edit_employee.get_role()))
                         print("Role changed to: {}".format(edit_employee.get_rank()))
                         break
@@ -217,6 +217,7 @@ class EmployeeRepo:
                         edit_employee.set_address(new_address)
                         print("Address changed to: {}".format(edit_employee.get_address()))
                         break
+
                     if choice == 4:
                         print("Current Phonenumber: {}".format(edit_employee.get_phonenumber()))
                         new_phonenumber = check_phonenumber()
