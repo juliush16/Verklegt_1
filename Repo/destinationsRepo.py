@@ -1,6 +1,8 @@
 
 from Models.Destinations import Destinations
+from Repo.inputCheck import *
 import csv
+import os
 clear = lambda: os.system('cls')
 
 class DestinationsRepo:
