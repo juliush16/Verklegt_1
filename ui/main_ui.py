@@ -22,3 +22,4 @@ def MainMenu():
             choice_str = a_ui()
         elif choice_str == '3':
             choice_str = emp_ui()
+###Vantar að geta breytt tengiliðaupplýsingum fyrir destination
