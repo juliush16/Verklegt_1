@@ -35,4 +35,3 @@ class Destinations2Repo:
         all_destinations = self.all_destinations()
         for destination in all_destinations:
             print(destination)
-

@@ -1,5 +1,6 @@
 
 from Models.employee import Employee
+from Repo.inputCheck import *
 import os
 import csv
 clear = lambda: os.system('cls')
@@ -153,7 +154,7 @@ class EmployeeRepo:
             ret_string = str(all_employees[0])
             ret_string += temp_str
             return ret_string
-        
+
         else:
             return 'Employee not found!'
 
@@ -194,7 +195,8 @@ class EmployeeRepo:
                 while True:
                     if choice == 1:
                         print("Current role: {}".format(edit_employee.get_role()))
-                        new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
+                        new_role = check_role()
+                        #new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
                         edit_employee.set_role(new_role)
                         print("Role changed to: {}".format(edit_employee.get_role()))
                         break
