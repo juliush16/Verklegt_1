@@ -82,3 +82,20 @@ Hildur: Breyta upplýsingum um starfsfólk
 
 Markmið:
 Reyna klára öll repo og stöðucheck um morguninn kl 10
+
+Dagur 10:
+6. desember
+Anna og Hildur: Uppfæra upplýsingar um starfsmenn
+Dagur: Búa til flugferðir
+Brynjar: Input Check
+Júlíus:  Input check
+
+Dagur 11:
+9. desember
+Dagur: Klára að búa Vinnuferðir
+Anna: Laga print skipanir og reyna að skrá starfsmenn í Vinnuferðir
+Hildur: Skýrla
+Brynjar:  Skýrsla
+Júlíus: Klára að gera svo upplýsingar um starfsmenn uppfærist þegar þeim er breytt.
+
+
