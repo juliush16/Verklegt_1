@@ -34,3 +34,12 @@ class Destinations:
 if __name__ == "__main__":
     d = Destinations('Reykjavik','keflavikurflugvollur','3','4','Sigmar marteinn','8209322')
     print(d)
+
+
+    #Set föll til að updatea contact info:
+
+    def set_contact(self,contact):
+        self.contact = contact
+
+    def set_phonenumber(self,phonenumber):
+        self.phonenumber = phonenumber

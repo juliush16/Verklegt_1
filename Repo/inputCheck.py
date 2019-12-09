@@ -18,7 +18,8 @@ def check_phonenumber():
 def check_role():
     new_emp_role = ""
     while new_emp_role != '1' or '2':
-        new_emp_role = input('Choose an option for employee role\n1:Pilot\n2:Cabincrew\n')
+        print('Press "1" for Pilot\nPress "2" for Cabin Crew\n')
+        new_emp_role = input('Choose an role: ')
         if new_emp_role == '1':
             new_emp_role = "Pilot"
             break
@@ -32,7 +33,8 @@ def check_rank(new_emp_role):
     new_emp_rank = ""
     while new_emp_role == "Pilot" or "Cabincrew":
         if new_emp_role == "Pilot":
-            new_emp_rank = input('Choose an option for employee rank\n1:Captain\n2:Copilot\n')
+            print('Press "1" for Captain\nPress "2" for Co Pilot\n')
+            new_emp_rank = input('Choose rank: ')
             if new_emp_rank == '1':
                 new_emp_rank = 'Captain'
                 break
@@ -41,7 +43,8 @@ def check_rank(new_emp_role):
                 break
             print("Invalid option for employee rank try again!")
         if new_emp_role == "Cabincrew":
-            new_emp_rank = input('Choose an option for employee rank\n1:Flight Service Manager\n2:Flight Attendant\n')
+            print('Press "1" for Flight Service Manager\nPress "2" for Flight Attendant\n')
+            new_emp_rank = input('Choose rank: ')
             if new_emp_rank == '1':
                 new_emp_rank = "Flight Service Manager"
                 break
@@ -58,7 +61,8 @@ def check_licence(new_emp_role):
         return new_emp_licence
     if new_emp_role == "Pilot":
         while new_emp_licence != '1' or '2' or '3': #licence
-            new_emp_licence = input('Choose an option for employee licence\n1:NABAE146\n2:NAFokkerF28\n3:NAFokkerF100\n')
+            print('Press "1" for NABAE146\nPress "2" for NAFokkerF28\nPress "3" for NAFokkerF100\n')
+            new_emp_licence = input('Choose licence: ')
             if new_emp_licence == '1':
                 new_emp_licence = "NABAE146"
                 break
@@ -74,7 +78,7 @@ def check_licence(new_emp_role):
 def check_email():
     new_emp_email = ""
     while new_emp_email[-7:] != "@nan.is":
-        new_emp_email =  input('Enter employee email :')
+        new_emp_email =  input('Enter employee email(@nan.is) :')
         if new_emp_email[-7:] == "@nan.is":
             return new_emp_email
         print("Invalid email try again!")

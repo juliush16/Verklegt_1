@@ -42,6 +42,7 @@ def reg_employee_menu():
     print('\n-----Register new employee-----\n')
     new_emp_SSN = check_ssn()
     new_emp_name = input('Enter employee name :').capitalize()
+    print('- - - - - - - - - - - - - - - - - - - - - - - - - -')
     new_emp_role =check_role()
     new_emp_rank = check_rank(new_emp_role)
     new_emp_licence = check_licence(new_emp_role)
