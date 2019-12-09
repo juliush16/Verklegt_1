@@ -192,10 +192,11 @@ class EmployeeRepo:
                         clear()
                     else:
                         break
-                while True:
+                while True: #
                     if choice == 1:
                         print("Current role: {}".format(edit_employee.get_role()))
                         new_role = check_role()
+                        new_rank = check_rank()
                         #new_role = input("Enter new role: ")      #Kannski breyta hér að það er bara hægt að velja um 2 role
                         edit_employee.set_role(new_role)
                         print("Role changed to: {}".format(edit_employee.get_role()))
