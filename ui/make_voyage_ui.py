@@ -2,7 +2,7 @@ from Repo.UpcomingVoyageRepo import VoyageRepo
 from Repo.AircraftRepo import AirCraftRepo
 from Repo.Destinations2Repo import Destinations2Repo
 import datetime
-
+import dateutil.parser
 def menu():
     choice_str = ''
     while choice_str != 'q':
@@ -31,27 +31,22 @@ def create_new_voyage_menu():
     # Aircrafts = AirCraftRepo()
     # Aircrafts.print_all_airplanes()
     # airplane = input('Please select an airplane (Type plane insignia) :').capitalize()
-    print('\nSelect Destination\n')
-<<<<<<< HEAD
-    Destinations = Destinations2Repo()
-    Destinations.print_all_destinations()
-    destination = input('Plese select a destination (Type destination id): ').capitalize()
-    print('\n')
-    departure_date_and_time = input('Please choose a departure date and time (DD/MM/YYYY/HH/MM) :')
+
+    
+    print('\nSelect Destination\n') # Menu - Sækir upplýsingar
+    Destinations2Repo().print_all_destinations()
+    destination = input('Plese select a destination (Type destination name): ').capitalize()
+    departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
     if(departure_date_and_time == ""):
         departure_date_and_time = "09/12/2019/18/30"
-
+    
     departure_list = departure_date_and_time.split('/')
     new_date = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
-    print(new_date)
-    
-    allSlots = VoyageRepo().all_upcoming_voyage()
-    print(allSlots)
 
-    ## Fyrst velja flugvél, svo áfangastað, svo tíma
-=======
-    UpcomingVoyage = VoyageRepo()
-    UpcomingVoyage.make_new_voyage()
->>>>>>> 14ce3084dde4719fdda8f7e9e6381355c3c35210
+    arrival_time = VoyageRepo().get_arrival_time(destination,new_date) # Ná í arrival tíma.
+    print(arrival_time)
+    VoyageRepo().make_new_flight(destination,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
+
+    print(('\nNew flight to "{}" has been created!\n').format(destination))
 
     

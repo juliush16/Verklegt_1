@@ -4,7 +4,7 @@ from Repo.Destinations2Repo import Destinations2Repo
 from Repo.destinationsRepo import DestinationsRepo
 import csv
 import datetime
-import dateutil
+import dateutil.parser
 import random
 
 class VoyageRepo:
@@ -14,11 +14,11 @@ class VoyageRepo:
 
     def add_voyage(self, voyage):
         with open("./data/UpcomingFlights2.csv", "a+") as voyage_file:
-            flight_number = Upcomingflights.get_flight_number()
-            departing_from = Upcomingflights.get_departing_from
-            arriving_at = Upcomingflights.get_arriving_at
-            departure = Upcomingflights.get_departure
-            arrival = Upcomingflights.get_arrival
+            flight_number = voyage.get_flight_number()
+            departing_from = voyage.get_departing_from()
+            arriving_at = voyage.get_arriving_at()
+            departure = voyage.get_departure()
+            arrival = voyage.get_arrival()
             voyage_file.write("{},{},{},{},{}\n".format(flight_number,
             departing_from,arriving_at,departure,arrival))
 
@@ -52,22 +52,20 @@ class VoyageRepo:
 
     def generate_flight_number(self):
         return_str = 'NA'
-        number = random.randint(0,9999)
+        number = random.randint(1000,9999)
         return_str += str(number)
         return return_str
 
-    def make_new_voyage(self):
-        Destinations2 = Destinations2Repo()
-        Destinations2.print_all_destinations()
-        destination = input('Plese select a destination (Type destination id): ').capitalize()
-        departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
-        departure_list = departure_date_and_time.split('/')
-        departure_date_iso = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
-        arrival_date_iso = departure_date_iso
-        parsed_date = dateutil.parser.parse(arrival_date_iso)
-        destinations_ = DestinationsRepo()
-        parsed_date.hour += destinations_.get_flight_time()
-        self.make_new_flight(destination,departure_date_iso,arrival_date_iso)
+    def get_arrival_time(self,destination, departure):
+        parsed_date = dateutil.parser.parse(departure)
+        year = int(parsed_date.year)
+        month = int(parsed_date.month)
+        day = int(parsed_date.day)
+        hour = int(parsed_date.hour)
+        minutes = int(parsed_date.minute)
+        flight_time = int(DestinationsRepo()._get_flight_time(destination))
+        new_time = datetime.datetime(year,month,day,hour + flight_time,minutes).isoformat()
+        return new_time
 
     def make_new_flight(self, arriving_at, departure, arrival,departing_from = 'KEF'):
         flight_num = self.generate_flight_number()
@@ -85,4 +83,4 @@ class VoyageRepo:
         return string
 
             
-            
+

@@ -46,13 +46,13 @@ class DestinationsRepo:
         for destination in all_destinations:
             print(destination)
 
-    def get_flight_time(self,destination):
+    def _get_flight_time(self,destination):
         all_destinations = self.all_destinations()
         for dest in all_destinations:
-            if dest.__location == destination:
-                return int(dest.__flight_time)
+            if dest.get_Airport() == destination:
+                return dest.get_flight_time()
         
-
+        
     def create_new_destination(self,location,airport,flight_time,voyage_time,contact,phonenumber):
         new_destination = Destinations(location,airport,flight_time,voyage_time,contact,phonenumber)
         self.add_employee(new_destination)
