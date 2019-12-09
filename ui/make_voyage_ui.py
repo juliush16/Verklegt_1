@@ -1,6 +1,7 @@
 from Repo.UpcomingVoyageRepo import VoyageRepo
 from Repo.AircraftRepo import AirCraftRepo
 from Repo.Destinations2Repo import Destinations2Repo
+from Repo.destinationsRepo import DestinationsRepo
 import datetime
 
 def menu():
@@ -26,7 +27,8 @@ def menu():
             pass
         elif choice_str == '4':
             destinations_location = input("Please input contact location: ")
-            #Klára
+            temp = DestinationsRepo()
+            temp.update_contact(destinations_location)
         
 
 
