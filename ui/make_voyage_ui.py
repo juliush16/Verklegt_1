@@ -32,7 +32,6 @@ def create_new_voyage_menu():
     # Aircrafts.print_all_airplanes()
     # airplane = input('Please select an airplane (Type plane insignia) :').capitalize()
     print('\nSelect Destination\n')
-<<<<<<< HEAD
     Destinations = Destinations2Repo()
     Destinations.print_all_destinations()
     destination = input('Plese select a destination (Type destination id): ').capitalize()
@@ -46,12 +45,11 @@ def create_new_voyage_menu():
     print(new_date)
     
     allSlots = VoyageRepo().all_upcoming_voyage()
+    #vantar for-lúppu til að ath hvort dagsetning sé laus
     print(allSlots)
 
     ## Fyrst velja flugvél, svo áfangastað, svo tíma
-=======
     UpcomingVoyage = VoyageRepo()
     UpcomingVoyage.make_new_voyage()
->>>>>>> 14ce3084dde4719fdda8f7e9e6381355c3c35210
 
     
