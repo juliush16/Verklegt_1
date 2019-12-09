@@ -31,6 +31,13 @@ class Destinations2Repo:
             return_list.append(destination)
         return return_list
 
+    def find_destination(self,dest_id):
+        all_destinations = self.all_destinations()
+        for destination in all_destinations:
+            if destination.id == dest_id:
+                return destination
+
+
     def print_all_destinations(self):
         all_destinations = self.all_destinations()
         for destination in all_destinations:
