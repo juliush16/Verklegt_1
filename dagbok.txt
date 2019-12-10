@@ -101,10 +101,10 @@ Júlíus: Input Check
 
 Dagur 12:
 10. desember
-Anna: Gera uppfært wireframe
+Anna: Gera uppfært wireframe og past flights
 Brynjar: Klasarit
-Dagur: Vinnuferðir
+Dagur: Vinnuferðir, fara yfir kóða, logic layer
 Hildur: Hönnunarskýrsla, uppfæra stöðurit
-Júlíus: Input check og vinnuferðir
+Júlíus: Input check fyrir destination og destination time
 
 
