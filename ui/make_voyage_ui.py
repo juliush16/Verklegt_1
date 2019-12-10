@@ -62,3 +62,9 @@ def create_new_voyage_menu():
     ## Fyrst velja flugvél, svo áfangastað, svo tíma
     UpcomingVoyage = VoyageRepo()
     UpcomingVoyage.make_new_voyage()
+
+
+    # vantar að bjóða uppá að edita eða hætta að keyra.
+    #Press s to save the trip
+    #Press e to edit the trip
+
