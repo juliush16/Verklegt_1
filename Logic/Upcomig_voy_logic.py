@@ -1,5 +1,6 @@
 from Repo.UpcomingVoyageRepo import VoyageRepo
 from Logic.Destinations_logic import DestinationsLogic
+from Logic.Destinations2_logic import Destinations2Logic
 from Models.Upcomingflights import Upcomingflights
 import datetime
 import dateutil.parser
@@ -25,20 +26,49 @@ class UpcomingVoyageLogic:
         return_str += str(number)
         return return_str
 
-    def get_arrival_time(self,destination, departure):
+    def get_arrival_time(self,destination_id, departure):
         parsed_date = dateutil.parser.parse(departure)
         year = int(parsed_date.year)
         month = int(parsed_date.month)
         day = int(parsed_date.day)
         hour = int(parsed_date.hour)
         minutes = int(parsed_date.minute)
+        destination = Destinations2Logic().find_destination(destination_id)
+        print(destination)
         flight_time = int(DestinationsLogic()._get_flight_time(destination))
         new_time = datetime.datetime(year,month,day,hour + flight_time,minutes).isoformat()
         return new_time
 
+    def get_departure_time_back(self,departure):
+        parsed_date = dateutil.parser.parse(departure)
+        year = int(parsed_date.year)
+        month = int(parsed_date.month)
+        day = int(parsed_date.day)
+        hour = int(parsed_date.hour)
+        minutes = int(parsed_date.minute)
+        new_time = datetime.datetime(year,month,day,hour + 1,minutes).isoformat()
+        return new_time
+
+
+    def get_voyage_time(self,destination_id,departure):
+        parsed_date = dateutil.parser.parse(departure)
+        year = int(parsed_date.year)
+        month = int(parsed_date.month)
+        day = int(parsed_date.day)
+        hour = int(parsed_date.hour)
+        minutes = int(parsed_date.minute)
+        destination = Destinations2Logic().find_destination(destination_id)
+        voyage_time = int(DestinationsLogic()._get_voyage_time(destination))
+        new_time = datetime.datetime(year,month,day,hour + voyage_time,minutes).isoformat()
+        return new_time
+
     def make_new_flight(self, arriving_at, departure, arrival,departing_from = 'KEF'):
-        flight_num = self.generate_flight_number()
-        new_flight = Upcomingflights(flight_num,departing_from,arriving_at,departure,arrival)
+        flight_num = self.generate_flight_number()  #bua til flugnumer
+        flight_num_back = self.generate_flight_number() #bua til flugnumer
+        arrival_time_back = self.get_voyage_time(arriving_at,departure)   #Nær í tíma sem að flug kemur til baka
+        new_flight = Upcomingflights(flight_num,departing_from,arriving_at,departure,arrival) #bua til flug út
+        flight_back = Upcomingflights(flight_num_back,arriving_at,'KEF',self.get_departure_time_back(arrival),self.get_voyage_time(arriving_at,departure))  #bua til flug til baka
         VoyageRepo().add_voyage(new_flight)
+        VoyageRepo().add_voyage(flight_back)
             
 

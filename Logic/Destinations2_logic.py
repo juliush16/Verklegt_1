@@ -1,4 +1,5 @@
 from Repo.Destinations2Repo import Destinations2Repo
+from Models.Destinations2 import Destinations2
 
 class Destinations2Logic:
 
@@ -12,8 +13,16 @@ class Destinations2Logic:
         return self.destinations
 
     def find_destination(self,dest_id):
-        all_destinations = self.all_destinations()
+        all_destinations = Destinations2Repo().get_destinations()
         for destination in all_destinations:
             if destination.id == dest_id:
-                return destination
+                return str(destination.get_destination())
+
+    def find_destination_id(self,destination):
+        all_destinations = Destinations2Repo().get_destinations()
+        for line in all_destinations:
+            if line.destination == destination:
+                return line.get_id()
+
+
 

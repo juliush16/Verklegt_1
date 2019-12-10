@@ -1,5 +1,6 @@
 from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
 from Logic.Aircraft_logic import AircraftLog
+from Logic.Destinations2_logic import Destinations2Logic
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
 import datetime
@@ -46,6 +47,8 @@ class VoyageUI:
         print('\nSelect Destination\n') # Menu - Sækir upplýsingar
         Destinations2UI().print_all_destinations()
         destination = input('Plese select a destination (Type destination name): ').capitalize()
+        destination_id = Destinations2Logic().find_destination_id(destination)
+        print(destination_id)
         departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
         if(departure_date_and_time == ""):
             departure_date_and_time = "09/12/2019/18/30"
@@ -53,9 +56,9 @@ class VoyageUI:
         departure_list = departure_date_and_time.split('/')
         new_date = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
 
-        arrival_time = UpcomingVoyageLogic().get_arrival_time(destination,new_date) # Ná í arrival tíma.
-        print(arrival_time)
-        UpcomingVoyageLogic().make_new_flight(destination,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
+        arrival_time = UpcomingVoyageLogic().get_arrival_time(destination_id,new_date) # Ná í arrival tíma.
+
+        UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
 
         print(('\nNew flight to "{}" has been created!\n').format(destination))
 

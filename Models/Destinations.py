@@ -30,16 +30,8 @@ class Destinations:
         return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}".format
         (self.__location,self.__airport,self.__flight_time,self.__voyage_time,self.__contact,self.__phonenumber))
 
-
-if __name__ == "__main__":
-    d = Destinations('Reykjavik','keflavikurflugvollur','3','4','Sigmar marteinn','8209322')
-    print(d)
-
-
-    #Set föll til að updatea contact info:
-
     def set_contact(self,contact):
-        self.contact = contact
+        self.__contact = contact
 
     def set_phonenumber(self,phonenumber):
-        self.phonenumber = phonenumber
+        self.__phonenumber = phonenumber

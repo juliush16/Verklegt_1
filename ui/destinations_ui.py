@@ -11,11 +11,10 @@ class DestinationsUI:
 
     def update_contact(self, location):
         all_location = DestinationsLogic().all_destinations()
-        for contact in all_location:
-            if Destinations().get_Location() == location:
-                edit_contact = contact
-
-                contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',destinations.contact,'Phonenumber: ',destinations.phonenumber))
+        for destination in all_location:
+            if destination.get_Location() == location:
+                edit_contact = destination
+                contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',destination.get_contact(),'Phonenumber: ',destination.get_phonenumber()))
                 print(contact_string)
                 print("1. Edit Contact\n2. Edit Phonenumber\n3. Return to Main Menu\n")
 
@@ -31,6 +30,7 @@ class DestinationsUI:
                         print("Current contact name: {}".format(edit_contact.get_contact()))
                         new_contact = input("Enter new contact name: ")
                         edit_contact.set_contact(new_contact)
+                        print(DestinationsLogic().set_contact(edit_contact,new_contact))
                         break
                     if choice == 2:
                         print("Current phonenumber: {}".format(edit_contact.get_phonenumber()))
