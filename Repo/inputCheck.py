@@ -82,13 +82,3 @@ def check_email():
         if new_emp_email[-7:] == "@nan.is":
             return new_emp_email
         print("Invalid email try again!")
-
-def check_destination():
-    destination_list = ['LYR','GOH','KUS','FAE','LWK','KEF']
-    destination = ""
-    while destination not in destination_list:
-        destination = input('\nPlese select a destination (Type destination id): ').upper()
-        if destination in destination_list:
-            print(destination)
-            return destination
-        print("Invalid destination Try again!")
