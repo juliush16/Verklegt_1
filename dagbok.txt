@@ -82,3 +82,29 @@ Hildur: Breyta upplýsingum um starfsfólk
 
 Markmið:
 Reyna klára öll repo og stöðucheck um morguninn kl 10
+
+Dagur 10:
+6. desember
+Anna: Update Employee og tengilið fyrir áfangastað
+Brynjar:Input Check
+Dagur: Vinnuferðir
+Hildur:Update Employee og tengilið fyrir áfangastað
+Júlíus:Input Check
+
+Dagur 11:
+9. desember
+Anna: Gera frumgerðarviðtal
+Brynjar: Gera klasarit 
+Dagur: Gera Logic layer
+Hildur: Uppfæra hönnunarskýrslu
+Júlíus: Input Check
+
+Dagur 12:
+10. desember
+Anna: Gera uppfært wireframe
+Brynjar: Klasarit
+Dagur: Vinnuferðir
+Hildur: Hönnunarskýrsla, uppfæra stöðurit
+Júlíus: Input check og vinnuferðir
+
+
