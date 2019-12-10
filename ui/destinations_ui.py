@@ -1,4 +1,5 @@
 from Logic.Destinations_logic import DestinationsLogic
+from Models.Destinations import Destinations
 
 class DestinationsUI:
 
@@ -11,7 +12,7 @@ class DestinationsUI:
     def update_contact(self, location):
         all_location = DestinationsLogic().all_destinations()
         for contact in all_location:
-            if destinations.get_Location() == location:
+            if Destinations().get_Location() == location:
                 edit_contact = contact
 
                 contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',destinations.contact,'Phonenumber: ',destinations.phonenumber))
