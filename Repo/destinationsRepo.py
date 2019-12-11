@@ -6,6 +6,7 @@ class DestinationsRepo:
 
     def __init__(self):
         self.__destination = []
+        self.get_destinations() #þessi
 
     def add_destination(self, destination):
         with open("./data/Destinations.csv", "a+") as destinations_file:
@@ -17,6 +18,7 @@ class DestinationsRepo:
             phonenumber  = destination.get_phonenumber()
             destinations_file.write("{},{},{},{},{},{},\n".format(location,
             airport,flight_time,voyage_time,contact,phonenumber))
+            self.__destination.append(destination) #þessi
 
     def get_destinations(self):
         if self.__destination == []:

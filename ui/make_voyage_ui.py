@@ -1,4 +1,5 @@
 from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
+from Repo.PastFlightsRepo import PastFlightsRepo
 from Logic.Aircraft_logic import AircraftLog
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
@@ -10,7 +11,7 @@ class VoyageUI:
     def menu(self):
         choice_str = ''
         while choice_str != 'q':
-            print('\n-----Make a voyage-----\n')
+            print('\n-----Voyage Menu-----\n')
             print('Press "1" to make a new voyage')
             print('Press "2" to list all upcoming voyages')
             print('Press "3" to list all past voyages')
@@ -26,7 +27,7 @@ class VoyageUI:
             elif choice_str == '2':
                 UpcomingVoyageLogic().print_all_upcoming_voyage()
             elif choice_str == '3':
-                pass
+                PastFlightsRepo().print_past_flights()
             elif choice_str == '4':
                 destinations_location = input("Please input contact location: ")
                 DestinationsUI().update_contact(destinations_location)
