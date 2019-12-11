@@ -60,8 +60,25 @@ class EmployeeUI:
         if empToUpdate == None:
             print("invalid employee")
             return
-        ## Setja inn menu
-        empToUpdate.phonenumber = input('Enter new phonenumber :')
+        choice = ""
+        print("1. Edit address\n2. Edit Phonenumber\n3. Edit email\n4. Return to Main Menu")
+        while True: 
+            choice = int(input("What do you want to edit? "))
+            if choice == 1:
+                empToUpdate.address = input("Enter address: ")
+                break
+            elif choice == 2:
+                new_phonenumber = InputCheck().check_phonenumber()
+                empToUpdate.phonenumber = new_phonenumber 
+                break
+            elif choice == 3:
+                new_email = InputCheck().check_email()
+                empToUpdate.email = new_email
+                break
+            elif choice == 4:
+                break
+            else:
+                print("Invalid input try again!")
         EmployeeLogic().update_employee(empToUpdate)
 
     def print_all_employees(self):

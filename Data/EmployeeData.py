@@ -11,7 +11,7 @@ class EmployeeData:
         pass
 
     def add_employee(self, employee):
-        with open("./Repo/Employee.csv", "a") as employee_file:
+        with open("./Repo/Employee.csv", "a",encoding = "utf-8", newline="") as employee_file:
             ssn = employee.get_ssn_str()
             name = employee.get_name_str()
             role = employee.get_role()
@@ -46,7 +46,7 @@ class EmployeeData:
         with open("./Repo/Employee.csv", "w+", newline="") as employee_file:
             fieldnames = ["ssn","name","role","rank","licence","address","phonenumber","email"]
             writer = csv.DictWriter(employee_file, fieldnames=fieldnames)
-            writer.writeheader()
+            #writer.writeheader()
         for emp in allEmps:
             if emp.ssn == updatedEmp.ssn:
                 self.add_employee(updatedEmp)
