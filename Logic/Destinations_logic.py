@@ -21,9 +21,8 @@ class DestinationsLogic:
 
         
         
-    def _get_flight_time(self,destination_id):
+    def _get_flight_time(self,destination):
         all_destinations = DestinationsRepo().get_destinations()
-        destination = Destinations2Logic().find_destination(destination_id)
         for dest in all_destinations:
             if dest.get_Airport() == destination:
                 return str(dest.get_flight_time())
