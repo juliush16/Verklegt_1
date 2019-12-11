@@ -10,7 +10,7 @@ class VoyageUI:
     def menu(self):
         choice_str = ''
         while choice_str != 'q':
-            print('\n-----Make a voyage-----\n')
+            print('\n-----Voyage Menu-----\n')
             print('Press "1" to make a new voyage')
             print('Press "2" to list all upcoming voyages')
             print('Press "3" to list all past voyages')
@@ -26,7 +26,8 @@ class VoyageUI:
             elif choice_str == '2':
                 UpcomingVoyageLogic().print_all_upcoming_voyage()
             elif choice_str == '3':
-                pass
+                past = PastFlights()
+                past = print_past_flights()
             elif choice_str == '4':
                 destinations_location = input("Please input contact location: ")
                 DestinationsUI().update_contact(destinations_location)

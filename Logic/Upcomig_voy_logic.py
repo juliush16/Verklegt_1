@@ -26,7 +26,6 @@ class UpcomingVoyageLogic:
         return_str += str(number)
         return return_str
 
-    def get_arrival_time(self,destination, departure):
     def get_arrival_time(self,destination_id, departure):
         parsed_date = dateutil.parser.parse(departure)
         year = int(parsed_date.year)
