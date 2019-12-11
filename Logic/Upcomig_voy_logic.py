@@ -16,7 +16,7 @@ class UpcomingVoyageLogic:
         return all_voyage_list
 
     def print_all_upcoming_voyage(self):
-        all_voyage = self.all_upcoming_voyage()
+        all_voyage = VoyageRepo().get_voyage()
         for voyage in all_voyage:
             print(voyage)
 
@@ -34,8 +34,7 @@ class UpcomingVoyageLogic:
         hour = int(parsed_date.hour)
         minutes = int(parsed_date.minute)
         destination = Destinations2Logic().find_destination(destination_id)
-        print(destination)
-        flight_time = int(DestinationsLogic()._get_flight_time(destination))
+        flight_time = int(DestinationsLogic()._get_flight_time(destination_id))
         new_time = datetime.datetime(year,month,day,hour + flight_time,minutes).isoformat()
         return new_time
 

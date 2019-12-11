@@ -10,10 +10,6 @@ class Destinations2Logic:
         return self.destinations
 
     def find_destination(self,dest_id):
-        all_destinations = self.all_destinations()
-        for destination in all_destinations:
-            if destination.id == dest_id:
-                return destination
         all_destinations = Destinations2Repo().get_destinations()
         for destination in all_destinations:
             if destination.id == dest_id:

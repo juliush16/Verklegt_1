@@ -1,5 +1,6 @@
 from Repo.destinationsRepo import DestinationsRepo
 from Repo.Destinations2Repo import Destinations2Repo
+from Logic.Destinations2_logic import Destinations2Logic
 from Repo.inputCheck import *
 import os
 clear = lambda: os.system('cls')
@@ -18,15 +19,11 @@ class DestinationsLogic:
         for destination in all_destinations:
             print(destination)
 
-    def _get_flight_time(self,destination):
-        all_destinations = self.all_destinations()
-        for dest in all_destinations:
-            if dest.get_Airport() == destination:
-                return dest.get_flight_time()
         
         
-    def _get_flight_time(self,destination):
+    def _get_flight_time(self,destination_id):
         all_destinations = DestinationsRepo().get_destinations()
+        destination = Destinations2Logic().find_destination(destination_id)
         for dest in all_destinations:
             if dest.get_Airport() == destination:
                 return str(dest.get_flight_time())
