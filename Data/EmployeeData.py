@@ -9,7 +9,7 @@ class EmployeeData:
 
     def __init__(self):
         self.__employee = []
-        self.get_employee() #þessi
+        self.get_employee()#þessi
 
     def add_employee(self, employee):
         with open("./Repo/Employee.csv", "a+") as employee_file:
