@@ -5,8 +5,9 @@ class PastFlightsRepo:
 
     def __init__(self):
         self.__voyage =[]
-#flightNumber,departingFrom,arrivingAt,departure,arrival,aircraftID,captain,copilot,fsm,fa1,fa2
-    def get_past_fligt(self):
+        # self.get_past_fligt() #kannski á þetta að vera hér
+
+    def get_past_fligt(self,PastFlights):
         if self.__voyage == []:
             with open('./Data/PastFlights2.csv','r',encoding = 'utf-8') as past_file:
                 past_flight_reader = csv.reader(past_file)

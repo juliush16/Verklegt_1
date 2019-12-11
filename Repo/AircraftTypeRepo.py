@@ -6,6 +6,7 @@ class AirCraftTypeRepo:
 
     def __init__(self):
         self.__aircraft = []
+        self.get_aircraft() #þessi
 
     def add_aircraft_type(self, aircraftype,not_in_delete = True):
         if not_in_delete == True:
@@ -25,6 +26,7 @@ class AirCraftTypeRepo:
             aircraft_type_file.write("{},{},{},{},{},{},{},{},{},{},{},\n".format(plane_type_id, 
             plane_type, model, capacity, empty_weight, max_takeoff_weight, unit_thrust, 
             service_ceiling, length, height, wingspan,))
+            self.__aircraft.append(aircraftype) #þessi
 
     def get_aircraft(self):
         if self.__aircraft == []:
