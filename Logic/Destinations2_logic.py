@@ -1,5 +1,8 @@
 from Repo.Destinations2Repo import Destinations2Repo
+from Models.Destinations2 import Destinations2
+
 class Destinations2Logic:
+
     def __init__(self):
         self.destinations = []
 

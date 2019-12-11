@@ -16,7 +16,7 @@ class UpcomingVoyageLogic:
         return all_voyage_list
 
     def print_all_upcoming_voyage(self):
-        all_voyage = VoyageRepo().get_voyage()
+        all_voyage = self.all_upcoming_voyage()
         for voyage in all_voyage:
             print(voyage)
 
@@ -34,14 +34,14 @@ class UpcomingVoyageLogic:
         hour = int(parsed_date.hour)
         minutes = int(parsed_date.minute)
         destination = Destinations2Logic().find_destination(destination_id)
-        flight_time = int(DestinationsLogic()._get_flight_time(destination_id))
-        new_time = datetime.datetime(year,month,day,hour + flight_time,minutes).isoformat()
+        flight_time = int(DestinationsLogic()._get_flight_time(destination))
+        hour += flight_time
+        if hour >= 23:
+            day += 1
+            hour -= 23
+        new_time = datetime.datetime(year,month,day,hour,minutes).isoformat()
         return new_time
 
-    def make_new_flight(self, arriving_at, departure, arrival,departing_from = 'KEF'):
-        flight_num = self.generate_flight_number()
-        new_flight = Upcomingflights(flight_num,departing_from,arriving_at,departure,arrival)
-        VoyageRepo().add_voyage(new_flight)
     def get_departure_time_back(self,departure):
         parsed_date = dateutil.parser.parse(departure)
         year = int(parsed_date.year)
@@ -62,7 +62,11 @@ class UpcomingVoyageLogic:
         minutes = int(parsed_date.minute)
         destination = Destinations2Logic().find_destination(destination_id)
         voyage_time = int(DestinationsLogic()._get_voyage_time(destination))
-        new_time = datetime.datetime(year,month,day,hour + voyage_time,minutes).isoformat()
+        hour += voyage_time
+        if hour >= 23:
+            day += 1
+            hour -= 23
+        new_time = datetime.datetime(year,month,day,hour,minutes).isoformat()
         return new_time
 
     def make_new_flight(self, arriving_at, departure, arrival,departing_from = 'KEF'):
