@@ -87,8 +87,10 @@ def check_destination():
     destination_list = ['LYR','GOH','KUS','FAE','LWK','KEF']
     destination = ""
     while destination not in destination_list:
-        destination = input('\nPlese select a destination (Type destination id): ').upper()
+        destination = input('Plese select a destination (Type destination id): ').upper()
         if destination in destination_list:
             print(destination)
             return destination
         print("Invalid destination Try again!")
+
+

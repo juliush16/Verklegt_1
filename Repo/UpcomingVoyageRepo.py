@@ -1,11 +1,6 @@
 
 from Models.Upcomingflights import Upcomingflights
-from Repo.Destinations2Repo import Destinations2Repo
-from Repo.destinationsRepo import DestinationsRepo
 import csv
-import datetime
-import dateutil
-import random
 
 class VoyageRepo:
 
@@ -14,11 +9,11 @@ class VoyageRepo:
 
     def add_voyage(self, voyage):
         with open("./data/UpcomingFlights2.csv", "a+") as voyage_file:
-            flight_number = Upcomingflights.get_flight_number()
-            departing_from = Upcomingflights.get_departing_from
-            arriving_at = Upcomingflights.get_arriving_at
-            departure = Upcomingflights.get_departure
-            arrival = Upcomingflights.get_arrival
+            flight_number = voyage.get_flight_number()
+            departing_from = voyage.get_departing_from()
+            arriving_at = voyage.get_arriving_at()
+            departure = voyage.get_departure()
+            arrival = voyage.get_arrival()
             voyage_file.write("{},{},{},{},{}\n".format(flight_number,
             departing_from,arriving_at,departure,arrival))
 
@@ -78,7 +73,7 @@ class VoyageRepo:
     def __str__(self):
         string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}{:<15}{:<15}\n".format
         ("Flight Number:", "Departing From:", "Arriving At:", "Departure:", "Arrival:", "Aircraft Id:", 
-        "Captein:", "Copilot:","Flight Service Manager:", "Flight Attendants")
+        "Captain:", "Co pilot:","Flight Service Manager:", "Flight Attendants")
         voyagelist = self.get_voyage()
         for voyage in voyagelist:
             string += str(voyage) + "\n"

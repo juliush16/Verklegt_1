@@ -48,17 +48,11 @@ class AirCraftTypeRepo:
                     self.__aircraft.append(new_aircraft)
         return self.__aircraft
 
-
-    def list_aircraft_types(self):
-        self.get_aircraft()
-        for i in range(len(self.__aircraft)):
-            print(self.__aircraft[i])
-
-    def __str__(self):
-        string = "{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}\n".format
-        ("Plane Type Id:", "Plane Type:", "Model:", "Capacity:", "Empty Weight:", "Max Takeoff Weight:", 
-        "Unit Thrust:", "Service Ceiling:","Length","Height","Wingspan")
-        aircrafttypelist = self.get_aircraft()
-        for aircraft in aircrafttypelist:
-            string += str(aircraft) + "\n"
-        return string
+    # def __str__(self):
+    #     string = "{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}\n".format
+    #     ("Plane Type Id:", "Plane Type:", "Model:", "Capacity:", "Empty Weight:", "Max Takeoff Weight:", 
+    #     "Unit Thrust:", "Service Ceiling:","Length","Height","Wingspan")
+    #     aircrafttypelist = self.get_aircraft()
+    #     for aircraft in aircrafttypelist:
+    #         string += str(aircraft) + "\n"
+    #     return string

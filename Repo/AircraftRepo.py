@@ -22,16 +22,3 @@ class AirCraftRepo:
                     new_aircraft = Aircraft(plane_insignia,plane_type_id)
                     self.__aircraft.append(new_aircraft)
         return self.__aircraft
-
-
-    def get_all_airplanes(self):
-        return_list = []
-        all_airplanes = self.get_aircrafts()
-        for airplane in all_airplanes:
-            return_list.append(airplane)
-        return return_list
-
-    def print_all_airplanes(self):
-        all_airplanes = self.get_all_airplanes()
-        for airplane in all_airplanes:
-            print(airplane)
