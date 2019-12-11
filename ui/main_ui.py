@@ -11,7 +11,7 @@ class Main:
         while choice_str != 'q':
             print('Welcome!')
             print('Press "1" for Voyage menu')
-            print('Press "2" to Assign employees to a voyage')
+            print('Press "2" to Assign eployees to a voyage')
             print('Press "3" to register or list employees ')
             print('Press "q" to Quit\n')
             choice_str = input('Choose an option: ')

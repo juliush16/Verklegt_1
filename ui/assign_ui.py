@@ -1,5 +1,7 @@
-from Repo.EmployeeRepo import EmployeeRepo
-from Repo.UpcomingVoyageRepo import VoyageRepo
+from Data.EmployeeData import EmployeeData
+from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
+from ui.aircraftUI import Aircraft_UI
+from ui.employee_ui import EmployeeUI
 
 class AssignUI:
 
@@ -28,21 +30,27 @@ class AssignUI:
 
 
     def assign_pilots_menu(self):
-        choice_str = ''
-        while choice_str != 'b':
-            voyage_list = [] #Listi fyrir ferðir fyrir valinn dag
-            choose_day_to_employ = input("Please type day to employ (DD/MM/YYYY): ")
-            all_voyage = VoyageRepo().get_voyage()
-            for voyage in all_voyage:
-                if voyage.__departure == choose_day_to_employ:
-                    voyage_list.append(voyage)
-            for item in voyage_list:
-                print(item)
+        print("\n-----Assign Pilots to Voyage-----\n")
+        UpcomingVoyageLogic().print_all_upcoming_voyage()
+        choose_day_to_employ = input("Please type flight number: ").upper()
+        #return choose_day_to_employ
+    
+        Aircraft_UI().print_all_airplanes()
+        airplane = input("Please select an airplane: ").upper()
+        print(airplane)
 
-            if not voyage_list: # ef engar ferðir skráðar
-                print('There are no trips on this day')
+        EmployeeUI().print_all_captains()
+        captain = input("Select capatain: ") # vantar virkni svo copilot skráist
+        EmployeeUI().print_all_copilots()
+        copilot = input("Select Co Pilot: ") # líka hér
+
+# vantar að bjóða að savea eða edita
+
+
+
+
+            
                 
-
 
     def assign_flight_attendants_menu(self):
         choice_str = ''
@@ -57,9 +65,3 @@ class AssignUI:
             elif choice_str == '1':
                 pass
 
-
-        
-
-
-if __name__ == "__main__":
-    menu()

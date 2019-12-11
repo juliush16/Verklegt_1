@@ -2,13 +2,14 @@
 from Models.Upcomingflights import Upcomingflights
 import csv
 
-class VoyageRepo:
+class VoyageData:
 
     def __init__(self):
         self.__voyage = []
+        self.get_voyage #þessi
 
     def add_voyage(self, voyage):
-        with open("./data/UpcomingFlights2.csv", "a+") as voyage_file:
+        with open("./Repo/UpcomingFlights2.csv", "a+") as voyage_file:
             flight_number = voyage.get_flight_number()
             departing_from = voyage.get_departing_from()
             arriving_at = voyage.get_arriving_at()
@@ -16,11 +17,12 @@ class VoyageRepo:
             arrival = voyage.get_arrival()
             voyage_file.write("{},{},{},{},{}\n".format(flight_number,
             departing_from,arriving_at,departure,arrival))
+            self.__voyage(voyage) #þessi
 
 
     def get_voyage(self):
         if self.__voyage == []:
-            with open("./Data/UpcomingFlights2.csv", "r", encoding = "utf-8") as voyage_file:
+            with open("./Repo/UpcomingFlights2.csv", "r", encoding = "utf-8") as voyage_file:
                 voyage_reader = csv.reader(voyage_file)
                 for line in voyage_reader:
                     flight_number = line[0]
@@ -40,10 +42,6 @@ class VoyageRepo:
             all_voyage_list.append(voyage)
         return all_voyage_list
 
-    def print_all_upcoming_voyage(self):
-        all_voyage = self.all_upcoming_voyage()
-        for voyage in all_voyage:
-            print(voyage)
 
     def generate_flight_number(self):
         return_str = 'NA'
