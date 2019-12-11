@@ -6,12 +6,14 @@ class Destinations2Repo:
 
     def __init__(self):
         self.__destinations = []
+        self.get_destinations() #þessi
 
     def add_destination(self, destination):
         with open("./data/Destinations2.csv", "a+") as destinations2_file:
             destinations2_id = Destinations2.get_id()
             destinations2_destination = Destinations2.get_destination()
-            destinations_file.write("{},{},\n".format(destinations2_id,destinations2_destination))
+            destinations2_file.write("{},{},\n".format(destinations2_id,destinations2_destination))
+            self.__destination.append(destination) #þessi
 
     def get_destinations(self):
         if self.__destinations == []:
