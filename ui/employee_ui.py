@@ -35,8 +35,7 @@ class EmployeeUI:
                 employee_ssn = input('Please input employee SSN :')
                 print(EmployeeLogic().get_by_ssn(employee_ssn))
             elif choice_str == '6':
-                employee_ssn = input('Please input employee SSN :')
-                EmployeeLogic().update_employee(employee_ssn)
+                self.updateEmployee()
 
 
     def reg_employee_menu(self):
@@ -53,6 +52,16 @@ class EmployeeUI:
         new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
         EmployeeData().add_employee(new_employee)
         print('Employee : "',str(new_emp_name),'" has been added!')
+
+    def updateEmployee(self):
+        self.print_all_employees()
+        ssnToUpdate = input("enter ssn of employee to update: ")
+        empToUpdate = EmployeeLogic().get_by_ssn(ssnToUpdate)
+        if empToUpdate == None:
+            print("invalid employee")
+            return
+        empToUpdate.phonenumber = 99999999999999999
+        EmployeeLogic().update_employee(empToUpdate)
 
     def print_all_employees(self):
         all_employees = EmployeeLogic().all_employees()
