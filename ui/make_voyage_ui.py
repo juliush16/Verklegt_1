@@ -3,7 +3,6 @@ from Logic.Aircraft_logic import AircraftLog
 from Logic.Destinations2_logic import Destinations2Logic
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
-from Repo.inputCheck import *
 import datetime
 import dateutil.parser
 class VoyageUI:

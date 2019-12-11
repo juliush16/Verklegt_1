@@ -1,6 +1,4 @@
 from datetime import datetime
-from Logic.Employee_logic import EmployeeLogic
-from Repo.EmployeeRepo import EmployeeRepo
 #Ætlaði að byrja á að gera svona input check
 
 class InputCheck:
