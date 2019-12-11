@@ -9,7 +9,7 @@ class DestinationsLogic:
 
     def all_destinations(self):
         return_list = []
-        all_destinations = DestinationsData().get_destinations()
+        all_destinations = DestinationsData.get_destinations()
         for destination in all_destinations:
             return_list.append(destination)
         return return_list
@@ -17,9 +17,7 @@ class DestinationsLogic:
     def print_all_destinations(self):
         all_destinations = self.all_destinations()
         for destination in all_destinations:
-            print(destination)
-
-        
+            print(destination)    
         
     def _get_flight_time(self,destination):
         all_destinations = DestinationsData().get_destinations()
