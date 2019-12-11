@@ -29,7 +29,8 @@ class VoyageUI:
             elif choice_str == '3':
                 PastFlightsData().print_past_flights()
             elif choice_str == '4':
-                destinations_location = input("Please input contact location: ")
+                DestinationsUI().print_all_destinations()
+                destinations_location = input("\nPlease input contact location: ")
                 DestinationsUI().update_contact(destinations_location)
             
 

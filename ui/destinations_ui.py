@@ -6,7 +6,7 @@ clear = lambda: os.system('cls')
 class DestinationsUI:
 
     def print_all_destinations(self):
-        all_destinations = DestinationsLogic.all_destinations()
+        all_destinations = DestinationsLogic().all_destinations()
         for destination in all_destinations:
             print(destination)
 
@@ -14,10 +14,9 @@ class DestinationsUI:
     def update_contact(self, location):
         all_location = DestinationsLogic().all_destinations()
         for contact in all_location:
-            if Destinations().get_Location() == location:
+            if contact.get_Location() == location:
                 edit_contact = contact
-
-                contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',destinations.contact,'Phonenumber: ',destinations.phonenumber))
+                contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',edit_contact.get_contact(),'Phonenumber: ',edit_contact.get_phonenumber()))
         for destination in all_location:
             if destination.get_Location() == location:
                 edit_contact = destination
@@ -36,13 +35,12 @@ class DestinationsUI:
                     if choice == 1:
                         print("Current contact name: {}".format(edit_contact.get_contact()))
                         new_contact = input("Enter new contact name: ")
-                        edit_contact.set_contact(new_contact)
-                        print(DestinationsLogic().set_contact(edit_contact,new_contact))
+                        edit_contact.contact = new_contact
                         break
                     if choice == 2:
                         print("Current phonenumber: {}".format(edit_contact.get_phonenumber()))
                         new_phonenumber = input("Enter new phonenumber: ")
-                        edit_contact.set_phonenumber(new_phonenumber)
+                        edit_contact.phonenumber = new_phonenumber
                         break
                     if choice == 3:
                         break

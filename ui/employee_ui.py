@@ -60,7 +60,8 @@ class EmployeeUI:
         if empToUpdate == None:
             print("invalid employee")
             return
-        empToUpdate.phonenumber = 99999999999999999
+        ## Setja inn menu
+        empToUpdate.phonenumber = input('Enter new phonenumber :')
         EmployeeLogic().update_employee(empToUpdate)
 
     def print_all_employees(self):
