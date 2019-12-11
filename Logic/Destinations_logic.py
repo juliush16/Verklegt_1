@@ -1,4 +1,5 @@
 from Repo.destinationsRepo import DestinationsRepo
+from Repo.Destinations2Repo import Destinations2Repo
 from Repo.inputCheck import *
 import os
 clear = lambda: os.system('cls')
@@ -24,6 +25,23 @@ class DestinationsLogic:
                 return dest.get_flight_time()
         
         
+
+    def _get_flight_time(self,destination):
+        all_destinations = DestinationsRepo().get_destinations()
+        for dest in all_destinations:
+            if dest.get_Airport() == destination:
+                return str(dest.get_flight_time())
+    
+    def _get_voyage_time(self,destination):
+        all_destinations = DestinationsRepo().get_destinations()
+        for dest in all_destinations:
+            if dest.get_Airport() == destination:
+                return dest.get_voyage_time()
+    
+    def set_contact(self,destination,new_contact):
+        return DestinationsRepo().set_contact(destination,new_contact)
+
+
     def create_new_destination(self,location,airport,flight_time,voyage_time,contact,phonenumber):
         new_destination = Destinations(location,airport,flight_time,voyage_time,contact,phonenumber)
         DestinationsRepo().add_destination(new_destination)

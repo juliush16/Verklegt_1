@@ -33,3 +33,23 @@ class DestinationsRepo:
                     flight_time, voyage_time, contact, phonenumber)
                     self.__destination.append(new_destination)
         return self.__destination
+
+    def set_contact(self,destination,new_contact):
+        all_destinations = self.get_destinations()  
+        r = csv.reader(open('./Data/destinations.csv'))
+        lines = list(r)
+        destination_num = 0
+        for line in all_destinations:
+            if line == destination:
+                destination_num = line
+        
+            lines[destination_num][4] = new_contact
+            writer = csv.writer(open('./Data/destinations.csv', 'w'))
+            writer.writerows(lines)
+        if destination_num != 0:
+            return '\nContact has been changed to "' + str(new_contact) + '"'
+        else:
+            return '\nError: contact could not be edited'
+
+
+
