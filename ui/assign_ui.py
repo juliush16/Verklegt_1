@@ -1,5 +1,7 @@
 from Repo.EmployeeRepo import EmployeeRepo
 from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
+from ui.aircraftUI import Aircraft_UI
+from ui.employee_ui import EmployeeUI
 
 class AssignUI:
 
@@ -28,12 +30,27 @@ class AssignUI:
 
 
     def assign_pilots_menu(self):
+        print("\n-----Assign Pilots to Voyage-----\n")
         UpcomingVoyageLogic().print_all_upcoming_voyage()
         choose_day_to_employ = input("Please type flight number: ").upper()
-        print(choose_day_to_employ)
+        #return choose_day_to_employ
+    
+        Aircraft_UI().print_all_airplanes()
+        airplane = input("Please select an airplane: ").upper()
+        print(airplane)
+
+        EmployeeUI().print_all_captains()
+        captain = input("Select capatain: ") # vantar virkni svo copilot skráist
+        EmployeeUI().print_all_copilots()
+        copilot = input("Select Co Pilot: ") # líka hér
+
+# vantar að bjóða að savea eða edita
+
+
+
+
             
                 
-
 
     def assign_flight_attendants_menu(self):
         choice_str = ''
@@ -47,3 +64,4 @@ class AssignUI:
                 return choice_str
             elif choice_str == '1':
                 pass
+
