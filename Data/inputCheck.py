@@ -1,6 +1,6 @@
 from datetime import datetime
 from Logic.Employee_logic import EmployeeLogic
-from Repo.EmployeeRepo import EmployeeRepo
+from Data.EmployeeData import EmployeeData
 #Ætlaði að byrja á að gera svona input check
 
 class InputCheck:
@@ -11,7 +11,7 @@ class InputCheck:
             new_emp_SSN = input('Enter employee social security number: ')
         return new_emp_SSN
 
-    def check_if_ssn_exist(self):
+    def check_if_ssn_exist():
         pass
 
     def check_phonenumber(self):
