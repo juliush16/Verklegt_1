@@ -21,7 +21,8 @@ class AssignUI:
             elif choice_str == '2':
                 self.assign_flight_attendants_menu()
             elif choice_str == '3':
-                pass # Kalla í listann yfir past flights
+                past = PastFlights()
+                past = print_past_flights()
             elif choice_str == 'b':
                 return choice_str
 
