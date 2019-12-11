@@ -10,7 +10,7 @@ class VoyageUI:
     def menu(self):
         choice_str = ''
         while choice_str != 'q':
-            print('\n-----Make a voyage-----\n')
+            print('\n-----Voyage Menu-----\n')
             print('Press "1" to make a new voyage')
             print('Press "2" to list all upcoming voyages')
             print('Press "3" to list all past voyages')
