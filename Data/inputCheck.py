@@ -99,6 +99,4 @@ class InputCheck:
             print("Invalid destination Try again!")
 
     def check_location(self,location):
-        
-
-
+        pass
