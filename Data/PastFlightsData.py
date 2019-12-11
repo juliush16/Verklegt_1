@@ -7,7 +7,7 @@ class PastFlightsData:
         self.__voyage =[]
         # self.get_past_fligt() #kannski á þetta að vera hér
 
-    def get_past_fligt(self,PastFlights):
+    def get_past_fligt(self):
         if self.__voyage == []:
             with open('./Repo/PastFlights2.csv','r',encoding = 'utf-8') as past_file:
                 past_flight_reader = csv.reader(past_file)
@@ -41,7 +41,7 @@ class PastFlightsData:
             print(line)
 
     def __str__ (self):
-        string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}{:<15}{:<15}\n".format("Flight Number:", "Departing From:", "Arriving At:", "Departure:", "Arrival:", "Aircraft Id:","Captain:", "Co pilot:","Flight Service Manager:", "Flight Attendants")
+        string = "{:^15}{:^20}{:^15}{:^30}{:^20}{:^15}{:^15}{:^15}{:^15}{:^15}\n".format("Flight Number:", "Departing From:", "Arriving At:", "Departure:", "Arrival:", "Aircraft Id:","Captain:", "Co pilot:","Flight Service Manager:", "Flight Attendants")
         past_list = self.get_past_fligt()
         for line in past_list:
             string += str(line) + "\n"

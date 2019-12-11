@@ -14,8 +14,8 @@ class PastFlights:
         self.__fa2 = fa2
 
     def __str__(self):
-        return ("{}{}{}{}{}{}{}{}{}{}{}".format
-        (self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,self.__arrival,
+        return ("{:^15}{:^15}{:^10}{:^22}{:^22}{:^10}{:^14}{:^14}{:^14}{:^14}".format
+        (self.__flight_number,self.__departing_from,self.__arriving_at,self.__departure,
         self.__arrival,self.__aircraft_id,self.__captain,self.__copilot,self.__flight_service_manager,self.__fa1,self.__fa2))
 
     def get_flight_number(self):
