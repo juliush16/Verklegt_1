@@ -25,7 +25,6 @@ class DestinationsLogic:
                 return dest.get_flight_time()
         
         
-
     def _get_flight_time(self,destination):
         all_destinations = DestinationsRepo().get_destinations()
         for dest in all_destinations:

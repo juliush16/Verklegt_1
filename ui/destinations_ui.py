@@ -1,5 +1,7 @@
 from Logic.Destinations_logic import DestinationsLogic
 from Models.Destinations import Destinations
+import os
+clear = lambda: os.system('cls')
 
 class DestinationsUI:
 
