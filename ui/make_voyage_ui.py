@@ -2,6 +2,7 @@ from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
 from Logic.Aircraft_logic import AircraftLog
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
+from Repo.inputCheck import *
 import datetime
 import dateutil.parser
 
@@ -46,7 +47,7 @@ class VoyageUI:
         
         print('\nSelect Destination\n') # Menu - Sækir upplýsingar
         Destinations2UI().print_all_destinations()
-        destination = input('Plese select a destination (Type destination name): ').capitalize()
+        destination = check_destination()
         departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
         if(departure_date_and_time == ""):
             departure_date_and_time = "09/12/2019/18/30"

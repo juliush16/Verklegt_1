@@ -1,4 +1,6 @@
 from datetime import datetime
+from Logic.Employee_logic import EmployeeLogic
+from Repo.EmployeeRepo import EmployeeRepo
 #Ætlaði að byrja á að gera svona input check
 
 def check_ssn():
@@ -7,6 +9,9 @@ def check_ssn():
         print('Invalid employee social security number Try again!')
         new_emp_SSN = input('Enter employee social security number: ')
     return new_emp_SSN
+
+def check_if_ssn_exist()
+     if Employee(ssn) == Employee(ssn)
 
 def check_phonenumber():
     new_emp_phonenumber = input('Enter employee phone number :')

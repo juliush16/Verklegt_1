@@ -2,6 +2,8 @@ from Repo.EmployeeRepo import EmployeeRepo
 from Models.employee import Employee
 from Repo.inputCheck import *
 
+
+
 class EmployeeLogic:
 
     def all_employees(self):
@@ -124,14 +126,11 @@ class EmployeeLogic:
                         print("Address changed to: {}".format(edit_employee.get_address()))
                         break
                     if choice == 2:
-                        print("Current Phonenumber: {}".format(get_phonenumber()))
+                        print("Current Phonenumber: {}".format(edit_employee.get_phonenumber()))
                         new_phonenumber = check_phonenumber()
                         #new_phonenumber = input("Enter new phonenumber: ")
-                        Employee(ssn,name,role,rank,licence,address,phonenumber,email)
-                        new_phonenumber = Employee(phonenumber)
-                        set_phonenumber(new_phonenumber)
-                        self.add_employee(phonenumber)
-                        print("Phonenumber changed to: {}".format(get_phonenumber()))
+                        edit_employee.set_phonenumber(new_phonenumber)
+                        print("Phonenumber changed to: {}".format(edit_employee.get_phonenumber()))
                         break
                     if choice == 3:
                         print("Current email: {}".format(edit_employee.get_email()))
