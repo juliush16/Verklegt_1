@@ -5,6 +5,7 @@ class PastFlights:
 
     def __init__(self):
         self.__voyage =[]
+        # self.get_past_fligt() #kannski á þetta að vera hér
 
     def get_past_fligt(self,PastFlights):
         if self.__voyage == []:

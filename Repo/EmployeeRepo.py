@@ -9,6 +9,7 @@ class EmployeeRepo:
 
     def __init__(self):
         self.__employee = []
+        self.get_employee() #þessi
 
     def add_employee(self, employee):
         with open("./data/Employee.csv", "a+") as employee_file:
@@ -22,6 +23,7 @@ class EmployeeRepo:
             email = employee.get_email()
             employee_file.write("{},{},{},{},{},{},{},{},\n".format(ssn,name,
             role,rank,licence,address,phonenumber,email))
+            self.__employee.append(employee) #þessi
 
     def get_employee(self):
         if self.__employee == []:
