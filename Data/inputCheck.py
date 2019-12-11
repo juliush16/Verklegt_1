@@ -1,4 +1,5 @@
 from datetime import datetime
+from Data.Destinations2Data import Destinations2Data
 #Ætlaði að byrja á að gera svona input check
 
 class InputCheck:
@@ -98,7 +99,7 @@ class InputCheck:
                 return destination
             print("Invalid destination Try again!")
 
-    def check_location(self,location):
-        
+    # def check_location(self,location):
+    #     all_destinations = Destinations2Data().__destinations
 
 
