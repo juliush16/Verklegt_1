@@ -16,11 +16,16 @@ class VoyageData:
             departure = voyage.get_departure()
             arrival = voyage.get_arrival()
             airplane = voyage.get_airplane()
-            voyage_file.write("{},{},{},{},{}\n".format(flight_number,
-            departing_from,arriving_at,departure,arrival))
+            captain = voyage.get_captain
+            copilot = voyage.get_copilot
+            fsm = voyage.get_fsm
+            fa1 = voyage.get_fa1
+            fa2 = voyage.get_fa2
+            voyage_file.write("{},{},{},{},{},{},{},{},{},{},{}\n".format(flight_number,
+            departing_from,arriving_at,departure,arrival, airplane,captain,copilot,fsm,fa1,fa2))
             # self.__voyage(voyage) #þessi
 
-
+#self,flight_number,departing_from,arriving_at,departure,arrival, airplane = None, captain = None,copilot = None,fsm = None,fa1 = None,fa2 = None
     def get_voyage(self):
         if self.__voyage == []:
             with open("./Repo/UpcomingFlights2.csv", "r", encoding = "utf-8") as voyage_file:
@@ -35,6 +40,26 @@ class VoyageData:
                         airplane = line[5]
                     except:
                         airplane = None
+                    try:
+                        captain = line[6]
+                    except:
+                        captain = None
+                    try:
+                        copilot = line[7]
+                    except:
+                        copilot = None
+                    
+                    try:
+                        fsm = line[8]
+                    except:
+                        fsm = None
+                    
+                    try:
+                        fa1 = line[8]
+                    except:
+                        fa1 = None
+                    
+
                     new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
                     departure, arrival)
                     self.__voyage.append(new_voyage)

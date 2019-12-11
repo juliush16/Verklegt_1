@@ -13,7 +13,3 @@ class Aircraft:
         return self.__planeTypeId
 
 
-
-if __name__ == "__main__":
-    d = Aircraft('Dagur','TF-943')
-    print(d)
