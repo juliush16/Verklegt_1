@@ -5,8 +5,9 @@ import csv
 class DestinationsData:
 
     def __init__(self):
-        self.__destination = []
-        self.get_destinations() #þessi
+        #self.__destination = []
+        #self.get_destinations() #þessi
+        pass
 
     def add_destination(self, destination):
         with open("./Repo/Destinations.csv", "a+") as destinations_file:

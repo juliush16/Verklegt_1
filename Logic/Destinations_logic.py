@@ -20,17 +20,17 @@ class DestinationsLogic:
             print(destination)
 
         
-        
     def _get_flight_time(self,destination):
         all_destinations = DestinationsData().get_destinations()
         for dest in all_destinations:
-            if dest.get_Airport() == destination:
-                return str(dest.get_flight_time())
+            print(str(dest).split(","))
+            # if dest.get_Airport() == destination:
+            #     return str(dest.get_flight_time())
     
     def _get_voyage_time(self,destination):
         all_destinations = DestinationsData().get_destinations()
         for dest in all_destinations:
-            if dest.get_Airport() == destination:
+            if dest.get_Airport() == destination: # Hvar er fallið get airport og hvað á það að gera
                 return dest.get_voyage_time()
     
     def set_contact(self,destination,new_contact):

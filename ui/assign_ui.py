@@ -1,7 +1,8 @@
 from Data.EmployeeData import EmployeeData
 from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
-
+from ui.aircraftUI import Aircraft_UI
 from ui.employee_ui import EmployeeUI
+from Logic.get_pilots_license import PilotLicence
 
 class AssignUI:
 
@@ -33,12 +34,18 @@ class AssignUI:
         print("\n-----Assign Pilots to Voyage-----\n")
         UpcomingVoyageLogic().print_all_upcoming_voyage()
         choose_day_to_employ = input("Please type flight number: ").upper()
+        
         #return choose_day_to_employ
-    
-        EmployeeUI().print_all_captains()
-        captain = input("Select capatain: ") # vantar virkni svo copilot skráist
-        EmployeeUI().print_all_copilots()
-        copilot = input("Select Co Pilot: ") # líka hér
+        Aircraft_UI().print_all_airplanes()
+        airplane = input("Select Airplane: ")
+        PilotLicence().get_pilots_wLicence(airplane)
+
+
+        #EmployeeUI().print_all_pilots()
+        #captain = input("Select capatain: ") # vantar virkni svo copilot skráist
+
+        #copilot = input("Select Co Pilot: ") # líka hér
+
 
 # vantar að bjóða að savea eða edita
 
