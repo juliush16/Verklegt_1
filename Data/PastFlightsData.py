@@ -1,7 +1,7 @@
 from Models.PastFlights import PastFlights
 import csv
 #flightNumber,departingFrom,arrivingAt,departure,arrival,aircraftID,captain,copilot,fsm,fa1,fa2
-class PastFlightsRepo:
+class PastFlightsData:
 
     def __init__(self):
         self.__voyage =[]
@@ -9,7 +9,7 @@ class PastFlightsRepo:
 
     def get_past_fligt(self,PastFlights):
         if self.__voyage == []:
-            with open('./Data/PastFlights2.csv','r',encoding = 'utf-8') as past_file:
+            with open('./Repo/PastFlights2.csv','r',encoding = 'utf-8') as past_file:
                 past_flight_reader = csv.reader(past_file)
                 for line in past_flight_reader:
                     flight_num = line[0]

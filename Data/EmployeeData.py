@@ -1,18 +1,18 @@
 
 from Models.employee import Employee
-from Repo.inputCheck import *
+from Data.inputCheck import *
 import os
 import csv
 clear = lambda: os.system('cls')
 
-class EmployeeRepo:
+class EmployeeData:
 
     def __init__(self):
         self.__employee = []
         self.get_employee() #þessi
 
     def add_employee(self, employee):
-        with open("./data/Employee.csv", "a+") as employee_file:
+        with open("./Repo/Employee.csv", "a+") as employee_file:
             ssn = employee.get_ssn_str()
             name = employee.get_name_str()
             role = employee.get_role()
@@ -27,7 +27,7 @@ class EmployeeRepo:
 
     def get_employee(self):
         if self.__employee == []:
-            with open("./Data/Employee.csv", "r", encoding = "utf-8") as employee_file:
+            with open("./Repo/Employee.csv", "r", encoding = "utf-8") as employee_file:
                 employee_reader = csv.reader(employee_file)
                 for line in employee_reader:
                     ssn = line[0]

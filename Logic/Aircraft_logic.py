@@ -1,4 +1,4 @@
-from Repo.AircraftRepo import AirCraftRepo
+from Data.AircraftData import AirCraftData
 
 class AircraftLog:
 
@@ -6,5 +6,5 @@ class AircraftLog:
         self.aircraft_list = []
 
     def get_all_airplanes(self):
-        all_airplanes = AirCraftRepo().get_aircrafts() 
+        all_airplanes = AirCraftData().get_aircrafts() 
         return all_airplanes

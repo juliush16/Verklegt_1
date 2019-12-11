@@ -1,4 +1,4 @@
-from Repo.EmployeeRepo import EmployeeRepo
+from Data.EmployeeData import EmployeeData
 from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
 from ui.aircraftUI import Aircraft_UI
 from ui.employee_ui import EmployeeUI

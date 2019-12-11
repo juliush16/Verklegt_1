@@ -1,7 +1,7 @@
 from Logic.Employee_logic import EmployeeLogic
-from Repo.EmployeeRepo import EmployeeRepo
+from Data.EmployeeData import EmployeeData
 from Models.employee import Employee
-from Repo.inputCheck import *
+from Data.inputCheck import *
 
 class EmployeeUI:
 
@@ -51,7 +51,7 @@ class EmployeeUI:
         new_emp_phonenumber = check_phonenumber()
         new_emp_email = check_email()
         new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
-        EmployeeRepo().add_employee(new_employee)
+        EmployeeData().add_employee(new_employee)
         print('Employee : "',str(new_emp_name),'" has been added!')
 
     def print_all_employees(self):

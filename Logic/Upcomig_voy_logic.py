@@ -1,4 +1,4 @@
-from Repo.UpcomingVoyageRepo import VoyageRepo
+from Data.UpcomingVoyageData import VoyageData
 from Logic.Destinations_logic import DestinationsLogic
 from Logic.Destinations2_logic import Destinations2Logic
 from Models.Upcomingflights import Upcomingflights
@@ -10,7 +10,7 @@ class UpcomingVoyageLogic:
 
     def all_upcoming_voyage(self):
         all_voyage_list = []
-        all_voyage = VoyageRepo().get_voyage()
+        all_voyage = VoyageData().get_voyage()
         for voyage in all_voyage:
             all_voyage_list.append(voyage)
         return all_voyage_list
@@ -75,7 +75,7 @@ class UpcomingVoyageLogic:
         arrival_time_back = self.get_voyage_time(arriving_at,departure)   #Nær í tíma sem að flug kemur til baka
         new_flight = Upcomingflights(flight_num,departing_from,arriving_at,departure,arrival) #bua til flug út
         flight_back = Upcomingflights(flight_num_back,arriving_at,'KEF',self.get_departure_time_back(arrival),self.get_voyage_time(arriving_at,departure))  #bua til flug til baka
-        VoyageRepo().add_voyage(new_flight)
-        VoyageRepo().add_voyage(flight_back)
+        VoyageData().add_voyage(new_flight)
+        VoyageData().add_voyage(flight_back)
             
 

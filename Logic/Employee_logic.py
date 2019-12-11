@@ -1,18 +1,18 @@
-from Repo.EmployeeRepo import EmployeeRepo
+from Data.EmployeeData import EmployeeData
 
 
 class EmployeeLogic:
 
     def all_employees(self):
         all_employee_list = []
-        all_employees = EmployeeRepo().get_employee()
+        all_employees = EmployeeData().get_employee()
         for employee in all_employees:
             all_employee_list.append(employee)
         return all_employee_list
 
     def get_all_pilots(self):
         all_pilots_list = []
-        all_employees = EmployeeRepo().get_employee()
+        all_employees = EmployeeData().get_employee()
         all_pilots_list.append(all_employees[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
         for employee in all_employees:
             if employee.role == 'Pilot':

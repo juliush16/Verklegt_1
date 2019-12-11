@@ -26,7 +26,7 @@ class VoyageUI:
             elif choice_str == '2':
                 UpcomingVoyageLogic().print_all_upcoming_voyage()
             elif choice_str == '3':
-                PastFlightsRepo().print_past_flights()
+                PastFlightsData().print_past_flights()
             elif choice_str == '4':
                 destinations_location = input("Please input contact location: ")
                 DestinationsUI().update_contact(destinations_location)
@@ -37,7 +37,7 @@ class VoyageUI:
     def create_new_voyage_menu(self):
         print('\n-----Make a new voyage-----\n')
         # print('\nSelect Airplane\n')
-        # Aircrafts = AirCraftRepo()
+        # Aircrafts = AirCraftData()
         # Aircrafts.print_all_airplanes()
         # airplane = input('Please select an airplane (Type plane insignia) :').capitalize()
 

@@ -2,7 +2,7 @@
 from Models.AircraftType import Aircraftype
 import csv
 
-class AirCraftTypeRepo:
+class AirCraftTypeData:
 
     def __init__(self):
         self.__aircraft = []
@@ -11,7 +11,7 @@ class AirCraftTypeRepo:
     def add_aircraft_type(self, aircraftype,not_in_delete = True):
         if not_in_delete == True:
             self.__aircraft.append(aircraftype)
-        with open("./data/AircraftType.csv", "a+") as aircraft_type_file:
+        with open("./Repo/AircraftType.csv", "a+") as aircraft_type_file:
             plane_type_id = aircraftype.get_planeTypeId()
             plane_type = aircraftype.get_plane_type()
             model = aircraftype.get_model()
@@ -30,7 +30,7 @@ class AirCraftTypeRepo:
 
     def get_aircraft(self):
         if self.__aircraft == []:
-            with open("./Data/AircraftType.csv", "r", encoding = "utf-8") as aircraft_type_file:
+            with open("./Repo/AircraftType.csv", "r", encoding = "utf-8") as aircraft_type_file:
                 aircraft_type_reader = csv.reader(aircraft_type_file)
                 for line in aircraft_type_reader:
                     plane_type_id = line[0]

@@ -1,4 +1,4 @@
-from Repo.AircraftTypeRepo import AirCraftTypeRepo
+from Data.AircraftTypeData import AirCraftTypeData
     
 
 class AircraftTypeLogic:
