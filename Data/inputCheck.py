@@ -11,8 +11,9 @@ class InputCheck:
             new_emp_SSN = input('Enter employee social security number: ')
         return new_emp_SSN
 
-    def check_if_ssn_exist(self):
-        pass
+# def check_if_ssn_exist():
+#      if Employee(ssn) == Employee(ssn):
+
 
     def check_phonenumber(self):
         new_emp_phonenumber = input('Enter employee phone number :')
