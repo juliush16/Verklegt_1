@@ -30,10 +30,10 @@ class PastFlightsData:
 
     def all_past_voyage(self):
         all_past_flights_list = []
-        all_past_flights = self.get_past_fligt()
+        all_past_flights = self.get_past_flight()
         for line in all_past_flights:
             all_past_flights_list.append(line)
-        return all_voyage_list
+        return all_past_flights_list
 
     def print_past_flights(self):
         all_past_flights = self.get_past_fligt()
