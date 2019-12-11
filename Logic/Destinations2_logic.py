@@ -3,8 +3,6 @@ from Models.Destinations2 import Destinations2
 
 class Destinations2Logic:
 
-    def __init__(self):
-        self.destinations = []
 
     def all_destinations(self):
         all_destinations = Destinations2Data().get_destinations()
