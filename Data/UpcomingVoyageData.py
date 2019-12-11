@@ -6,7 +6,7 @@ class VoyageData:
 
     def __init__(self):
         self.__voyage = []
-        self.get_voyage #þessi
+        self.get_voyage()   #þessi
 
     def add_voyage(self, voyage):
         with open("./Repo/UpcomingFlights2.csv", "a+") as voyage_file:
@@ -17,7 +17,7 @@ class VoyageData:
             arrival = voyage.get_arrival()
             voyage_file.write("{},{},{},{},{}\n".format(flight_number,
             departing_from,arriving_at,departure,arrival))
-            self.__voyage(voyage) #þessi
+            # self.__voyage(voyage) #þessi
 
 
     def get_voyage(self):
