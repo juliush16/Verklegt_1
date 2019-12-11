@@ -1,5 +1,5 @@
 from Repo.EmployeeRepo import EmployeeRepo
-from Repo.UpcomingVoyageRepo import VoyageRepo
+from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
 
 class AssignUI:
 
@@ -27,19 +27,10 @@ class AssignUI:
 
 
     def assign_pilots_menu(self):
-        choice_str = ''
-        while choice_str != 'b':
-            voyage_list = [] #Listi fyrir ferðir fyrir valinn dag
-            choose_day_to_employ = input("Please type day to employ (DD/MM/YYYY): ")
-            all_voyage = VoyageRepo().get_voyage()
-            for voyage in all_voyage:
-                if voyage.__departure == choose_day_to_employ:
-                    voyage_list.append(voyage)
-            for item in voyage_list:
-                print(item)
-
-            if not voyage_list: # ef engar ferðir skráðar
-                print('There are no trips on this day')
+        UpcomingVoyageLogic().print_all_upcoming_voyage()
+        choose_day_to_employ = input("Please type flight number: ").upper()
+        print(choose_day_to_employ)
+            
                 
 
 
@@ -55,10 +46,3 @@ class AssignUI:
                 return choice_str
             elif choice_str == '1':
                 pass
-
-
-        
-
-
-if __name__ == "__main__":
-    menu()

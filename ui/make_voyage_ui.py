@@ -59,4 +59,5 @@ class VoyageUI:
 
         print(('\nNew flight to "{}" has been created!\n').format(destination))
 
+
         

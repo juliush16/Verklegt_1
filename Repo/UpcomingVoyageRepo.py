@@ -40,10 +40,6 @@ class VoyageRepo:
             all_voyage_list.append(voyage)
         return all_voyage_list
 
-    def print_all_upcoming_voyage(self):
-        all_voyage = self.all_upcoming_voyage()
-        for voyage in all_voyage:
-            print(voyage)
 
     def generate_flight_number(self):
         return_str = 'NA'
