@@ -15,6 +15,7 @@ class VoyageData:
             arriving_at = voyage.get_arriving_at()
             departure = voyage.get_departure()
             arrival = voyage.get_arrival()
+            airplane = voyage.get_airplane()
             voyage_file.write("{},{},{},{},{}\n".format(flight_number,
             departing_from,arriving_at,departure,arrival))
             # self.__voyage(voyage) #þessi
@@ -30,6 +31,10 @@ class VoyageData:
                     arriving_at = line[2]
                     departure = line[3]
                     arrival = line[4]
+                    try:
+                        airplane = line[5]
+                    except:
+                        airplane = None
                     new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
                     departure, arrival)
                     self.__voyage.append(new_voyage)
