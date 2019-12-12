@@ -41,18 +41,34 @@ class DestinationsData:
         all_destinations = self.get_destinations()  
         r = csv.reader(open('./Repo/destinations.csv'))
         lines = list(r)
-        destination_num = 0
+        counter = 0
         for line in all_destinations:
-            if line == destination:
-                destination_num = line
-        
-            lines[destination_num][4] = new_contact
+            counter += 1
+            if line.get_Airport() == destination.get_Airport():
+                lines[counter][4] = new_contact
+
             writer = csv.writer(open('./Repo/destinations.csv', 'w'))
             writer.writerows(lines)
-        if destination_num != 0:
-            return '\nContact has been changed to "' + str(new_contact) + '"'
-        else:
-            return '\nError: contact could not be edited'
+
+        return '\nContact has been changed to "' + str(new_contact) + '"'
+        # except:
+        #     return '\nError: contact could not be edited'
+
+
+    def set_phonenumber(self,destination,new_phonenumber):
+        all_destinations = self.get_destinations()  
+        r = csv.reader(open('./Repo/destinations.csv'))
+        lines = list(r)
+        counter = 0
+        for line in all_destinations:
+            counter += 1
+            if line.get_Airport() == destination.get_Airport():
+                lines[counter][5] = new_phonenumber
+
+            writer = csv.writer(open('./Repo/destinations.csv', 'w'))
+            writer.writerows(lines)
+
+        return '\nPhonenumber has been changed to "' + str(new_phonenumber) + '"'
 
 
 

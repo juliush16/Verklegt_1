@@ -27,7 +27,7 @@ class Destinations:
         return self.__phonenumber
 
     def __str__(self): #
-        return ("{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}".format
+        return ("{:^15}{:^20}{:^15}{:^15}{:^20}{:^15}".format
         (self.__location,self.__airport,self.__flight_time,self.__voyage_time,self.__contact,self.__phonenumber))
 
     def set_contact(self,contact):
