@@ -46,6 +46,7 @@ class VoyageUI:
         
         print('\nSelect Destination\n') # Menu - Sækir upplýsingar
         Destinations2UI().print_all_destinations()
+        print('\n')
         destination = input('Plese select a destination (Type destination name): ').capitalize()
         destination_id = Destinations2Logic().find_destination_id(destination)
 

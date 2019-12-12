@@ -63,7 +63,7 @@ class EmployeeUI:
     def updateEmployee(self):
         self.print_all_employees()
         print()
-        ssnToUpdate = input("Enter ssn of employee to update: \n")
+        ssnToUpdate = input("Enter ssn of employee to update: ")
         empToUpdate = EmployeeLogic().get_by_ssn(ssnToUpdate)
         if empToUpdate == None:
             print("Invalid employee")
@@ -74,6 +74,7 @@ class EmployeeUI:
             choice = int(input("What do you want to update? "))
             if choice == 1:
                 empToUpdate.address = input("Enter address: ")
+                print('\nAdress has been updated!')
                 break
             elif choice == 2:
                 new_phonenumber = InputCheck().check_phonenumber()

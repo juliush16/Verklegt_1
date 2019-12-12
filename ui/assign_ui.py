@@ -35,14 +35,14 @@ class AssignUI:
     def assign_pilots_menu(self):
         print("\n-----Assign Pilots to Voyage-----\n")
         UpcomingVoyageLogic().print_all_upcoming_voyage()
-        choose_day_to_employ = input("Please type flight number: ").upper()
+        choose_day_to_employ = input("\nPlease type flight number: ").upper()
         
         #return choose_day_to_employ
         Aircraft_UI().print_all_airplanes()
-        airplane = input("Select Airplane: ")
+        airplane = input("\nSelect Airplane: ")
         PilotLicence().get_pilots_wLicence(airplane)
-        captain = input("Select Captain: ")
-        copilot = input("Select Co Pilot: ")
+        captain = input("\nSelect Captain: ")
+        copilot = input("\nSelect Co Pilot: ")
         
         #for i in airplane:
            # if(str(str(i).split()[1]) == choosen_airplane.strip()):
