@@ -12,8 +12,7 @@ class AssignUI:
         choice_str = ''
         while choice_str != 'q':
             print('\n---Assign eployees to a voyage---\n')
-            print('Press "1" to assign Pilots to a voyage')
-            print('Press "2" to assign Cabincrew to a voyage')
+            print('Press "1" to assign staff members to a voyage')
             print('Press "q" to Quit')
             print('Press "b" to go back to Main Menu\n')
             choice_str = input('Choose an option: ')
@@ -21,14 +20,14 @@ class AssignUI:
             if choice_str == 'q':
                 return choice_str
             elif choice_str == '1':
-                self.assign_pilots_menu()
+                self.assign_staff_menu()
             elif choice_str == '2':
                 self.assign_flight_attendants_menu()
             elif choice_str == 'b':
                 return choice_str
 
 
-    def assign_pilots_menu(self):
+    def assign_staff_menu(self):
         print("\n-----Assign Pilots to Voyage-----\n")
         UpcomingVoyageLogic().print_all_upcoming_voyage()
         choose_day_to_employ = input("Please type flight number: ").upper()
