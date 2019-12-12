@@ -2,10 +2,31 @@ from Logic.Destinations_logic import DestinationsLogic
 from Models.Destinations import Destinations
 from Models.Destinations2 import Destinations2
 from Data.Destinations2Data import Destinations2Data
+from Logic.Destinations_logic import DestinationsLogic
 import os
 clear = lambda: os.system('cls')
 
 class DestinationsUI:
+    def selectin_dest(self):
+        print('\nDestination Menu\n')
+        choice = ''
+        while choice != 'b':
+            print('Select "1" to change information')
+            print('Select "2" to view all destinations')
+            print('press "b" to go back to Main Menu')
+            choice = input("select action: ").lower()
+            if choice == 'b':
+                choice = 'b'
+            elif choice == '1':
+                choice = self.destinations_menu()
+                print('\n')
+                break
+            elif choice == '2':
+                choice = self.print_all_destinations()
+                print('\n')
+                break
+        
+
 
     def destinations_menu(self):
         print('\n-----Create new destination-----\n')

@@ -14,7 +14,8 @@ class Main:
             print('Press "1" for Voyage menu')
             print('Press "2" to Assign eployees to a voyage')
             print('Press "3" to register,list or change employee information ')
-            print('Press "4" to create a new destination ')
+            print('Press "4" for Destination Menu')
+            #print('Press "4" to create a new destination ') # Breyta þessu í destination menu þar sem hægt er að sja og breyta 
             print('Press "q" to Quit\n')
             choice_str = input('Choose an option: ')
 
@@ -27,5 +28,6 @@ class Main:
             elif choice_str == '3':
                 choice_str = EmployeeUI().menu()
             elif choice_str == '4':
-                choice_str = DestinationsUI().destinations_menu()
+                choice_str = DestinationsUI().selectin_dest()
+                #choice_str = DestinationsUI().destinations_menu()
     ###Vantar að geta breytt tengiliðaupplýsingum fyrir destination
