@@ -22,10 +22,9 @@ class DestinationsLogic:
         
     def _get_flight_time(self,destination):
         all_destinations = DestinationsData().get_destinations()
-        for dest in all_destinations:
-            print(str(dest).split(","))
-            # if dest.get_Airport() == destination:
-            #     return str(dest.get_flight_time())
+        for dest in all_destinations:     
+            if dest.get_Airport() == destination:
+                return int(dest.get_flight_time())
     
     def _get_voyage_time(self,destination):
         all_destinations = DestinationsData().get_destinations()
@@ -38,5 +37,5 @@ class DestinationsLogic:
 
 
     def create_new_destination(self,location,airport,flight_time,voyage_time,contact,phonenumber):
-        new_destination = Destinations(location,airport,flight_time,voyage_time,contact,phonenumber)
+        new_destination = DestinationsData(location,airport,flight_time,voyage_time,contact,phonenumber)
         DestinationsData().add_destination(new_destination)

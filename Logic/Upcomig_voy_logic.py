@@ -35,13 +35,12 @@ class UpcomingVoyageLogic:
         minutes = int(parsed_date.minute)
         destination = Destinations2Logic().find_destination(destination_id.upper())
         flight_time = DestinationsLogic()._get_flight_time(destination)
-        print(flight_time)
-        # hour += flight_time
-        # if hour >= 23:
-        #     day += 1
-        #     hour -= 23
-        # new_time = datetime.datetime(year,month,day,hour,minutes).isoformat()
-        # return new_time
+        hour += flight_time
+        if hour >= 23:
+            day += 1
+            hour -= 23
+        new_time = datetime.datetime(year,month,day,hour,minutes).isoformat()
+        return new_time
 
     def get_departure_time_back(self,departure):
         parsed_date = dateutil.parser.parse(departure)

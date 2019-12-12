@@ -4,7 +4,7 @@ from Data.Destinations2Data import Destinations2Data
 
 class InputCheck:
     def check_ssn(self):
-        new_emp_SSN = input('Enter employee social security number :')
+        new_emp_SSN = input('Enter employee social security number: ')
         while new_emp_SSN.isdigit() != True or len(new_emp_SSN) != 10:
             print('Invalid employee social security number Try again!')
             new_emp_SSN = input('Enter employee social security number: ')
@@ -20,10 +20,10 @@ class InputCheck:
 
 
     def check_phonenumber(self):
-        new_emp_phonenumber = input('Enter employee phone number :')
+        new_emp_phonenumber = input('Enter employee phone number: ')
         while new_emp_phonenumber.isdigit() != True or len(new_emp_phonenumber) != 7:
             print('Invalid employee phone number Try again!')
-            new_emp_phonenumber = input('Enter employee phone number :')
+            new_emp_phonenumber = input('Enter employee phone number: ')
         return new_emp_phonenumber
         
     def check_role(self):
@@ -89,7 +89,7 @@ class InputCheck:
     def check_email(self):
         new_emp_email = ""
         while new_emp_email[-7:] != "@nan.is":
-            new_emp_email =  input('Enter employee email(@nan.is) :')
+            new_emp_email =  input('Enter employee email(@nan.is): ')
             if new_emp_email[-7:] == "@nan.is":
                 return new_emp_email
             print("Invalid email try again!")
