@@ -44,8 +44,8 @@ class VoyageUI:
         
         print('\nSelect Destination\n') # Menu - Sækir upplýsingar
         Destinations2UI().print_all_destinations()
-        destination_id = input('Plese select a destination (Type destination name): ').capitalize()
-        #destination_id = Destinations2Logic().find_destination_id(destination)
+        destination = input('Plese select a destination (Type destination name): ').capitalize()
+        destination_id = Destinations2Logic().find_destination_id(destination)
 
         departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
         if(departure_date_and_time == ""):
@@ -64,10 +64,9 @@ class VoyageUI:
             print(a)
         
         arrival_time = UpcomingVoyageLogic().get_arrival_time(destination_id,new_date) # Ná í arrival tíma.
-        print(arrival_time)
-        # UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
+        UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
 
-        # print(('\nNew flight to "{}" has been created!\n').format(destination))
+        print(('\nNew flight to "{}" has been created!\n').format(destination))
 
         
 

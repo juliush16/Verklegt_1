@@ -16,11 +16,11 @@ class VoyageData:
             departure = voyage.get_departure()
             arrival = voyage.get_arrival()
             airplane = voyage.get_airplane()
-            captain = voyage.get_captain
-            copilot = voyage.get_copilot
-            fsm = voyage.get_fsm
-            fa1 = voyage.get_fa1
-            fa2 = voyage.get_fa2
+            captain = voyage.get_captain()
+            copilot = voyage.get_copilot()
+            fsm = voyage.get_fsm()
+            fa1 = voyage.get_fa1()
+            fa2 = voyage.get_fa2()
             voyage_file.write("{},{},{},{},{},{},{},{},{},{},{}\n".format(flight_number,
             departing_from,arriving_at,departure,arrival, airplane,captain,copilot,fsm,fa1,fa2))
             # self.__voyage(voyage) #þessi
