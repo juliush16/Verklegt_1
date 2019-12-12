@@ -9,7 +9,7 @@ class DestinationsUI:
 
     def destinations_menu(self):
         print('\n-----Create new destination-----\n')
-        choice_str = input('You can type "b" to go back to the main menu or press enter to continue :')
+        choice_str = input('You can type "b" to go back to the main menu or press enter to continue: ')
         if choice_str == 'b':
             return
         new_location = input('Please type new destination country: ').capitalize()
