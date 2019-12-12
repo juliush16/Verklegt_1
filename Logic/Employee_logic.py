@@ -82,13 +82,9 @@ class EmployeeLogic:
                 return emp
         return None
 
-        
     #breyta maili, address, phonenumber
     def update_employee(self, updatedEmployee):  #passa að breyta ekki nafni og kt
         EmployeeData().update_employee(updatedEmployee)
-
-
-  
     
     def get_available_employees(self): #Sýna starfsmenn sem hafa ekki unnið þennan dag og geta farið i vinnuferð
         pass

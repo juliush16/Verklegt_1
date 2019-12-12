@@ -64,7 +64,6 @@ class VoyageData:
                     except:
                         fa1 = None
                     
-
                     new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
                     departure, arrival)
                     self.__voyage.append(new_voyage)
@@ -112,5 +111,16 @@ class VoyageData:
             string += str(voyage) + "\n"
         return string
 
+    def update_voyage(self, updatedvoyage):
+        allvoyage = self.get_voyage()
+        with open("./Repo/UpcomingFlights2.csv", "w+", newline="") as voyage_file:
+            fieldnames = ["flightNumber","departingFrom","arrivingAt","departure","arrival","airplane","captain","copilot","fsm","fa1","fa2"]
+            writer = csv.DictWriter(voyage_file, fieldnames=fieldnames)
+            writer.writeheader()
+        for voyage in allvoyage:
+            if voyage.flight_number == updatedvoyage.flight_number:
+                self.add_voyage(updatedvoyage)
+            else:
+                self.add_voyage(voyage)
             
             
