@@ -35,6 +35,7 @@ class AssignUI:
     def assign_pilots_menu(self):
         print("\n-----Assign Pilots to Voyage-----\n")
         UpcomingVoyageLogic().print_all_upcoming_voyage()
+<<<<<<< HEAD
         choose_day_to_employ = input("Please type flight number: ").upper()
         print()
         voyage_update = UpcomingVoyageLogic().get_by_voyage(choose_day_to_employ) #sækja listann og velja flugnúmer
@@ -53,6 +54,17 @@ class AssignUI:
         voyage_update.fa2 = input("Select Flight Attendant: ")
         UpcomingVoyageLogic().update_voyage(voyage_update) #UPDATEA NYJA LISTANN 
 
+=======
+        choose_day_to_employ = input("\nPlease type flight number: ").upper()
+        
+        #return choose_day_to_employ
+        Aircraft_UI().print_all_airplanes()
+        airplane = input("\nSelect Airplane: ")
+        PilotLicence().get_pilots_wLicence(airplane)
+        captain = input("\nSelect Captain: ")
+        copilot = input("\nSelect Co Pilot: ")
+        
+>>>>>>> 6a3d08c2ecd6d80e8cd67a140fa257d45c3ad0ff
         #for i in airplane:
            # if(str(str(i).split()[1]) == choosen_airplane.strip()):
               #  print("HEllo")

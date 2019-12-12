@@ -160,5 +160,48 @@ class EmployeeUI:
         all_flight_attendants = EmployeeLogic().get_all_flight_attendants()
         for flight_attendant in all_flight_attendants:
             print(flight_attendant)
+<<<<<<< HEAD
 
 
+=======
+    
+
+
+    # new_emp_role = ""
+    # new_emp_rank = "" 
+    # new_emp_licence = ""
+    # while new_emp_role != '1' or '2': #1 er pilot og 2 er cabin crew
+    #     new_emp_role = input('Choose an option for employee role\n1:Pilot\n2:Cabincrew\n')
+    #     if new_emp_role == '1':
+    #         new_emp_role = "Pilot"
+    #         while new_emp_role != '1' or '2': #pilot rank (captain or copilot)
+    #             new_emp_rank = input('Choose an option for employee rank\n1:Captain\n2:Copilot\n')
+    #             if new_emp_rank == '1':
+    #                 new_emp_rank = 'Captain'
+    #             elif new_emp_rank == '2':
+    #                 new_emp_rank = "Copilot"
+    #             break #fer ut ur while loopunni og i næstu
+
+    #         while new_emp_licence != '1' or '2' or '3': #licence
+    #             new_emp_licence = input('Choose an option for employee licence\n1:NABAE146\n2:NAFokkerF28\n3:NAFokkerF100\n')
+    #             if new_emp_licence == '1':
+    #                 new_emp_licence = "NABAE146"
+    #             elif new_emp_licence == '2':
+    #                 new_emp_licence = "NAFokkerF28"
+    #             elif new_emp_licence == '3':
+    #                 new_emp_licence = "NAFokkerF100"
+    #             break #fer út ur while
+    #         break #fer ut ur if
+
+    #     elif new_emp_role == '2': #cabincrew 
+    #         new_emp_role = "Cabincrew"
+    #         new_emp_licence = "N/A"
+    #         while new_emp_rank != '1' or '2': #cabincrew rank (flight service manager og flight attendant)
+    #             new_emp_rank = input('Choose an option for employee rank\n1:Flight Service Manager\n2:Flight Attendant\n')
+    #             if new_emp_rank == '1':
+    #                 new_emp_rank = "Flight Service Manager"
+    #             elif new_emp_rank == '2':
+    #                 new_emp_rank = "Flight Attendant"
+    #             break
+    #         break
+>>>>>>> 6a3d08c2ecd6d80e8cd67a140fa257d45c3ad0ff
