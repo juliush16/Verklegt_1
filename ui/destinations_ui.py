@@ -23,7 +23,7 @@ class DestinationsUI:
         new_dest2 = Destinations2(new_loc_id,new_location)
         Destinations2Data().add_destination(new_dest2)
         print('\nOverview :')
-        print('\nAirport location : {} \nAirport name : {} \nContact name : {} \nContacts phonenumber : {}'.format(str(new_location),str(new_airport),str(new_contact),new_phonenumber))
+        print('\nAirport location: {} \nAirport name: {} \nContact name: {} \nContacts phonenumber: {}'.format(str(new_location),str(new_airport),str(new_contact),new_phonenumber))
         print('\nDestination has been created!\n')
 
 
@@ -38,7 +38,7 @@ class DestinationsUI:
         choice = ''
         while choice != '3':
             print("1. Edit Contact\n2. Edit Phonenumber\n3. Return to Main Menu\n")
-            choice = int(input("Choose :"))
+            choice = int(input("Choose: "))
             
 
 
