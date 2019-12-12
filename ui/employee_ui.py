@@ -160,10 +160,6 @@ class EmployeeUI:
     
 
 
-
-
-
-
     # new_emp_role = ""
     # new_emp_rank = "" 
     # new_emp_licence = ""
