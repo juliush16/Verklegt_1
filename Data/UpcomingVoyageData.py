@@ -1,5 +1,7 @@
 
 from Models.Upcomingflights import Upcomingflights
+from Data.Destinations2Data import Destinations2Data
+from Data.destinationsData import DestinationsData
 import random
 import csv
 from datetime import datetime
@@ -83,7 +85,7 @@ class VoyageData:
         return return_str
 
     def make_new_voyage(self):
-        Destinations2 = Destinations2Repo()
+        Destinations2 = Destinations2Data()
         Destinations2.print_all_destinations()
         destination = input('Plese select a destination (Type destination id): ').capitalize()
         departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
@@ -91,7 +93,7 @@ class VoyageData:
         departure_date_iso = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
         arrival_date_iso = departure_date_iso
         parsed_date = dateutil.parser.parse(arrival_date_iso)
-        destinations_ = DestinationsRepo()
+        destinations_ = DestinationsData()
         parsed_date.hour += destinations_.get_flight_time()
         self.make_new_flight(destination,departure_date_iso,arrival_date_iso)
 
