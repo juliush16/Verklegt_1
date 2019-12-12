@@ -35,14 +35,18 @@ class DestinationsUI:
 
 
     def update_contact(self, airport):
-        self.print_all_destinations()
+        # self.print_all_destinations()
 
-        destinations_airport = input("Please type in airport: ").lower()
-        DestinationsLogic().all_destinations(destinations_airport)
+        # DestinationsLogic().all_destinations(airport)
 
-        if destinations_airport == None:
-            print("Invalid Destination")
-            return
+        # if airport == None:
+        #     print("Invalid Destination")
+        #     return
+        edit_contact = DestinationsLogic().get_destination(airport)
+        destination = edit_contact
+        print('\n')
+        print(edit_contact)
+        print('\n')
         choice = ''
         print("1. Edit Contact\n2. Edit Phonenumber\n3. Return to Main Menu\n")
         while True:
@@ -57,12 +61,13 @@ class DestinationsUI:
                 print("Current contact name: {}".format(edit_contact.get_contact()))
                 new_contact = input("Enter new contact name: ")
                 edit_contact.contact = new_contact
+                DestinationsLogic().set_contact(destination,new_contact)
                 break
             if choice == 2:
                 print("Current phonenumber: {}".format(edit_contact.get_phonenumber()))
                 new_phonenumber = input("Enter new phonenumber: ")
                 edit_contact.phonenumber = new_phonenumber
+                DestinationsLogic().set_phonenumber(destination,new_phonenumber)
                 break
             if choice == 3:
                 break
-        DestinationsLogic().set_contact(destinations_airport)

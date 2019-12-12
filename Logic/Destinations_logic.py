@@ -9,16 +9,20 @@ clear = lambda: os.system('cls')
 class DestinationsLogic:
 
     def all_destinations(self):
-        return_list = []
         all_destinations = DestinationsData().get_destinations()
-        for destination in all_destinations:
-            return_list.append(destination)
-        return return_list
+        return all_destinations
 
     def print_all_destinations(self):
         all_destinations = self.all_destinations()
         for destination in all_destinations:
             print(destination)
+
+
+    def get_destination(self,destination):
+        all_destinations = self.all_destinations()
+        for item in all_destinations:
+            if item.get_Airport() == destination:
+                return item
 
         
     def _get_flight_time(self,destination):
@@ -35,6 +39,9 @@ class DestinationsLogic:
     
     def set_contact(self,destination,new_contact):
         return DestinationsData().set_contact(destination,new_contact)
+
+    def set_phonenumber(self,destination,new_phonenumber):
+        return DestinationsData().set_phonenumber(destination,new_phonenumber)
 
 
     def create_new_destination(self,location,airport,flight_time,voyage_time,contact,phonenumber):

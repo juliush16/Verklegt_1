@@ -31,9 +31,9 @@ class VoyageUI:
             elif choice_str == '3':
                 PastFlightsUI().print_past_flights()
             elif choice_str == '4':
-                DestinationsLogic().print_all_destinations()
-                #destinations_airport = input("Please type in airport: ").lower()
-                #DestinationsUI().update_contact(destinations_airport)
+                self.change_contact_menu()
+                # destinations_airport = input("Please type in airport: ").lower()
+                # DestinationsUI().update_contact(destinations_airport)
             
 
     def create_new_voyage_menu(self):
@@ -70,6 +70,15 @@ class VoyageUI:
         UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
 
         print(('\nNew flight to "{}" has been created!\n').format(destination))
+
+
+
+    def change_contact_menu(self):
+            DestinationsLogic().print_all_destinations()
+            destinations_airport = input("Please type in airport: ").capitalize()
+            DestinationsUI().update_contact(destinations_airport)
+
+
 
         
 
