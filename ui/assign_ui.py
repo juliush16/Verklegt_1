@@ -13,8 +13,7 @@ class AssignUI:
         while choice_str != 'q':
             print('\n---Assign eployees to a voyage---\n')
             print('Press "1" to assign Pilots to a voyage')
-            print('Press "2" to assign Cabincrew to a voyage')
-            print('Press "3" to print past Voyages')
+            print('Press "2" to assign Flight Attendant to a voyage')
             print('Press "q" to Quit')
             print('Press "b" to go back to Main Menu\n')
             choice_str = input('Choose an option: ')
@@ -25,9 +24,6 @@ class AssignUI:
                 self.assign_pilots_menu()
             elif choice_str == '2':
                 self.assign_flight_attendants_menu()
-            elif choice_str == '3':
-                past = PastFlights()
-                past = print_past_flights()
             elif choice_str == 'b':
                 return choice_str
 
@@ -64,6 +60,26 @@ class AssignUI:
         voyage_update.fa1 = input("Select Flight Attendant: ")
         voyage_update.fa2 = input("Select Flight Attendant: ")
         UpcomingVoyageLogic().update_voyage(voyage_update) #UPDATEA NYJA LISTANN 
+
+        #for i in airplane:
+           # if(str(str(i).split()[1]) == choosen_airplane.strip()):
+              #  print("HEllo")
+            #if(str(str(up).split()[3]).strip() == new_date.strip()):
+            #    print("nei") # stoppa 
+        #all_aircrafts = AircraftLog().get_all_airplanes()
+        #for a in all_aircrafts:
+        #    print(a)
+
+        #EmployeeUI().print_all_pilots()
+        #captain = input("Select capatain: ") # vantar virkni svo copilot skráist
+
+        #copilot = input("Select Co Pilot: ") # líka hér
+
+
+# vantar að bjóða að savea eða edita
+
+
+
 
 
 
