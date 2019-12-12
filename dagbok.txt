@@ -107,5 +107,24 @@ Dagur: Vinnuferðir
 Hildur: Hönnunarskýrsla, uppfæra stöðurit
 Júlíus: Input check og vinnuferðir
 
+Dagur 13:
+11. desember
+Anna: Gera uppfært wireframe
+Brynjar: Klasarit
+Dagur: Vinnuferðir
+Hildur: Hönnunarskýrsla, uppfæra stöðurit
+Júlíus: Update employee
+
+Dagur 13:
+12. desember
+Anna: Gera uppfært wireframe
+Brynjar: Klasarit
+Dagur: Vinnuferðir
+Hildur: Hönnunarskýrsla, uppfæra stöðurit
+Júlíus: Upcoming flight
+
+Dagur 14:
+12. desember
+Fórum öll saman yfir skýrsluna og allan kóðann, gerðum svo myndband sem sýnir flæðið í forritinu.  
 
 
