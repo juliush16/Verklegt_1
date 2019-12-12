@@ -41,17 +41,17 @@ class EmployeeUI:
     def reg_employee_menu(self):
         print('\n-----Register new employee-----\n')
         new_emp_SSN = InputCheck().check_ssn()
-        new_emp_name = input('Enter employee name :').capitalize()
+        new_emp_name = input('Enter employee name: ').capitalize()
         print('- - - - - - - - - - - - - - - - - - - - - - - - - -')
         new_emp_role = InputCheck().check_role()
         new_emp_rank = InputCheck().check_rank(new_emp_role)
         new_emp_licence = InputCheck().check_licence(new_emp_role)
-        new_emp_address = input('Enter employee address :').capitalize()
+        new_emp_address = input('Enter employee address: ').capitalize()
         new_emp_phonenumber = InputCheck().check_phonenumber()
         new_emp_email = InputCheck().check_email()
         new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
         EmployeeData().add_employee(new_employee)
-        print('Employee : "',str(new_emp_name),'" has been added!')
+        print('Employee: "',str(new_emp_name),'" has been added!')
 
     def updateEmployee(self):
         self.print_all_employees()
