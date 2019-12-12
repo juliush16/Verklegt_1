@@ -1,6 +1,7 @@
 from Data.AircraftData import AirCraftData
 from Logic.Employee_logic import EmployeeLogic
 
+
 class PilotLicence():
 
 
@@ -14,4 +15,4 @@ class PilotLicence():
         for p in pilots:
             if(p.licence == plane):
                 print(p)
-            
+                      #  if(str(str(up).split()[3]).strip() == new_date.strip()):
