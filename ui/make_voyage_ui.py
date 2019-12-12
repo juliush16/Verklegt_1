@@ -6,6 +6,7 @@ from ui.destinations_ui import DestinationsUI
 from ui.past_flights_ui import PastFlightsUI
 import datetime
 import dateutil.parser
+
 class VoyageUI:
 
     def menu(self):
@@ -32,8 +33,6 @@ class VoyageUI:
                 destinations_location = input("Please input contact location: ")
                 DestinationsUI().update_contact(destinations_location)
             
-
-
 
     def create_new_voyage_menu(self):
         print('\n-----Make a new voyage-----\n')

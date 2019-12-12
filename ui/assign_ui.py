@@ -41,7 +41,21 @@ class AssignUI:
         Aircraft_UI().print_all_airplanes()
         airplane = input("Select Airplane: ")
         PilotLicence().get_pilots_wLicence(airplane)
+        captain = input("Select Captain: ")
+        copilot = input("Select Co Pilot: ")
+        
+        #for i in airplane:
+           # if(str(str(i).split()[1]) == choosen_airplane.strip()):
+              #  print("HEllo")
+            #if(str(str(up).split()[3]).strip() == new_date.strip()):
+            #    print("nei") # stoppa 
 
+
+
+
+        #all_aircrafts = AircraftLog().get_all_airplanes()
+        #for a in all_aircrafts:
+        #    print(a)
 
         #EmployeeUI().print_all_pilots()
         #captain = input("Select capatain: ") # vantar virkni svo copilot skráist
@@ -51,11 +65,7 @@ class AssignUI:
 
 # vantar að bjóða að savea eða edita
 
-
-
-
-            
-                
+                        
 
     def assign_flight_attendants_menu(self):
         choice_str = ''
