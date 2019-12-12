@@ -38,7 +38,7 @@ class EmployeeUI:
             elif choice_str == '4':
                 self.print_all_cabin_crew()
             elif choice_str == '5':
-                employee_ssn = input('Please input employee SSN:')
+                employee_ssn = input('Please input employee SSN: ')
                 print()
                 print("{:<15}{:<20}{:<15}{:<20}{:<15}{:<15}{:<15}{:<15}".format("SSN","Name","Role","Rank","Licence","Address","Phonenumber","Email"))
                 print(EmployeeLogic().get_by_ssn(employee_ssn))
