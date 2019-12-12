@@ -29,14 +29,14 @@ class DestinationsUI:
             print(destination)
 
 
-    def update_contact(self, location):
+    def update_contact(self, airport):
         all_location = DestinationsLogic().all_destinations()
         for contact in all_location:
-            if contact.get_Location() == location:
+            if contact.get_Airport() == airport:
                 edit_contact = contact
                 contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',edit_contact.get_contact(),'Phonenumber: ',edit_contact.get_phonenumber()))
         for destination in all_location:
-            if destination.get_Location() == location:
+            if destination.get_Airport() == airport:
                 edit_contact = destination
                 contact_string = ("\n{}{}\n{}{}\n".format('Contact Name: ',destination.get_contact(),'Phonenumber: ',destination.get_phonenumber()))
                 print(contact_string)
