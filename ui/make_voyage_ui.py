@@ -3,6 +3,7 @@ from Logic.Aircraft_logic import AircraftLog
 from Logic.Destinations2_logic import Destinations2Logic
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
+from ui.past_flights_ui import PastFlightsUI
 import datetime
 import dateutil.parser
 class VoyageUI:
@@ -26,7 +27,7 @@ class VoyageUI:
             elif choice_str == '2':
                 UpcomingVoyageLogic().print_all_upcoming_voyage()
             elif choice_str == '3':
-                PastFlightsData().print_past_flights()
+                PastFlightsUI().print_past_flights()
             elif choice_str == '4':
                 destinations_location = input("Please input contact location: ")
                 DestinationsUI().update_contact(destinations_location)
