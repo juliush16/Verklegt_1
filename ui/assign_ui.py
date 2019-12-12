@@ -13,7 +13,7 @@ class AssignUI:
         while choice_str != 'q':
             print('\n---Assign eployees to a voyage---\n')
             print('Press "1" to assign Pilots to a voyage')
-            print('Press "2" to assign Flight Attendant to a voyage')
+            print('Press "2" to assign Cabincrew to a voyage')
             print('Press "3" to print past Voyages')
             print('Press "q" to Quit')
             print('Press "b" to go back to Main Menu\n')
@@ -46,6 +46,18 @@ class AssignUI:
         PilotLicence().get_pilots_wLicence(voyage_update.airplane) #ALLA MEÐ LEYFI A X VÉLAR
         voyage_update.captain = input("Select Captain: ")
         voyage_update.copilot = input("Select Co Pilot: ")
+        UpcomingVoyageLogic().update_voyage(voyage_update)
+
+                        
+
+    def assign_flight_attendants_menu(self):
+        UpcomingVoyageLogic().print_all_upcoming_voyage()
+        choose_day_to_employ = input("Please type flight number: ").upper()
+        print()
+        voyage_update = UpcomingVoyageLogic().get_by_voyage(choose_day_to_employ) #sækja listann og velja flugnúmer
+        if voyage_update == None: #ef flugnúmerið er ekki til prenta ut invalid voyage
+            print("Invalid voyage")
+            return
         EmployeeUI().print_all_flight_service_managers() #PRENTA ALLAN FLIGHT SERVICE MANAGER
         voyage_update.fsm = input("Select Flight Service Manager: ")
         EmployeeUI().print_all_flight_attendants() #PRENTA ALLAN FLIGHT ATTENDANTS
@@ -62,31 +74,4 @@ class AssignUI:
 
 
 
-        #all_aircrafts = AircraftLog().get_all_airplanes()
-        #for a in all_aircrafts:
-        #    print(a)
-
-        #EmployeeUI().print_all_pilots()
-        #captain = input("Select capatain: ") # vantar virkni svo copilot skráist
-
-        #copilot = input("Select Co Pilot: ") # líka hér
-
-
-# vantar að bjóða að savea eða edita
-
-                        
-
-    def assign_flight_attendants_menu(self):
-        print("-----Assign Flight attendants to Voyage-----")
-        choice_str = ''
-        while choice_str != 'b':
-            print('\n---Assign flight attendants to voyage---\n')
-            print('Press "1" to see all upcoming voyages')  # Ekki buinn að utfæra þennan option
-            print('Press "b" to go back to Main Menu!\n')
-            choice_str = input('Choose an option: ')
-
-            if choice_str == 'b':
-                return choice_str
-            elif choice_str == '1':
-                pass
 
