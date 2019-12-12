@@ -1,6 +1,6 @@
 from datetime import datetime
 from Data.Destinations2Data import Destinations2Data
-#Ætlaði að byrja á að gera svona input check
+
 
 class InputCheck:
     def check_ssn(self):
