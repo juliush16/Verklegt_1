@@ -11,16 +11,16 @@ SSN,Name,Role,Rank,Licence,Address,Phonenumber,Email
 1900769521,Jasmine Hagadone,Pilot,Copilot,NABAE146,Fellsmúli 10,8998810,jasmine@nan.is
 2500812671,Anna Phillips,Pilot,Copilot,NAFokkerF28,Fellsmúli 11,8998811,anna@nan.is
 1309927223,Patricia Bates,Pilot,Copilot,NAFokkerF28,Fellsmúli 12,8998812,patricia@nan.is
-1600904199,Sherry Walker,Cabincrew,Flight Service Manager,N/A,Fellsmúli 13,8998813,sherry@nan.is
-0303758167,Margarita Fischer,Cabincrew,Flight Service Manager,N/A,Fellsmúli 14,8998814,margarita@nan.is
-2200763823,Judith Aleshire,Cabincrew,Flight Service Manager,N/A,Fellsmúli 15,8998815,judith@nan.is
-1308941169,Jacob Blecha,Cabincrew,Flight Service Manager,N/A,Fellsmúli 16,8998816,jacob@nan.is
-1405853585,Lula Stefani,Cabincrew,Flight Service Manager,N/A,Fellsmúli 17,8998817,lula@nan.is
-0909862878,Richard Sanders,Cabincrew,Flight Service Manager,N/A,Fellsmúli 18,8998818,richard@nan.is
-1811931544,John Kline,Cabincrew,Flight Service Manager,N/A,Fellsmúli 19,8998819,jhon@nan.is
-0409858797,Evelyn Pickhardt,Cabincrew,Flight Service Manager,N/A,Fellsmúli 20,8998820,evelyn@nan.is
+1600904199,Sherry Walker,Cabincrew,Flight S Manager,N/A,Fellsmúli 13,8998813,sherry@nan.is
+0303758167,Margarita Fischer,Cabincrew,Flight S Manager,N/A,Fellsmúli 14,8998814,margarita@nan.is
+2200763823,Judith Aleshire,Cabincrew,Flight S Manager,N/A,Fellsmúli 15,8998815,judith@nan.is
+1308941169,Jacob Blecha,Cabincrew,Flight S Manager,N/A,Fellsmúli 16,8998816,jacob@nan.is
+1405853585,Lula Stefani,Cabincrew,Flight S Manager,N/A,Fellsmúli 17,8998817,lula@nan.is
+0909862878,Richard Sanders,Cabincrew,Flight S Manager,N/A,Fellsmúli 18,8998818,richard@nan.is
+1811931544,John Kline,Cabincrew,Flight S Manager,N/A,Fellsmúli 19,8998819,jhon@nan.is
+0409858797,Evelyn Pickhardt,Cabincrew,Flight S Manager,N/A,Fellsmúli 20,8998820,evelyn@nan.is
 3002688722,Stacey Henrickson,Cabincrew,Flight Attendant,N/A,Fellsmúli 21,8998821,stacey@nan.is
-3003962187,Delores Whitfield,Cabincrew,Flight Attendant,N/A,Fellsmúli 22,8998822,delores@nan.is
+3003962187,Delores Whitfield,Cabincrew,Flight Attendant,N/A,Fellsmúli 22,7779719,delores@nan.is
 1311772221,Maribel Lucero,Cabincrew,Flight Attendant,N/A,Fellsmúli 23,8998823,maribel@nan.is
 2509913418,Katherine Wernimont,Cabincrew,Flight Attendant,N/A,Fellsmúli 24,8998824,katherin@nan.is
 1103647756,Wilma Horne,Cabincrew,Flight Attendant,N/A,Fellsmúli 25,8998825,wilma@nan.is
@@ -33,9 +33,4 @@ SSN,Name,Role,Rank,Licence,Address,Phonenumber,Email
 0505942924,Carlton Chan,Cabincrew,Flight Attendant,N/A,Fellsmúli 32,8998832,carlton@nan.is
 1110732819,Arthur Karr,Cabincrew,Flight Attendant,N/A,Fellsmúli 33,8998833,arthur@nan.is
 2602806942,Teresa Thruman,Cabincrew,Flight Attendant,N/A,Fellsmúli 34,8998834,terese@nan.is
-1107951952,Elizabeth Mcfadden,Cabincrew,Flight Attendant,N/A,Fellsmúli 35,8998835,elizabeth@nan.is
-0301962449,Dagur Orn Hilmarsson,Pilot,Copilot,N/A,Garðsendi 11,8988539,Dagur@nan.is
-1412992239,Binni Jo,Captein,Capten,334-44,4445555,5552220,binni@nan.is
-1008963039,Julli,Pilot,Captain,NAFokkerF100,hesthamrar 7,8959082,julliair@nan.is
-1409942439,Brynjar jónasson,Pilot,Captain,NABAE146,Suðurgata 13,8456963,brynjar@nan.is
-2006693399,David beckham,Pilot,Captain,NABAE146,Garðsendi 11,99999999999999999,david@nan.is
+1107951952,Elizabeth Mcfadden,Cabincrew,Flight Attendant,N/A,Fellsmúli 35,7779719,elizabeth@nan.is

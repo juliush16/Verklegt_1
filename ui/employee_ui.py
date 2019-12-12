@@ -2,10 +2,10 @@ from Logic.Employee_logic import EmployeeLogic
 from Data.EmployeeData import EmployeeData
 from Models.employee import Employee
 from Data.inputCheck import InputCheck
+from ui.aircraftUI import Aircraft_UI
+from Logic.get_pilots_license import PilotLicence
 
 class EmployeeUI:
-
-
 
     def menu(self):
         choice_str = ''
@@ -28,7 +28,13 @@ class EmployeeUI:
             elif choice_str == '2':
                 self.print_all_employees()
             elif choice_str == '3':
-                self.print_all_pilots()
+                self.pilots_menu_display()
+                #print()
+                #Aircraft_UI().print_all_airplanes()
+                #airplane = input("Select licence to see the Pilots: ")
+                #print("\n")
+                #PilotLicence().get_pilots_wLicence(airplane)
+                #self.print_all_pilots()
             elif choice_str == '4':
                 self.print_all_cabin_crew()
             elif choice_str == '5':
@@ -36,6 +42,7 @@ class EmployeeUI:
                 print(EmployeeLogic().get_by_ssn(employee_ssn))
             elif choice_str == '6':
                 self.updateEmployee()
+
 
 
     def reg_employee_menu(self):
@@ -56,7 +63,7 @@ class EmployeeUI:
     def updateEmployee(self):
         self.print_all_employees()
         print()
-        ssnToUpdate = input("Enter ssn of employee to update: ")
+        ssnToUpdate = input("Enter ssn of employee to update: \n")
         empToUpdate = EmployeeLogic().get_by_ssn(ssnToUpdate)
         if empToUpdate == None:
             print("Invalid employee")
@@ -70,11 +77,13 @@ class EmployeeUI:
                 break
             elif choice == 2:
                 new_phonenumber = InputCheck().check_phonenumber()
-                empToUpdate.phonenumber = new_phonenumber 
+                empToUpdate.phonenumber = new_phonenumber
+                print("\nPhone number updated to: ",new_phonenumber) 
                 break
             elif choice == 3:
                 new_email = InputCheck().check_email()
                 empToUpdate.email = new_email
+                print("\nEmail adress updated to: ",new_email)
                 break
             elif choice == 4:
                 break
@@ -91,6 +100,38 @@ class EmployeeUI:
         all_pilots = EmployeeLogic().get_all_pilots()
         for pilot in all_pilots:
             print(pilot)
+    
+    def pilots_menu_display(self):
+        print()
+        choice_string = ""
+        while choice_string != "q":
+            print('Press "1" to list all Pilots')
+            print('Press "2" to list Pilots after licence')
+            print('Press "3" to list all Captains')
+            print('Press "4" to list all Co Pilots')
+            print('Press "q" to Quit\n')
+            choice_string = input('Choose an option: ')
+
+            if choice_string == 'q':
+                return choice_string
+                break
+            elif choice_string == '1':
+                self.print_all_pilots()
+                break
+            elif choice_string == '2':
+                Aircraft_UI().print_all_airplanes()
+                airplane = input("Select licence to see the Pilots: ")
+                print("\n")
+                PilotLicence().get_pilots_wLicence(airplane)
+                break
+            elif choice_string == '3':
+                self.print_all_captains()
+                break
+            elif choice_string == '4':
+                self.print_all_copilots()
+                break
+
+
 
     def print_all_captains(self):
         all_captains = EmployeeLogic().get_all_captains()
@@ -116,6 +157,8 @@ class EmployeeUI:
         all_flight_attendants = EmployeeLogic().get_all_flight_attendants()
         for flight_attendant in all_flight_attendants:
             print(flight_attendant)
+    
+
 
 
 

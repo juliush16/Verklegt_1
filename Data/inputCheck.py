@@ -8,6 +8,7 @@ class InputCheck:
         while new_emp_SSN.isdigit() != True or len(new_emp_SSN) != 10:
             print('Invalid employee social security number Try again!')
             new_emp_SSN = input('Enter employee social security number: ')
+        
         return new_emp_SSN
 
     # def check_if_ssn_exist(self,new_employee):
@@ -25,6 +26,7 @@ class InputCheck:
             print('Invalid employee phone number Try again!')
             new_emp_phonenumber = input('Enter employee phone number: ')
         return new_emp_phonenumber
+        
         
     def check_role(self):
         new_emp_role = ""

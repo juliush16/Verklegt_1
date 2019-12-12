@@ -22,7 +22,7 @@ class EmployeeLogic:
 
     def get_all_captains(self):
         all_captains_list = []
-        all_employees = self.get_employee()
+        all_employees = self.all_employees()
         all_captains_list.append(all_employees[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
         for employee in all_employees:
             if employee.rank == 'Captain':
