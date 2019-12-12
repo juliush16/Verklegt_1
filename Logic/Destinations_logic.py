@@ -22,8 +22,7 @@ class DestinationsLogic:
         
     def _get_flight_time(self,destination):
         all_destinations = DestinationsData().get_destinations()
-        for dest in all_destinations: 
-            print(dest.get_Airport())       
+        for dest in all_destinations:     
             if dest.get_Airport() == destination:
                 return int(dest.get_flight_time())
     

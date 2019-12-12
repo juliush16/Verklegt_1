@@ -59,9 +59,9 @@ class VoyageUI:
             if(str(str(up).split()[3]).strip() == new_date.strip()):
                 print("nei") # stoppa 
 
-        all_aircrafts = AircraftLog().get_all_airplanes()
-        for a in all_aircrafts:
-            print(a)
+        # all_aircrafts = AircraftLog().get_all_airplanes()
+        # for a in all_aircrafts:
+        #     print(a)
         
         arrival_time = UpcomingVoyageLogic().get_arrival_time(destination_id,new_date) # Ná í arrival tíma.
         UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
