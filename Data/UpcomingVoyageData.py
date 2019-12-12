@@ -120,7 +120,7 @@ class VoyageData:
         for voyage in allvoyage:
             if voyage.flight_number == updatedvoyage.flight_number:
                 self.add_voyage(updatedvoyage)
-            if voyage.flight_number == 'flightNumber':
+            elif voyage.flight_number == 'flightNumber':
                 pass
             else:
                 self.add_voyage(voyage)
