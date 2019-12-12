@@ -55,7 +55,7 @@ class EmployeeLogic:
         all_crew = self.get_all_cabin_crew()
         all_fsm_list.append(all_crew[0]) # Til þess að fá fyrstu línuna með ssn, name og því :D
         for crew_member in all_crew:
-            if crew_member.rank == 'Flight Service Manager':
+            if crew_member.rank == 'Flight S Manager':
                 all_fsm_list.append(crew_member)
         return all_fsm_list
 
