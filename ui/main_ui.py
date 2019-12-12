@@ -2,6 +2,7 @@
 from ui.assign_ui import AssignUI
 from ui.make_voyage_ui import VoyageUI
 from ui.employee_ui import EmployeeUI
+from ui.destinations_ui import DestinationsUI
 
 class Main:
 
@@ -13,6 +14,7 @@ class Main:
             print('Press "1" for Voyage menu')
             print('Press "2" to Assign eployees to a voyage')
             print('Press "3" to register or list employees ')
+            print('Press "4" to create a new destination ')
             print('Press "q" to Quit\n')
             choice_str = input('Choose an option: ')
 
@@ -24,4 +26,6 @@ class Main:
                 choice_str = AssignUI().menu()
             elif choice_str == '3':
                 choice_str = EmployeeUI().menu()
+            elif choice_str == '4':
+                choice_str = DestinationsUI().destinations_menu()
     ###Vantar að geta breytt tengiliðaupplýsingum fyrir destination
