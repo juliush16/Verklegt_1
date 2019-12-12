@@ -37,5 +37,5 @@ class DestinationsLogic:
 
 
     def create_new_destination(self,location,airport,flight_time,voyage_time,contact,phonenumber):
-        new_destination = Destinations(location,airport,flight_time,voyage_time,contact,phonenumber)
+        new_destination = DestinationsData(location,airport,flight_time,voyage_time,contact,phonenumber)
         DestinationsData().add_destination(new_destination)
