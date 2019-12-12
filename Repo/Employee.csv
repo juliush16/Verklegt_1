@@ -1,4 +1,4 @@
-ssn,name,role,rank,licence,address,phonenumber,email
+SSN,Name,Role,Rank,Licence,Address,Phonenumber,Email
 3009907461,William Carillo,Pilot,Captain,NAFokkerF100,Fellsmúli 1,8998801,willian@nan.is
 2910858778,Virginia Ho,Pilot,Captain,NABAE146,Fellsmúli 2,8998802,virginia@nan.is
 2706838569,Gerard Nelson,Pilot,Captain,NAFokkerF100,Fellsmúli 3,8998803,gerard@nan.is

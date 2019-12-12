@@ -72,7 +72,7 @@ class EmployeeLogic:
 
 
     def create_new_employee(self,ssn,name,role,rank,licence,address,phonenumber,email):
-        new_emp = Employee(ssn,name,role,rank,licence,address,phonenumber,email)
+        new_emp = EmployeeData(ssn,name,role,rank,licence,address,phonenumber,email)
         self.add_employee(new_emp)
 
     def get_by_ssn(self, ssn):

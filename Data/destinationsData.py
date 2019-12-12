@@ -5,7 +5,7 @@ import csv
 class DestinationsData:
 
     def __init__(self):
-        #self.__destination = []
+        self.__destination = []
         #self.get_destinations() #þessi
         pass
 

@@ -3,6 +3,7 @@ from Logic.Aircraft_logic import AircraftLog
 from Logic.Destinations2_logic import Destinations2Logic
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
+from ui.past_flights_ui import PastFlightsUI
 import datetime
 import dateutil.parser
 
@@ -27,7 +28,7 @@ class VoyageUI:
             elif choice_str == '2':
                 UpcomingVoyageLogic().print_all_upcoming_voyage()
             elif choice_str == '3':
-                PastFlightsData().print_past_flights()
+                PastFlightsUI().print_past_flights()
             elif choice_str == '4':
                 destinations_location = input("Please input contact location: ")
                 DestinationsUI().update_contact(destinations_location)
@@ -54,19 +55,18 @@ class VoyageUI:
         new_date = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
         
         upcoming = UpcomingVoyageLogic().all_upcoming_voyage()
-        for up in upcoming:
-            if(str(str(up).split()[3]).strip() == new_date.strip()):
-                print("nei") # stoppa 
+        # for up in upcoming:
+        #     if(str(str(up).split()[3]).strip() == new_date.strip()):
+        #         print("nei") # stoppa 
 
-        #all_aircrafts = AircraftLog().get_all_airplanes()
-        #for a in all_aircrafts:
-        #    print(a)
+        # all_aircrafts = AircraftLog().get_all_airplanes()
+        # for a in all_aircrafts:
+        #     print(a)
         
-        #arrival_time = UpcomingVoyageLogic().get_arrival_time(destination_id,new_date) # Ná í arrival tíma.
-        #print(arrival_time)
-        # UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
+        arrival_time = UpcomingVoyageLogic().get_arrival_time(destination_id,new_date) # Ná í arrival tíma.
+        UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
 
-        # print(('\nNew flight to "{}" has been created!\n').format(destination))
+        print(('\nNew flight to "{}" has been created!\n').format(destination))
 
         
 

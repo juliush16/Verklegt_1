@@ -3,6 +3,8 @@ from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
 from ui.aircraftUI import Aircraft_UI
 from ui.employee_ui import EmployeeUI
 from Logic.get_pilots_license import PilotLicence
+from Data.PastFlightsData import PastFlightsData
+from Models.PastFlights import PastFlights
 
 class AssignUI:
 
