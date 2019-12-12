@@ -1,7 +1,11 @@
 
 from Models.Upcomingflights import Upcomingflights
+from Data.Destinations2Data import Destinations2Data
+from Data.destinationsData import DestinationsData
 import random
 import csv
+from datetime import datetime
+import dateutil.parser
 
 class VoyageData:
 
@@ -60,7 +64,6 @@ class VoyageData:
                     except:
                         fa1 = None
                     
-
                     new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
                     departure, arrival)
                     self.__voyage.append(new_voyage)
@@ -81,7 +84,7 @@ class VoyageData:
         return return_str
 
     def make_new_voyage(self):
-        Destinations2 = Destinations2Repo()
+        Destinations2 = Destinations2Data()
         Destinations2.print_all_destinations()
         destination = input('Plese select a destination (Type destination id): ').capitalize()
         departure_date_and_time = input('\nPlease choose a departure date and time (DD/MM/YYYY/HH/MM) :')
@@ -89,7 +92,7 @@ class VoyageData:
         departure_date_iso = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
         arrival_date_iso = departure_date_iso
         parsed_date = dateutil.parser.parse(arrival_date_iso)
-        destinations_ = DestinationsRepo()
+        destinations_ = DestinationsData()
         parsed_date.hour += destinations_.get_flight_time()
         self.make_new_flight(destination,departure_date_iso,arrival_date_iso)
 
@@ -108,5 +111,16 @@ class VoyageData:
             string += str(voyage) + "\n"
         return string
 
+    def update_voyage(self, updatedvoyage):
+        allvoyage = self.get_voyage()
+        with open("./Repo/UpcomingFlights2.csv", "w+", newline="") as voyage_file:
+            fieldnames = ["flightNumber","departingFrom","arrivingAt","departure","arrival","airplane","captain","copilot","fsm","fa1","fa2"]
+            writer = csv.DictWriter(voyage_file, fieldnames=fieldnames)
+            writer.writeheader()
+        for voyage in allvoyage:
+            if voyage.flight_number == updatedvoyage.flight_number:
+                self.add_voyage(updatedvoyage)
+            else:
+                self.add_voyage(voyage)
             
             

@@ -35,15 +35,36 @@ class AssignUI:
     def assign_pilots_menu(self):
         print("\n-----Assign Pilots to Voyage-----\n")
         UpcomingVoyageLogic().print_all_upcoming_voyage()
+<<<<<<< HEAD
         choose_day_to_employ = input("Please type flight number: ").upper()
+        print()
+        voyage_update = UpcomingVoyageLogic().get_by_voyage(choose_day_to_employ) #sækja listann og velja flugnúmer
+        if voyage_update == None: #ef flugnúmerið er ekki til prenta ut invalid voyage
+            print("Invalid voyage")
+            return
+        Aircraft_UI().print_all_airplanes() #fá flugvéla lista
+        voyage_update.airplane = input("Select Airplane: ")
+        PilotLicence().get_pilots_wLicence(voyage_update.airplane) #ALLA MEÐ LEYFI A X VÉLAR
+        voyage_update.captain = input("Select Captain: ")
+        voyage_update.copilot = input("Select Co Pilot: ")
+        EmployeeUI().print_all_flight_service_managers() #PRENTA ALLAN FLIGHT SERVICE MANAGER
+        voyage_update.fsm = input("Select Flight Service Manager: ")
+        EmployeeUI().print_all_flight_attendants() #PRENTA ALLAN FLIGHT ATTENDANTS
+        voyage_update.fa1 = input("Select Flight Attendant: ")
+        voyage_update.fa2 = input("Select Flight Attendant: ")
+        UpcomingVoyageLogic().update_voyage(voyage_update) #UPDATEA NYJA LISTANN 
+
+=======
+        choose_day_to_employ = input("\nPlease type flight number: ").upper()
         
         #return choose_day_to_employ
         Aircraft_UI().print_all_airplanes()
-        airplane = input("Select Airplane: ")
+        airplane = input("\nSelect Airplane: ")
         PilotLicence().get_pilots_wLicence(airplane)
-        captain = input("Select Captain: ")
-        copilot = input("Select Co Pilot: ")
+        captain = input("\nSelect Captain: ")
+        copilot = input("\nSelect Co Pilot: ")
         
+>>>>>>> 6a3d08c2ecd6d80e8cd67a140fa257d45c3ad0ff
         #for i in airplane:
            # if(str(str(i).split()[1]) == choosen_airplane.strip()):
               #  print("HEllo")

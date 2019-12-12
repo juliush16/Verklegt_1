@@ -38,7 +38,9 @@ class EmployeeUI:
             elif choice_str == '4':
                 self.print_all_cabin_crew()
             elif choice_str == '5':
-                employee_ssn = input('Please input employee SSN :')
+                employee_ssn = input('Please input employee SSN: ')
+                print()
+                print("{:<15}{:<20}{:<15}{:<20}{:<15}{:<15}{:<15}{:<15}".format("SSN","Name","Role","Rank","Licence","Address","Phonenumber","Email"))
                 print(EmployeeLogic().get_by_ssn(employee_ssn))
             elif choice_str == '6':
                 self.updateEmployee()
@@ -63,7 +65,7 @@ class EmployeeUI:
     def updateEmployee(self):
         self.print_all_employees()
         print()
-        ssnToUpdate = input("Enter ssn of employee to update: \n")
+        ssnToUpdate = input("Enter ssn of employee to update: ")
         empToUpdate = EmployeeLogic().get_by_ssn(ssnToUpdate)
         if empToUpdate == None:
             print("Invalid employee")
@@ -74,6 +76,7 @@ class EmployeeUI:
             choice = int(input("What do you want to update? "))
             if choice == 1:
                 empToUpdate.address = input("Enter address: ")
+                print('\nAdress has been updated!')
                 break
             elif choice == 2:
                 new_phonenumber = InputCheck().check_phonenumber()
@@ -157,6 +160,10 @@ class EmployeeUI:
         all_flight_attendants = EmployeeLogic().get_all_flight_attendants()
         for flight_attendant in all_flight_attendants:
             print(flight_attendant)
+<<<<<<< HEAD
+
+
+=======
     
 
 
@@ -197,3 +204,4 @@ class EmployeeUI:
     #                 new_emp_rank = "Flight Attendant"
     #             break
     #         break
+>>>>>>> 6a3d08c2ecd6d80e8cd67a140fa257d45c3ad0ff
