@@ -76,7 +76,7 @@ class EmployeeUI:
             choice = int(input("What do you want to update? "))
             if choice == 1:
                 empToUpdate.address = input("Enter address: ")
-                print('\nAdress has been updated!')
+                print('\nAddress has been updated!')
                 break
             elif choice == 2:
                 new_phonenumber = InputCheck().check_phonenumber()
@@ -86,7 +86,7 @@ class EmployeeUI:
             elif choice == 3:
                 new_email = InputCheck().check_email()
                 empToUpdate.email = new_email
-                print("\nEmail adress updated to: ",new_email)
+                print("\nEmail address updated to: ",new_email)
                 break
             elif choice == 4:
                 break
