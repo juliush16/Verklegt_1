@@ -160,10 +160,6 @@ class EmployeeUI:
         all_flight_attendants = EmployeeLogic().get_all_flight_attendants()
         for flight_attendant in all_flight_attendants:
             print(flight_attendant)
-<<<<<<< HEAD
-
-
-=======
     
 
 
@@ -204,4 +200,3 @@ class EmployeeUI:
     #                 new_emp_rank = "Flight Attendant"
     #             break
     #         break
->>>>>>> 6a3d08c2ecd6d80e8cd67a140fa257d45c3ad0ff
