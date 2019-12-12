@@ -1,5 +1,7 @@
 from Logic.Destinations_logic import DestinationsLogic
 from Models.Destinations import Destinations
+from Models.Destinations2 import Destinations2
+from Data.Destinations2Data import Destinations2Data
 import os
 clear = lambda: os.system('cls')
 
@@ -12,11 +14,14 @@ class DestinationsUI:
             return
         new_location = input('Please type new destination country :').capitalize()
         new_airport = input('Please type new airport name :').capitalize()
+        new_loc_id = new_airport[:3].upper()
         new_flight_time = input('Please type new destination flight time (integer) :')
         new_voyage_time = (int(new_flight_time) * 2) + 1
         new_contact = input('Please type new destinations contact name :').capitalize()
         new_phonenumber = input('Please type new contacts phone number :')
         DestinationsLogic().create_new_destination(str(new_location),str(new_airport),new_flight_time,new_voyage_time,str(new_contact),str(new_phonenumber))
+        new_dest2 = Destinations2(new_loc_id,new_location)
+        Destinations2Data().add_destination(new_dest2)
         print('\nOverview :')
         print('\nAirport location : {} \nAirport name : {} \nContact name : {} \nContacts phonenumber : {}'.format(str(new_location),str(new_airport),str(new_contact),new_phonenumber))
         print('\nDestination has been created!\n')

@@ -11,10 +11,10 @@ class Destinations2Data:
 
     def add_destination(self, destination):
         with open("./Repo/Destinations2.csv", "a+") as destinations2_file:
-            destinations2_id = Destinations2.get_id()
-            destinations2_destination = Destinations2.get_destination()
+            destinations2_id = destination.get_id()
+            destinations2_destination = destination.get_destination()
             destinations2_file.write("{},{},\n".format(destinations2_id,destinations2_destination))
-            self.__destination.append(destination) #þessi
+            # self.__destination.append(destination) #þessi
 
     def get_destinations(self):
         if self.__destinations == []:
