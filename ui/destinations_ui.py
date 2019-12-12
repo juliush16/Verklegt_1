@@ -3,6 +3,7 @@ from Models.Destinations import Destinations
 from Models.Destinations2 import Destinations2
 from Data.Destinations2Data import Destinations2Data
 from Logic.Destinations_logic import DestinationsLogic
+
 import os
 clear = lambda: os.system('cls')
 
@@ -11,8 +12,9 @@ class DestinationsUI:
         print('\nDestination Menu\n')
         choice = ''
         while choice != 'b':
-            print('Select "1" to change information')
+            print('Select "1" to create a new destination')
             print('Select "2" to view all destinations')
+            print('Select "3" to change contact for destination')
             print('press "b" to go back to Main Menu')
             choice = input("select action: ").lower()
             if choice == 'b':
@@ -25,6 +27,12 @@ class DestinationsUI:
                 choice = self.print_all_destinations()
                 print('\n')
                 break
+            elif choice == '3':
+                DestinationsLogic().print_all_destinations()
+                airport = input("select airport: ")
+                choice = self.update_contact(airport)
+                break
+                
         
 
 
@@ -53,7 +61,6 @@ class DestinationsUI:
         all_destinations = DestinationsLogic().all_destinations()
         for destination in all_destinations:
             print(destination)
-
 
     def update_contact(self, airport):
         # self.print_all_destinations()
@@ -92,3 +99,4 @@ class DestinationsUI:
                 break
             if choice == 3:
                 break
+
