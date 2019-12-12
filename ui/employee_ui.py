@@ -59,7 +59,7 @@ class EmployeeUI:
         new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
         EmployeeData().add_employee(new_employee)
         print('Employee: "',str(new_emp_name),'" has been added!')
-
+#
     def updateEmployee(self):
         self.print_all_employees()
         print()

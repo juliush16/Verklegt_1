@@ -32,8 +32,8 @@ class VoyageUI:
                 PastFlightsUI().print_past_flights()
             elif choice_str == '4':
                 DestinationsLogic().print_all_destinations()
-                destinations_airport = input("Please type in airport: ").lower()
-                DestinationsUI().update_contact(destinations_airport)
+                #destinations_airport = input("Please type in airport: ").lower()
+                #DestinationsUI().update_contact(destinations_airport)
             
 
     def create_new_voyage_menu(self):

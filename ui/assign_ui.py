@@ -68,6 +68,7 @@ class AssignUI:
                         
 
     def assign_flight_attendants_menu(self):
+        print("-----Assign Flight attendants to Voyage-----")
         choice_str = ''
         while choice_str != 'b':
             print('\n---Assign flight attendants to voyage---\n')
