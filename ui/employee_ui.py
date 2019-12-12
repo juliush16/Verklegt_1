@@ -2,10 +2,10 @@ from Logic.Employee_logic import EmployeeLogic
 from Data.EmployeeData import EmployeeData
 from Models.employee import Employee
 from Data.inputCheck import InputCheck
+from ui.aircraftUI import Aircraft_UI
+from Logic.get_pilots_license import PilotLicence
 
 class EmployeeUI:
-
-
 
     def menu(self):
         choice_str = ''
@@ -28,14 +28,23 @@ class EmployeeUI:
             elif choice_str == '2':
                 self.print_all_employees()
             elif choice_str == '3':
-                self.print_all_pilots()
+                self.pilots_menu_display()
+                #print()
+                #Aircraft_UI().print_all_airplanes()
+                #airplane = input("Select licence to see the Pilots: ")
+                #print("\n")
+                #PilotLicence().get_pilots_wLicence(airplane)
+                #self.print_all_pilots()
             elif choice_str == '4':
                 self.print_all_cabin_crew()
             elif choice_str == '5':
-                employee_ssn = input('Please input employee SSN :')
+                employee_ssn = input('Please input employee SSN:')
+                print()
+                print("{:<15}{:<20}{:<15}{:<20}{:<15}{:<15}{:<15}{:<15}".format("SSN","Name","Role","Rank","Licence","Address","Phonenumber","Email"))
                 print(EmployeeLogic().get_by_ssn(employee_ssn))
             elif choice_str == '6':
                 self.updateEmployee()
+
 
 
     def reg_employee_menu(self):
@@ -52,7 +61,7 @@ class EmployeeUI:
         new_employee = Employee(new_emp_SSN, new_emp_name, new_emp_role, new_emp_rank, new_emp_licence, new_emp_address, new_emp_phonenumber, new_emp_email)
         EmployeeData().add_employee(new_employee)
         print('Employee: "',str(new_emp_name),'" has been added!')
-
+#
     def updateEmployee(self):
         self.print_all_employees()
         print()
@@ -67,14 +76,17 @@ class EmployeeUI:
             choice = int(input("What do you want to update? "))
             if choice == 1:
                 empToUpdate.address = input("Enter address: ")
+                print('\nAdress has been updated!')
                 break
             elif choice == 2:
                 new_phonenumber = InputCheck().check_phonenumber()
-                empToUpdate.phonenumber = new_phonenumber 
+                empToUpdate.phonenumber = new_phonenumber
+                print("\nPhone number updated to: ",new_phonenumber) 
                 break
             elif choice == 3:
                 new_email = InputCheck().check_email()
                 empToUpdate.email = new_email
+                print("\nEmail adress updated to: ",new_email)
                 break
             elif choice == 4:
                 break
@@ -91,6 +103,38 @@ class EmployeeUI:
         all_pilots = EmployeeLogic().get_all_pilots()
         for pilot in all_pilots:
             print(pilot)
+    
+    def pilots_menu_display(self):
+        print()
+        choice_string = ""
+        while choice_string != "q":
+            print('Press "1" to list all Pilots')
+            print('Press "2" to list Pilots after licence')
+            print('Press "3" to list all Captains')
+            print('Press "4" to list all Co Pilots')
+            print('Press "q" to Quit\n')
+            choice_string = input('Choose an option: ')
+
+            if choice_string == 'q':
+                return choice_string
+                break
+            elif choice_string == '1':
+                self.print_all_pilots()
+                break
+            elif choice_string == '2':
+                Aircraft_UI().print_all_airplanes()
+                airplane = input("Select licence to see the Pilots: ")
+                print("\n")
+                PilotLicence().get_pilots_wLicence(airplane)
+                break
+            elif choice_string == '3':
+                self.print_all_captains()
+                break
+            elif choice_string == '4':
+                self.print_all_copilots()
+                break
+
+
 
     def print_all_captains(self):
         all_captains = EmployeeLogic().get_all_captains()
@@ -118,43 +162,3 @@ class EmployeeUI:
             print(flight_attendant)
 
 
-
-
-
-    # new_emp_role = ""
-    # new_emp_rank = "" 
-    # new_emp_licence = ""
-    # while new_emp_role != '1' or '2': #1 er pilot og 2 er cabin crew
-    #     new_emp_role = input('Choose an option for employee role\n1:Pilot\n2:Cabincrew\n')
-    #     if new_emp_role == '1':
-    #         new_emp_role = "Pilot"
-    #         while new_emp_role != '1' or '2': #pilot rank (captain or copilot)
-    #             new_emp_rank = input('Choose an option for employee rank\n1:Captain\n2:Copilot\n')
-    #             if new_emp_rank == '1':
-    #                 new_emp_rank = 'Captain'
-    #             elif new_emp_rank == '2':
-    #                 new_emp_rank = "Copilot"
-    #             break #fer ut ur while loopunni og i næstu
-
-    #         while new_emp_licence != '1' or '2' or '3': #licence
-    #             new_emp_licence = input('Choose an option for employee licence\n1:NABAE146\n2:NAFokkerF28\n3:NAFokkerF100\n')
-    #             if new_emp_licence == '1':
-    #                 new_emp_licence = "NABAE146"
-    #             elif new_emp_licence == '2':
-    #                 new_emp_licence = "NAFokkerF28"
-    #             elif new_emp_licence == '3':
-    #                 new_emp_licence = "NAFokkerF100"
-    #             break #fer út ur while
-    #         break #fer ut ur if
-
-    #     elif new_emp_role == '2': #cabincrew 
-    #         new_emp_role = "Cabincrew"
-    #         new_emp_licence = "N/A"
-    #         while new_emp_rank != '1' or '2': #cabincrew rank (flight service manager og flight attendant)
-    #             new_emp_rank = input('Choose an option for employee rank\n1:Flight Service Manager\n2:Flight Attendant\n')
-    #             if new_emp_rank == '1':
-    #                 new_emp_rank = "Flight Service Manager"
-    #             elif new_emp_rank == '2':
-    #                 new_emp_rank = "Flight Attendant"
-    #             break
-    #         break

@@ -77,5 +77,16 @@ class UpcomingVoyageLogic:
         flight_back = Upcomingflights(flight_num_back,arriving_at,'KEF',self.get_departure_time_back(arrival),self.get_voyage_time(arriving_at,departure))  #bua til flug til baka
         VoyageData().add_voyage(new_flight)
         VoyageData().add_voyage(flight_back)
+
+    def get_by_voyage(self, flight_number):#sækja flight_number
+        allvoyage = self.all_upcoming_voyage()
+        for voyage in allvoyage:
+            if voyage.flight_number == flight_number:
+                return voyage
+        return None
+
+    def update_voyage(self, updatedvoyage):  
+        VoyageData().update_voyage(updatedvoyage)
             
+        #EmployeeLogic().update_employee(empToUpdate)
 

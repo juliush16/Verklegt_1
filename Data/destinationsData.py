@@ -11,8 +11,8 @@ class DestinationsData:
 
     def add_destination(self, destination):
         with open("./Repo/Destinations.csv", "a+") as destinations_file:
-            location = destination.get_location()
-            airport = destination.get_airport()
+            location = destination.get_Location()
+            airport = destination.get_Airport()
             flight_time = destination.get_flight_time()
             voyage_time = destination.get_voyage_time()
             contact = destination.get_contact()
