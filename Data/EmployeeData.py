@@ -46,7 +46,6 @@ class EmployeeData:
         with open("./Repo/Employee.csv", "w+", newline="") as employee_file:
             fieldnames = ["ssn","name","role","rank","licence","address","phonenumber","email"]
             writer = csv.DictWriter(employee_file, fieldnames=fieldnames)
-            #writer.writeheader()
         for emp in allEmps:
             if emp.ssn == updatedEmp.ssn:
                 self.add_employee(updatedEmp)
