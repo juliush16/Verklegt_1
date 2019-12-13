@@ -9,8 +9,9 @@ class AssignUI:
     def menu(self):
         choice_str = ''
         while choice_str != 'q':
-            print('\n---Assign eployees to a voyage---\n')
+            print('\n---Assign employees to a voyage---\n')
             print('Press "1" to assign staff members to a voyage')
+            print('Press "2" to print employees working on a speciffic date')
             print('Press "q" to Quit')
             print('Press "b" to go back to Main Menu\n')
             choice_str = input('Choose an option: ')
@@ -20,9 +21,27 @@ class AssignUI:
             elif choice_str == '1':
                 self.assign_staff_menu()
             elif choice_str == '2':
-                self.assign_flight_attendants_menu()
+                self.get_employee_by_date()
             elif choice_str == 'b':
                 return choice_str
+
+    def get_date(self):
+        date = input('Please input date :(YYYY-MM-DD)')
+        dArr = date.split("-")
+        retDate = date(dArr[0], dArr[1], dArr[2])
+        return retDate
+
+    def get_employee_by_date(self):
+        date = self.get_date()
+        employee_lis = UpcomingVoyageLogic().get_staff_by_date(date)
+        for i in range(len(employee_lis)):
+            print(employee_lis[i])
+
+        # for employee in employee_lis:
+        #     if employee == None:
+        #         pass
+        #     else:
+        #         EmployeeUI.print_by_ssn(employee)
 
 
     def assign_staff_menu(self):

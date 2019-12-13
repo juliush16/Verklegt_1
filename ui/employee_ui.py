@@ -133,7 +133,10 @@ class EmployeeUI:
             elif choice_string == '4':
                 self.print_all_copilots()
                 break
-
+            
+    def print_by_ssn(self,ssn):
+        employee = EmployeeLogic.get_by_ssn(ssn)
+        print(employee)
 
 
     def print_all_captains(self):
