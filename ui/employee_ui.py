@@ -55,6 +55,7 @@ class EmployeeUI:
         print('Employee: "',str(new_emp_name),'" has been added!')
 
     def updateEmployee(self):
+        print('\n-----Update Empoyee information-----\n')
         self.print_all_employees()
         print()
         ssnToUpdate = input("Enter ssn of employee to update: ")
@@ -63,7 +64,7 @@ class EmployeeUI:
             print("Invalid employee")
             return
         choice = ""
-        print('Press "1" to update address\nPress "2" to update Phonenumber\nPress "3" to update email\nPress "4" to Return to Main Menu')
+        print('\nPress "1" to update address\nPress "2" to update Phonenumber\nPress "3" to update email\nPress "4" to Return to Main Menu')
         while True: 
             choice = int(input("What do you want to update? "))
             if choice == 1:
@@ -97,6 +98,7 @@ class EmployeeUI:
             print(pilot)
     
     def pilots_menu_display(self):
+        print('\n-----Pilots Menu-----\n')
         print()
         choice_string = ""
         while choice_string != "q":
