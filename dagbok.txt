@@ -130,7 +130,7 @@ Fórum öll saman yfir skýrsluna og allan kóðann, gerðum svo myndband sem s�
 Dagur 15:
 13. desember
 Dagur: Klára að manna ferðir 
-Júlíus:
-Anna: Wireframes lagað.
+Júlíus: Manna ferðir 
+Anna: Wireframes klárað, og skýrsla
 
 
