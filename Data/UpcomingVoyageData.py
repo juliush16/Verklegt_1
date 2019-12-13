@@ -111,7 +111,7 @@ class VoyageData:
             string += str(voyage) + "\n"
         return string
 
-    def update_voyage(self, updatedvoyage):
+    def _update_voyage(self, updatedvoyage):
         allvoyage = self.get_voyage()
         with open("./Repo/UpcomingFlights2.csv", "w+", newline="") as voyage_file:
             fieldnames = ["flightNumber","departingFrom","arrivingAt","departure","arrival","airplane","captain","copilot","fsm","fa1","fa2"]
@@ -121,6 +121,8 @@ class VoyageData:
             if voyage.flight_number == updatedvoyage.flight_number:
                 self.add_voyage(updatedvoyage)
             elif voyage.flight_number == 'flightNumber':
+                pass
+            elif voyage.airplane != None:
                 pass
             else:
                 self.add_voyage(voyage)

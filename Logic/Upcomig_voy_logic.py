@@ -5,6 +5,7 @@ from Models.Upcomingflights import Upcomingflights
 import datetime
 import dateutil.parser
 import random
+import csv
 
 class UpcomingVoyageLogic:
 
@@ -86,7 +87,20 @@ class UpcomingVoyageLogic:
         return None
 
     def update_voyage(self, updatedvoyage):  
-        VoyageData().update_voyage(updatedvoyage)
+        VoyageData()._update_voyage(updatedvoyage)
+
+    def get_next_flight(self, flight_number):
+        all_voyage = VoyageData().get_voyage()
+        with open("./Repo/UpcomingFlights2.csv", "r", newline="") as employee_file:
+            line = Upcomingflights('ekkert','ekkert','ekkert','ekkert','ekkert')
+        for voy in all_voyage:
+            if voy.flight_number == flight_number:
+                line = next(voy)
+        
+                
+        new_voyage = Upcomingflights(line.flight_number, line.departing_from, line.arriving_at,
+        line.departure, line.arrival)
+
+        return new_voyage
             
-        #EmployeeLogic().update_employee(empToUpdate)
 
