@@ -57,14 +57,6 @@ class VoyageUI:
         new_date = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
         
         upcoming = UpcomingVoyageLogic().all_upcoming_voyage()
-        # for up in upcoming:
-        #     if(str(str(up).split()[3]).strip() == new_date.strip()):
-        #         print("nei") # stoppa 
-
-        # all_aircrafts = AircraftLog().get_all_airplanes()
-        # for a in all_aircrafts:
-        #     print(a)
-        
         arrival_time = UpcomingVoyageLogic().get_arrival_time(destination_id,new_date) # Ná í arrival tíma.
         UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
 

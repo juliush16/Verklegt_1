@@ -77,7 +77,7 @@ class UpcomingVoyageLogic:
         hour += flight_time
         if hour >= 23:
             day += 1
-            hour -= 23
+            hour -= 24
         new_time = datetime.datetime(year,month,day,hour,minutes).isoformat()
         return new_time
 

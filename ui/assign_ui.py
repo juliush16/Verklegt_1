@@ -13,7 +13,7 @@ class AssignUI:
             print('\n---Assign employees to a voyage---\n')
             print('Press "1" to assign staff members to a voyage')
             print('Press "2" to print employees working on a speciffic date')
-            print('Press "2" to print employees NOT working on a speciffic date')
+            print('Press "3" to print employees NOT working on a speciffic date')
             print('Press "q" to Quit')
             print('Press "b" to go back to Main Menu\n')
             choice_str = input('Choose an option: ')
