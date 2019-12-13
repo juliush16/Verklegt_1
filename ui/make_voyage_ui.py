@@ -4,6 +4,7 @@ from Logic.Destinations2_logic import Destinations2Logic
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
 from ui.past_flights_ui import PastFlightsUI
+from Logic.Destinations_logic import DestinationsLogic
 import datetime
 import dateutil.parser
 
@@ -16,7 +17,7 @@ class VoyageUI:
             print('Press "1" to make a new voyage')
             print('Press "2" to list all upcoming voyages')
             print('Press "3" to list all past voyages')
-            print('Press "4" to change contact information')
+            #print('Press "4" to change contact information')
             print('Press "q" to Quit\n')
             choice_str = input('Choose an option: ')
 
@@ -26,11 +27,11 @@ class VoyageUI:
                 self.create_new_voyage_menu()
                 choice_str = 'q'
             elif choice_str == '2':
-                self.print_all_upcoming_voyage()
+                UpcomingVoyageLogic().print_all_upcoming_voyage()
             elif choice_str == '3':
                 PastFlightsUI().print_past_flights()
-            elif choice_str == '4':
-                self.change_contact_menu()
+            #elif choice_str == '4':
+               # self.change_contact_menu()
                 # destinations_airport = input("Please type in airport: ").lower()
                 # DestinationsUI().update_contact(destinations_airport)
             
@@ -57,22 +58,27 @@ class VoyageUI:
         new_date = datetime.datetime(int(departure_list[2]),int(departure_list[1]),int(departure_list[0]),int(departure_list[3]),int(departure_list[4])).isoformat()
         
         upcoming = UpcomingVoyageLogic().all_upcoming_voyage()
+        # for up in upcoming:
+        #     if(str(str(up).split()[3]).strip() == new_date.strip()):
+        #         print("nei") # stoppa 
+
+        # all_aircrafts = AircraftLog().get_all_airplanes()
+        # for a in all_aircrafts:
+        #     print(a)
+        
         arrival_time = UpcomingVoyageLogic().get_arrival_time(destination_id,new_date) # Ná í arrival tíma.
         UpcomingVoyageLogic().make_new_flight(destination_id,new_date,arrival_time)        # Búa til nýtt flug með öllum upplýsingum
 
         print(('\nNew flight to "{}" has been created!\n').format(destination))
 
 
+#færði change contact yfir í 
+    #def change_contact_menu(self):
+            #DestinationsLogic().print_all_destinations()
+            #destinations_airport = input("Please type in airport: ").capitalize()
+            #DestinationsUI().update_contact(destinations_airport)
 
-    def change_contact_menu(self):
-            DestinationsUI().print_all_destinations()
-            destinations_airport = input("Please type in airport: ").capitalize()
-            DestinationsUI().update_contact(destinations_airport)
 
 
-    def print_all_upcoming_voyage(self):
-        all_voyage = UpcomingVoyageLogic().all_upcoming_voyage()
-        for voyage in all_voyage:
-            print(voyage)
         
 

@@ -127,4 +127,10 @@ Dagur 14:
 12. desember
 Fórum öll saman yfir skýrsluna og allan kóðann, gerðum svo myndband sem sýnir flæðið í forritinu.  
 
+Dagur 15:
+13. desember
+Dagur: Klára að manna ferðir 
+Júlíus:
+Anna: Wireframes lagað.
+
 

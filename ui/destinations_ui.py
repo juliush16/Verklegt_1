@@ -3,7 +3,7 @@ from Models.Destinations import Destinations
 from Models.Destinations2 import Destinations2
 from Data.Destinations2Data import Destinations2Data
 from Logic.Destinations_logic import DestinationsLogic
-
+from Data.inputCheck import InputCheck
 import os
 clear = lambda: os.system('cls')
 
@@ -20,7 +20,8 @@ class DestinationsUI:
             if choice == 'b':
                 choice = 'b'
             elif choice == '1':
-                choice = self.destinations_menu()
+                choice = self.destinations_menu().append()
+
                 print('\n')
                 break
             elif choice == '2':
@@ -32,6 +33,8 @@ class DestinationsUI:
                 airport = input("select airport: ")
                 choice = self.update_contact(airport)
                 break
+                
+        
 
 
     def destinations_menu(self):
@@ -52,6 +55,7 @@ class DestinationsUI:
         print('\nOverview :')
         print('\nAirport location: {} \nAirport name: {} \nContact name: {} \nContacts phonenumber: {}'.format(str(new_location),str(new_airport),str(new_contact),new_phonenumber))
         print('\nDestination has been created!\n')
+        # vantar að villutékka hér til að koma í veg fyrir að land sé skráð 2 sinnum. 
 
 
 
@@ -61,6 +65,13 @@ class DestinationsUI:
             print(destination)
 
     def update_contact(self, airport):
+        # self.print_all_destinations()
+
+        # DestinationsLogic().all_destinations(airport)
+
+        # if airport == None:
+        #     print("Invalid Destination")
+        #     return
         edit_contact = DestinationsLogic().get_destination(airport)
         destination = edit_contact
         print('\n')

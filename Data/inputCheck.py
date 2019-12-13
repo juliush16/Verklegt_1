@@ -1,6 +1,6 @@
 from datetime import datetime
-from Data.EmployeeData import EmployeeData
 from Data.Destinations2Data import Destinations2Data
+
 
 class InputCheck:
     def check_ssn(self):
@@ -8,22 +8,17 @@ class InputCheck:
         while new_emp_SSN.isdigit() != True or len(new_emp_SSN) != 10:
             print('Invalid employee social security number Try again!')
             new_emp_SSN = input('Enter employee social security number: ')
+            # Vatntar að athuga hér hvort starfsmaður sé í listanum
+        
         return new_emp_SSN
 
-    def check_ssn_exist(self):
-        ssn_exist = EmployeeData().get_employee()
-        new_emp_SSN = input('Enter employee social security number: ')
-        while True:
-            for emp in ssn_exist:
-                if emp.ssn == new_emp_SSN:
-                    print("The employee is already on the list Try again!")
-                    new_emp_SSN = input('Enter employee social security number: ')
-                    break
-            while new_emp_SSN.isdigit() != True or len(new_emp_SSN) != 10:
-                print('Invalid employee social security number Try again!')
-                new_emp_SSN = input('Enter employee social security number: ')
-                break
-            return new_emp_SSN
+    # def check_if_ssn_exist(self,new_employee):
+    #     all_employees = EmployeeLogic().all_employees()
+    #     for employee in all_employees:
+    #         if employee.ssn == new_employee:
+    #             print("Employee is already registered Try again!\n")
+    #             return self.check_ssn()
+
 
 
     def check_phonenumber(self):
@@ -111,5 +106,8 @@ class InputCheck:
                 print(destination)
                 return destination
             print("Invalid destination Try again!")
+
+    # def check_location(self,location):
+    #     all_destinations = Destinations2Data().__destinations
 
 
