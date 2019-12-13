@@ -9,9 +9,9 @@ import dateutil.parser
 
 class VoyageData:
 
-    def __init__(self):
-        self.__voyage = []
-        self.get_voyage()   #þessi
+    # def __init__(self):
+    #     self.__voyage = []
+    #     self.get_voyage()   #þessi
 
     def add_voyage(self, voyage):
         with open("./Repo/UpcomingFlights2.csv", "a+") as voyage_file:
@@ -32,42 +32,40 @@ class VoyageData:
 
 #self,flight_number,departing_from,arriving_at,departure,arrival, airplane = None, captain = None,copilot = None,fsm = None,fa1 = None,fa2 = None
     def get_voyage(self):
-        if self.__voyage == []:
-            with open("./Repo/UpcomingFlights2.csv", "r", encoding = "utf-8") as voyage_file:
-                voyage_reader = csv.reader(voyage_file)
-                for line in voyage_reader:
-                    flight_number = line[0]
-                    departing_from = line[1]
-                    arriving_at = line[2]
-                    departure = line[3]
-                    arrival = line[4]
-                    try:
-                        airplane = line[5]
-                    except:
-                        airplane = None
-                    try:
-                        captain = line[6]
-                    except:
-                        captain = None
-                    try:
-                        copilot = line[7]
-                    except:
-                        copilot = None
+        retLis = []
+        with open("./Repo/UpcomingFlights2.csv", "r", encoding = "utf-8") as voyage_file:
+            voyage_reader = csv.reader(voyage_file)
+            for line in voyage_reader:
+                flight_number = line[0]
+                departing_from = line[1]
+                arriving_at = line[2]
+                departure = line[3]
+                arrival = line[4]
+                try:
+                    airplane = line[5]
+                except:
+                    airplane = None
+                try:
+                    captain = line[6]
+                except:
+                    captain = None
+                try:
+                    copilot = line[7]
+                except:
+                    copilot = None
+                try:
+                    fsm = line[8]
+                except:
+                    fsm = None
+                try:
+                    fa1 = line[8]
+                except:
+                    fa1 = None
                     
-                    try:
-                        fsm = line[8]
-                    except:
-                        fsm = None
-                    
-                    try:
-                        fa1 = line[8]
-                    except:
-                        fa1 = None
-                    
-                    new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
-                    departure, arrival)
-                    self.__voyage.append(new_voyage)
-        return self.__voyage
+                new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
+                departure, arrival)
+                retLis.append(new_voyage)
+        return retLis
 
     def all_upcoming_voyage(self):
         all_voyage_list = []
@@ -111,18 +109,25 @@ class VoyageData:
             string += str(voyage) + "\n"
         return string
 
-    def update_voyage(self, updatedvoyage):
+    def _update_voyage(self, updatedvoyage):
         allvoyage = self.get_voyage()
         with open("./Repo/UpcomingFlights2.csv", "w+", newline="") as voyage_file:
             fieldnames = ["flightNumber","departingFrom","arrivingAt","departure","arrival","airplane","captain","copilot","fsm","fa1","fa2"]
             writer = csv.DictWriter(voyage_file, fieldnames=fieldnames)
             writer.writeheader()
-        for voyage in allvoyage:
-            if voyage.flight_number == updatedvoyage.flight_number:
+
+        i = 1
+        while(i < len(allvoyage)):
+            if updatedvoyage.flight_number == allvoyage[i].flight_number:
                 self.add_voyage(updatedvoyage)
-            elif voyage.flight_number == 'flightNumber':
-                pass
+                allvoyage[i+1].airplane = updatedvoyage.airplane
+                allvoyage[i+1].captain = updatedvoyage.captain
+                allvoyage[i+1].copilot = updatedvoyage.copilot
+                allvoyage[i+1].fsm = updatedvoyage.fsm
+                allvoyage[i+1].fa1 = updatedvoyage.fa1
+                allvoyage[i+1].fa2 = updatedvoyage.fa2
+                self.add_voyage(allvoyage[i+1])
             else:
-                self.add_voyage(voyage)
-            
-            
+                self.add_voyage(allvoyage[i])
+                self.add_voyage(allvoyage[i+1])
+            i += 2

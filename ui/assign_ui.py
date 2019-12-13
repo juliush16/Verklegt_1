@@ -1,10 +1,8 @@
-from Data.EmployeeData import EmployeeData
 from Logic.Upcomig_voy_logic import UpcomingVoyageLogic
 from ui.aircraftUI import Aircraft_UI
 from ui.employee_ui import EmployeeUI
 from Logic.get_pilots_license import PilotLicence
-from Data.PastFlightsData import PastFlightsData
-from Models.PastFlights import PastFlights
+from Data.inputCheck import InputCheck
 
 class AssignUI:
 
@@ -29,8 +27,10 @@ class AssignUI:
 
     def assign_staff_menu(self):
         print("\n-----Assign Pilots to Voyage-----\n")
-        UpcomingVoyageLogic().print_all_upcoming_voyage()
-        choose_day_to_employ = input("Please type flight number: ").upper()
+        self.print_from_kef()
+        choose_flight = input("Please select flight (type the integer): ")
+        flights_from_kef = UpcomingVoyageLogic().get_from_kef()
+        choose_day_to_employ = flights_from_kef[int(choose_flight) -1]
         print()
         voyage_update = UpcomingVoyageLogic().get_by_voyage(choose_day_to_employ) #sækja listann og velja flugnúmer
         if voyage_update == None: #ef flugnúmerið er ekki til prenta ut invalid voyage
@@ -39,15 +39,41 @@ class AssignUI:
         Aircraft_UI().print_all_airplanes() #fá flugvéla lista
         voyage_update.airplane = input("Select Airplane: ")
         PilotLicence().get_pilots_wLicence(voyage_update.airplane) #ALLA MEÐ LEYFI A X VÉLAR
-        voyage_update.captain = input("Select Captain: ")
-        voyage_update.copilot = input("Select Co Pilot: ")
+        print("\nSelect Captain\n")
+        voyage_update.captain = InputCheck().check_ssn()
+        print("\nSelect Copilot\n")
+        voyage_update.copilot = InputCheck().check_ssn()
         #########################################################
         EmployeeUI().print_all_flight_service_managers() #PRENTA ALLAN FLIGHT SERVICE MANAGER
-        voyage_update.fsm = input("Select Flight Service Manager: ")
+        print("\nSelect Flight Service Manager\n")
+        voyage_update.fsm = InputCheck().check_ssn()
         EmployeeUI().print_all_flight_attendants() #PRENTA ALLAN FLIGHT ATTENDANTS
-        voyage_update.fa1 = input("Select Flight Attendant: ")
-        voyage_update.fa2 = input("Select Flight Attendant: ")
+        print("\nSelect Flight Attendant\n")
+        voyage_update.fa1 = InputCheck().check_ssn()
+        more_attendants = ''
+        while more_attendants != 'N':
+            more_attendants = input('Do you want to add another flight attendant?(Y/N) :').upper()
+            if more_attendants == 'Y':
+                voyage_update.fa2 = InputCheck().check_ssn()
+                more_attendants = 'N'
+            elif more_attendants == 'N':
+                break
+            else:
+                print('Try again! \n')
         UpcomingVoyageLogic().update_voyage(voyage_update)
+
+
+    def print_from_kef(self):
+        flights_from_kef = UpcomingVoyageLogic().get_from_kef()
+        i = 0
+        for flight in flights_from_kef:
+            i += 1
+            if i <10:
+                print( str(i) + ') ', end=' ')
+                print(flight)
+            else:
+                print( str(i) + ')', end=' ')
+                print(flight)
 
                         
 '''

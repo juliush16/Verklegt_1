@@ -5,20 +5,22 @@ from Models.Upcomingflights import Upcomingflights
 import datetime
 import dateutil.parser
 import random
+import csv
 
 class UpcomingVoyageLogic:
 
     def all_upcoming_voyage(self):
-        all_voyage_list = []
         all_voyage = VoyageData().get_voyage()
-        for voyage in all_voyage:
-            all_voyage_list.append(voyage)
-        return all_voyage_list
+        return all_voyage
 
-    def print_all_upcoming_voyage(self):
+    def get_from_kef(self):
         all_voyage = self.all_upcoming_voyage()
-        for voyage in all_voyage:
-            print(voyage)
+        flightsFromKefOnly = []
+        for i in range(0, len(all_voyage)):
+            if i % 2 == 1:
+                flightsFromKefOnly.append(all_voyage[i])
+        return flightsFromKefOnly
+
 
     def generate_flight_number(self):
         return_str = 'NA'
@@ -81,12 +83,51 @@ class UpcomingVoyageLogic:
     def get_by_voyage(self, flight_number):#sækja flight_number
         allvoyage = self.all_upcoming_voyage()
         for voyage in allvoyage:
-            if voyage.flight_number == flight_number:
+            if voyage.flight_number == flight_number.flight_number:
                 return voyage
         return None
 
     def update_voyage(self, updatedvoyage):  
-        VoyageData().update_voyage(updatedvoyage)
+        VoyageData()._update_voyage(updatedvoyage)
+
+    def get_next_flight(self, flight_number):
+        all_voyage = VoyageData().get_voyage()
+        with open("./Repo/UpcomingFlights2.csv", "r", newline="") as employee_file:
+            line = Upcomingflights('ekkert','ekkert','ekkert','ekkert','ekkert')
+        for voy in all_voyage:
+            if voy.flight_number == flight_number:
+                line = next(voy)
+                flight_number = line[0]
+                departing_from = line[1]
+                arriving_at = line[2]
+                departure = line[3]
+                arrival = line[4]
+                try:
+                    airplane = line[5]
+                except:
+                    airplane = None
+                try:
+                    captain = line[6]
+                except:
+                    captain = None
+                try:
+                    copilot = line[7]
+                except:
+                    copilot = None
+                try:
+                    fsm = line[8]
+                except:
+                    fsm = None 
+                try:
+                    fa1 = line[8]
+                except:
+                    fa1 = None
+                new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
+                departure, arrival)
+                
+        new_voyage = Upcomingflights(line.flight_number, line.departing_from, line.arriving_at,
+        line.departure, line.arrival)
+
+        return new_voyage
             
-        #EmployeeLogic().update_employee(empToUpdate)
 

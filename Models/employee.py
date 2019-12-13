@@ -39,6 +39,9 @@ class Employee:
         return ("{:<15}{:<20}{:<15}{:<20}{:<15}{:<15}{:<15}{:<15}".format
         (self.ssn,self.name,self.role,self.rank,self.licence,self.address,self.phonenumber,self.email))
 
+    # def basicPrint(self):
+
+
 
 #Set föll til að updatea starfsmann:
 
