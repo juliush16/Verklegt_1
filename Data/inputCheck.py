@@ -97,7 +97,7 @@ class InputCheck:
             print("Invalid email try again!")
 
     def check_destination(self):
-        destination_list = ['LYR','GOH','KUS','FAE','LWK','KEF']
+        destination_list = ['Longyearbyen','Nuuk','Kulusuk','Thorshavn','Tingwall','Keflavik']
         destination = ""
         while destination not in destination_list:
             destination = input('Plese select a destination (Type destination id): ').upper()
