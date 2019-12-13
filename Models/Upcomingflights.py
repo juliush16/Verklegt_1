@@ -1,4 +1,3 @@
-#flightNumber,departingFrom,arrivingAt,departure,arrival 
 class Upcomingflights:
     def __init__(self,flight_number,departing_from,arriving_at,departure,arrival, airplane = None, captain = None,copilot = None,fsm = None,fa1 = None,fa2 = None):
         self.flight_number = flight_number

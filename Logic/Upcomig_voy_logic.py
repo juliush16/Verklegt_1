@@ -78,7 +78,6 @@ class UpcomingVoyageLogic:
         new_time = datetime.datetime(year,month,day,hour + 1,minutes).isoformat()
         return new_time
 
-
     def get_voyage_time(self,destination_id,departure):
         parsed_date = dateutil.parser.parse(departure)
         year = int(parsed_date.year)
