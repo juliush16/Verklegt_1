@@ -49,12 +49,3 @@ class AirCraftTypeData:
                         length, height, wingspan)
                     self.__aircraft.append(new_aircraft)
         return self.__aircraft
-
-    # def __str__(self):
-    #     string = "{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}{:<15}\n".format
-    #     ("Plane Type Id:", "Plane Type:", "Model:", "Capacity:", "Empty Weight:", "Max Takeoff Weight:", 
-    #     "Unit Thrust:", "Service Ceiling:","Length","Height","Wingspan")
-    #     aircrafttypelist = self.get_aircraft()
-    #     for aircraft in aircrafttypelist:
-    #         string += str(aircraft) + "\n"
-    #     return string

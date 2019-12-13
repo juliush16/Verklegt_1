@@ -4,7 +4,6 @@ from Logic.Employee_logic import EmployeeLogic
 
 class PilotLicence():
 
-
     def get_all_airplanes(self):
         all_airplanes = AirCraftData().get_aircrafts() 
         return all_airplanes

@@ -1,4 +1,3 @@
-#flightNumber,departingFrom,arrivingAt,departure,arrival,aircraftID,captain,copilot,fsm,fa1,fa2
 class PastFlights:
     def __init__(self,flight_number,departing_from,arriving_at,departure,arrival,aircraft_id,captain,copilot,flight_service_manager,fa1,fa2):
         self.__flight_number = flight_number

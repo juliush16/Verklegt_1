@@ -21,7 +21,6 @@ class UpcomingVoyageLogic:
                 flightsFromKefOnly.append(all_voyage[i])
         return flightsFromKefOnly
 
-
     def generate_flight_number(self):
         return_str = 'NA'
         number = random.randint(1000,9999)
@@ -53,7 +52,6 @@ class UpcomingVoyageLogic:
         minutes = int(parsed_date.minute)
         new_time = datetime.datetime(year,month,day,hour + 1,minutes).isoformat()
         return new_time
-
 
     def get_voyage_time(self,destination_id,departure):
         parsed_date = dateutil.parser.parse(departure)

@@ -2,7 +2,6 @@ from Data.EmployeeData import EmployeeData
 
 
 class EmployeeLogic:
-
     def all_employees(self):
         all_employee_list = []
         all_employees = EmployeeData().get_employee()
@@ -19,7 +18,6 @@ class EmployeeLogic:
                 all_pilots_list.append(employee)
         return all_pilots_list
 
-
     def get_all_captains(self):
         all_captains_list = []
         all_employees = self.all_employees()
@@ -28,7 +26,6 @@ class EmployeeLogic:
             if employee.rank == 'Captain':
                 all_captains_list.append(employee)
         return all_captains_list
-
 
     def get_all_copilots(self):
         all_copilots_list = []
@@ -39,7 +36,6 @@ class EmployeeLogic:
                 all_copilots_list.append(employee)
         return all_copilots_list
 
-
     def get_all_cabin_crew(self):
         all_crew_list = []
         all_employees = self.all_employees()
@@ -48,7 +44,6 @@ class EmployeeLogic:
             if employee.role == 'Cabincrew':
                 all_crew_list.append(employee)
         return all_crew_list
-
 
     def get_all_flight_service_managers(self):
         all_fsm_list = []
@@ -59,8 +54,6 @@ class EmployeeLogic:
                 all_fsm_list.append(crew_member)
         return all_fsm_list
 
-
-
     def get_all_flight_attendants(self):
         all_flight_attendants_list = []
         all_crew = self.get_all_cabin_crew()
@@ -69,7 +62,6 @@ class EmployeeLogic:
             if crew_member.rank == 'Flight Attendant':
                 all_flight_attendants_list.append(crew_member)
         return all_flight_attendants_list
-
 
     def create_new_employee(self,ssn,name,role,rank,licence,address,phonenumber,email):
         new_emp = EmployeeData(ssn,name,role,rank,licence,address,phonenumber,email)
@@ -82,7 +74,6 @@ class EmployeeLogic:
                 return emp
         return None
 
-    #breyta maili, address, phonenumber
     def update_employee(self, updatedEmployee):  #passa að breyta ekki nafni og kt
         EmployeeData().update_employee(updatedEmployee)
     

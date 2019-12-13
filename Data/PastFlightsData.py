@@ -1,11 +1,9 @@
 from Models.PastFlights import PastFlights
 import csv
-#flightNumber,departingFrom,arrivingAt,departure,arrival,aircraftID,captain,copilot,fsm,fa1,fa2
-class PastFlightsData:
 
+class PastFlightsData:
     def __init__(self):
         self.__voyage =[]
-        # self.get_past_fligt() #kannski á þetta að vera hér
 
     def get_past_flight(self):
         if self.__voyage == []:
@@ -26,7 +24,6 @@ class PastFlightsData:
                     voyage_past = PastFlights(flight_num,departed_from,arrived_at,departure,arrival,aircraft_id,captain, copilot,fsm,fa1,fa2)
                     self.__voyage.append(voyage_past)
         return self.__voyage
-                #past_file.read("{},{},{},{},{}\n".format(flight_num,departed_from,arrived_at,departure,arrival))
 
     def all_past_voyage(self):
         all_past_flights_list = []
@@ -35,13 +32,10 @@ class PastFlightsData:
             all_past_flights_list.append(line)
         return all_past_flights_list
 
-
     def __str__ (self):
         string = "{:^15}{:^20}{:^15}{:^30}{:^20}{:^15}{:^15}{:^15}{:^15}{:^15}\n".format("Flight Number:", "Departing From:", "Arriving At:", "Departure:", "Arrival:", "Aircraft Id:","Captain:", "Co pilot:","Flight Service Manager:", "Flight Attendants")
         past_list = self.get_past_fligt()
         for line in past_list:
             string += str(line) + "\n"
         return string
-
-        
 

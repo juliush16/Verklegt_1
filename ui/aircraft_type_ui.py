@@ -1,6 +1,5 @@
 from Logic.Aircraft_type_logic import AircraftTypeLogic
 
-
 class AircraftTypeUI:
 
     def print_aircraft_type(self):

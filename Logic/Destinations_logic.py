@@ -17,14 +17,12 @@ class DestinationsLogic:
         for destination in all_destinations:
             print(destination)
 
-
     def get_destination(self,destination):
         all_destinations = self.all_destinations()
         for item in all_destinations:
             if item.get_Airport() == destination:
                 return item
 
-        
     def _get_flight_time(self,destination):
         all_destinations = DestinationsData().get_destinations()
         for dest in all_destinations:     
@@ -42,7 +40,6 @@ class DestinationsLogic:
 
     def set_phonenumber(self,destination,new_phonenumber):
         return DestinationsData().set_phonenumber(destination,new_phonenumber)
-
 
     def create_new_destination(self,location,airport,flight_time,voyage_time,contact,phonenumber):
         new_destination = Destinations(location,airport,flight_time,voyage_time,contact,phonenumber)

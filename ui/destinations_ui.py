@@ -32,8 +32,6 @@ class DestinationsUI:
                 airport = input("select airport: ")
                 choice = self.update_contact(airport)
                 break
-                
-        
 
 
     def destinations_menu(self):
@@ -63,13 +61,6 @@ class DestinationsUI:
             print(destination)
 
     def update_contact(self, airport):
-        # self.print_all_destinations()
-
-        # DestinationsLogic().all_destinations(airport)
-
-        # if airport == None:
-        #     print("Invalid Destination")
-        #     return
         edit_contact = DestinationsLogic().get_destination(airport)
         destination = edit_contact
         print('\n')
