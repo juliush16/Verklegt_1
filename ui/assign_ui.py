@@ -27,8 +27,10 @@ class AssignUI:
 
     def assign_staff_menu(self):
         print("\n-----Assign Pilots to Voyage-----\n")
-        UpcomingVoyageLogic().print_all_upcoming_voyage()
-        choose_day_to_employ = input("Please type flight number: ").upper()
+        self.print_from_kef()
+        choose_flight = input("Please select flight (type the integer): ")
+        flights_from_kef = UpcomingVoyageLogic().get_from_kef()
+        choose_day_to_employ = flights_from_kef[int(choose_flight) -1]
         print()
         voyage_update = UpcomingVoyageLogic().get_by_voyage(choose_day_to_employ) #sækja listann og velja flugnúmer
         if voyage_update == None: #ef flugnúmerið er ekki til prenta ut invalid voyage
@@ -59,14 +61,19 @@ class AssignUI:
             else:
                 print('Try again! \n')
         UpcomingVoyageLogic().update_voyage(voyage_update)
-        next_flight = UpcomingVoyageLogic().get_next_flight(voyage_update)
-        next_flight.captain = voyage_update.captain
-        next_flight.copilot = voyage_update.copilot
-        next_flight.fsm = voyage_update.fsm
-        next_flight.fa1 = voyage_update.fa1
-        next_flight.fa2 = voyage_update.fa2
-        UpcomingVoyageLogic().update_voyage(next_flight) 
-        print('allt for i gegn')
+
+
+    def print_from_kef(self):
+        flights_from_kef = UpcomingVoyageLogic().get_from_kef()
+        i = 0
+        for flight in flights_from_kef:
+            i += 1
+            if i <10:
+                print( str(i) + ') ', end=' ')
+                print(flight)
+            else:
+                print( str(i) + ')', end=' ')
+                print(flight)
 
                         
 '''

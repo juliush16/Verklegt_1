@@ -4,7 +4,6 @@ from Logic.Destinations2_logic import Destinations2Logic
 from ui.destinations2_ui import Destinations2UI
 from ui.destinations_ui import DestinationsUI
 from ui.past_flights_ui import PastFlightsUI
-from Logic.Destinations_logic import DestinationsLogic
 import datetime
 import dateutil.parser
 
@@ -27,7 +26,7 @@ class VoyageUI:
                 self.create_new_voyage_menu()
                 choice_str = 'q'
             elif choice_str == '2':
-                UpcomingVoyageLogic().print_all_upcoming_voyage()
+                self.print_all_upcoming_voyage()
             elif choice_str == '3':
                 PastFlightsUI().print_past_flights()
             elif choice_str == '4':
@@ -74,11 +73,14 @@ class VoyageUI:
 
 
     def change_contact_menu(self):
-            DestinationsLogic().print_all_destinations()
+            DestinationsUI().print_all_destinations()
             destinations_airport = input("Please type in airport: ").capitalize()
             DestinationsUI().update_contact(destinations_airport)
 
 
-
+    def print_all_upcoming_voyage(self):
+        all_voyage = UpcomingVoyageLogic().all_upcoming_voyage()
+        for voyage in all_voyage:
+            print(voyage)
         
 
