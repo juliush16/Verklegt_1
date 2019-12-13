@@ -2,7 +2,7 @@ from Data.UpcomingVoyageData import VoyageData
 from Logic.Destinations_logic import DestinationsLogic
 from Logic.Destinations2_logic import Destinations2Logic
 from Models.Upcomingflights import Upcomingflights
-import datetime
+from datetime import datetime
 import dateutil.parser
 import random
 import csv
@@ -12,6 +12,9 @@ class UpcomingVoyageLogic:
     def all_upcoming_voyage(self):
         all_voyage = VoyageData().get_voyage()
         return all_voyage
+    
+    def all_other_upcoming_voyage(self):
+        all_voyage = VoyageData().other
 
     def get_from_kef(self):
         all_voyage = self.all_upcoming_voyage()
@@ -23,20 +26,21 @@ class UpcomingVoyageLogic:
 
     def get_staff_by_date(self,date):
         staff_list = []
-        all_voyage = self.all_upcoming_voyage()
-        for voyage in all_voyage:
+        all_voyage = self.get_from_kef()
+        for voyage in all_voyage[1:]:
             d = voyage.departure.replace("T", "-").replace(":", "-").split("-")
-            voyage_date_dept = datetime(d[0], d[1], d[2], d[3], d[4])
+            voyage_date_dept = datetime(int(d[0]), int(d[1]), int(d[2]), int(d[3]), int(d[4]))
             if voyage_date_dept.date() == date.date():
-                if voyage.captain != "" and voyage.captain != None:
+                
+                if voyage.captain != "":
                     staff_list.append(voyage.captain)
-                if voyage.copilot != "" and voyage.copilot != None:
+                if voyage.copilot != "":
                     staff_list.append(voyage.copilot)
-                if voyage.fsm != "" and voyage.fsm != None:
+                if voyage.fsm != "":
                     staff_list.append(voyage.fsm)
-                if voyage.fa1 != "" and voyage.fa1 != None:
+                if voyage.fa1 != "":
                     staff_list.append(voyage.fa1)
-                if voyage.fa2 != "" and voyage.fa2 != None:
+                if voyage.fa2 != "":
                     staff_list.append(voyage.fa2)
         return staff_list
 

@@ -41,29 +41,15 @@ class VoyageData:
                 arriving_at = line[2]
                 departure = line[3]
                 arrival = line[4]
-                try:
-                    airplane = line[5]
-                except:
-                    airplane = None
-                try:
-                    captain = line[6]
-                except:
-                    captain = None
-                try:
-                    copilot = line[7]
-                except:
-                    copilot = None
-                try:
-                    fsm = line[8]
-                except:
-                    fsm = None
-                try:
-                    fa1 = line[8]
-                except:
-                    fa1 = None
+                airplane = line[5]
+                captain = line[6]
+                copilot = line[7]
+                fsm = line[8]
+                fa1 = line[9]
+                fa2 = line[10]
                     
                 new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
-                departure, arrival)
+                departure, arrival, airplane, captain, copilot, fsm, fa1, fa2)
                 retLis.append(new_voyage)
         return retLis
 

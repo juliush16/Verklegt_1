@@ -3,6 +3,7 @@ from ui.aircraftUI import Aircraft_UI
 from ui.employee_ui import EmployeeUI
 from Logic.get_pilots_license import PilotLicence
 from Data.inputCheck import InputCheck
+from datetime import datetime
 
 class AssignUI:
 
@@ -28,20 +29,17 @@ class AssignUI:
     def get_date(self):
         date = input('Please input date :(YYYY-MM-DD)')
         dArr = date.split("-")
-        retDate = date(dArr[0], dArr[1], dArr[2])
+        retDate = datetime(int(dArr[0]), int(dArr[1]), int(dArr[2]))
         return retDate
 
     def get_employee_by_date(self):
         date = self.get_date()
         employee_lis = UpcomingVoyageLogic().get_staff_by_date(date)
-        for i in range(len(employee_lis)):
-            print(employee_lis[i])
-
-        # for employee in employee_lis:
-        #     if employee == None:
-        #         pass
-        #     else:
-        #         EmployeeUI.print_by_ssn(employee)
+        for employee in employee_lis:
+            if employee == None:
+                pass
+            else:
+                EmployeeUI().print_by_ssn(employee)
 
 
     def assign_staff_menu(self):

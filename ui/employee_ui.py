@@ -135,8 +135,9 @@ class EmployeeUI:
                 break
             
     def print_by_ssn(self,ssn):
-        employee = EmployeeLogic.get_by_ssn(ssn)
-        print(employee)
+        employee = EmployeeLogic().get_by_ssn(ssn)
+        if employee != None:
+            print(employee)
 
 
     def print_all_captains(self):
