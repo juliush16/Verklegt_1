@@ -5,9 +5,7 @@ class Destinations2Logic:
     destinations = []
     def all_destinations(self):
         all_destinations = Destinations2Data().get_destinations()
-        for destination in all_destinations:
-            self.destinations.append(destination)
-        return self.destinations
+        return all_destinations
 
     def find_destination(self,dest_id):
         all_destinations = Destinations2Data().get_destinations()

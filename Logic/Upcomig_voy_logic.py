@@ -3,7 +3,7 @@ from Logic.Destinations_logic import DestinationsLogic
 from Logic.Destinations2_logic import Destinations2Logic
 from Logic.Employee_logic import EmployeeLogic
 from Models.Upcomingflights import Upcomingflights
-from datetime import datetime
+import datetime
 import dateutil.parser
 import random
 import csv

@@ -4,10 +4,6 @@ import csv
 
 class DestinationsData:
 
-    def __init__(self):
-        self.__destination = []
-        pass
-
     def add_destination(self, destination):
         with open("./Repo/Destinations.csv", "a+") as destinations_file:
             location = destination.get_Location()
@@ -21,20 +17,20 @@ class DestinationsData:
             self.__destination.append(destination) #þessi
 
     def get_destinations(self):
-        if self.__destination == []:
-            with open("./Repo/destinations.csv", "r", encoding = "utf-8") as destinations_file:
-                destination_reader = csv.reader(destinations_file)
-                for line in destination_reader:
-                    location = line[0]
-                    airport = line[1]
-                    flight_time = line[2]
-                    voyage_time = line[3]
-                    contact = line[4]
-                    phonenumber = line[5]    
-                    new_destination = Destinations(location, airport, 
-                    flight_time, voyage_time, contact, phonenumber)
-                    self.__destination.append(new_destination)
-        return self.__destination
+        destinations = []
+        with open("./Repo/destinations.csv", "r", encoding = "utf-8") as destinations_file:
+            destination_reader = csv.reader(destinations_file)
+            for line in destination_reader:
+                location = line[0]
+                airport = line[1]
+                flight_time = line[2]
+                voyage_time = line[3]
+                contact = line[4]
+                phonenumber = line[5]    
+                new_destination = Destinations(location, airport, 
+                flight_time, voyage_time, contact, phonenumber)
+                destinations.append(new_destination)
+        return destinations
 
     def set_contact(self,destination,new_contact):
         all_destinations = self.get_destinations()  
