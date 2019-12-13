@@ -11,13 +11,6 @@ class InputCheck:
         
         return new_emp_SSN
 
-    # def check_if_ssn_exist(self,new_employee):
-    #     all_employees = EmployeeLogic().all_employees()
-    #     for employee in all_employees:
-    #         if employee.ssn == new_employee:
-    #             print("Employee is already registered Try again!\n")
-    #             return self.check_ssn()
-
 
 
     def check_phonenumber(self):
@@ -105,8 +98,5 @@ class InputCheck:
                 print(destination)
                 return destination
             print("Invalid destination Try again!")
-
-    # def check_location(self,location):
-    #     all_destinations = Destinations2Data().__destinations
 
 

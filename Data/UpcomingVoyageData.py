@@ -8,11 +8,6 @@ from datetime import datetime
 import dateutil.parser
 
 class VoyageData:
-
-    # def __init__(self):
-    #     self.__voyage = []
-    #     self.get_voyage()   #þessi
-
     def add_voyage(self, voyage):
         with open("./Repo/UpcomingFlights2.csv", "a+") as voyage_file:
             flight_number = voyage.get_flight_number()
@@ -28,7 +23,6 @@ class VoyageData:
             fa2 = voyage.get_fa2()
             voyage_file.write("{},{},{},{},{},{},{},{},{},{},{}\n".format(flight_number,
             departing_from,arriving_at,departure,arrival, airplane,captain,copilot,fsm,fa1,fa2))
-            # self.__voyage(voyage) #þessi
 
 #self,flight_number,departing_from,arriving_at,departure,arrival, airplane = None, captain = None,copilot = None,fsm = None,fa1 = None,fa2 = None
     def get_voyage(self):
@@ -74,7 +68,6 @@ class VoyageData:
             all_voyage_list.append(voyage)
         return all_voyage_list
 
-
     def generate_flight_number(self):
         return_str = 'NA'
         number = random.randint(0,9999)
@@ -99,7 +92,6 @@ class VoyageData:
         new_flight = Upcomingflights(flight_num,departing_from,arriving_at,departure,arrival)
         self.add_voyage(new_flight)
 
-    
     def __str__(self):
         string = "{:<15}{:<20}{:<15}{:<30}{:<20}{:<15}{:<15}{:<15}{:<15}{:<15}\n".format
         ("Flight Number:", "Departing From:", "Arriving At:", "Departure:", "Arrival:", "Aircraft Id:", 

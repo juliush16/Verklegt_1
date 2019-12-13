@@ -2,9 +2,6 @@ from Data.Destinations2Data import Destinations2Data
 from Models.Destinations2 import Destinations2
 
 class Destinations2Logic:
-
-
-    destinations = []   
     def all_destinations(self):
         all_destinations = Destinations2Data().get_destinations()
         for destination in all_destinations:

@@ -6,7 +6,6 @@ class DestinationsData:
 
     def __init__(self):
         self.__destination = []
-        #self.get_destinations() #þessi
         pass
 
     def add_destination(self, destination):
@@ -46,14 +45,9 @@ class DestinationsData:
             counter += 1
             if line.get_Airport() == destination.get_Airport():
                 lines[counter][4] = new_contact
-
             writer = csv.writer(open('./Repo/destinations.csv', 'w'))
             writer.writerows(lines)
-
         return '\nContact has been changed to "' + str(new_contact) + '"'
-        # except:
-        #     return '\nError: contact could not be edited'
-
 
     def set_phonenumber(self,destination,new_phonenumber):
         all_destinations = self.get_destinations()  
@@ -64,10 +58,8 @@ class DestinationsData:
             counter += 1
             if line.get_Airport() == destination.get_Airport():
                 lines[counter][5] = new_phonenumber
-
             writer = csv.writer(open('./Repo/destinations.csv', 'w'))
             writer.writerows(lines)
-
         return '\nPhonenumber has been changed to "' + str(new_phonenumber) + '"'
 
 
