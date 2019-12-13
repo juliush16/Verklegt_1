@@ -1,8 +1,9 @@
 from Data.UpcomingVoyageData import VoyageData
 from Logic.Destinations_logic import DestinationsLogic
 from Logic.Destinations2_logic import Destinations2Logic
+from Logic.Employee_logic import EmployeeLogic
 from Models.Upcomingflights import Upcomingflights
-import datetime
+from datetime import datetime
 import dateutil.parser
 import random
 import csv
@@ -12,6 +13,9 @@ class UpcomingVoyageLogic:
     def all_upcoming_voyage(self):
         all_voyage = VoyageData().get_voyage()
         return all_voyage
+    
+    def all_other_upcoming_voyage(self):
+        all_voyage = VoyageData().other
 
     def get_from_kef(self):
         all_voyage = self.all_upcoming_voyage()
@@ -20,6 +24,40 @@ class UpcomingVoyageLogic:
             if i % 2 == 1:
                 flightsFromKefOnly.append(all_voyage[i])
         return flightsFromKefOnly
+
+    def get_not_working(self,date):
+        staff_list = []
+        all_employee = EmployeeLogic().all_employees()
+        working_employees = self.get_staff_by_date(date)
+        for employee in all_employee:
+            if employee.ssn in working_employees:
+                pass
+            else:
+                staff_list.append(employee)
+
+        return staff_list
+
+    def get_staff_by_date(self,date):
+        staff_list = []
+        all_voyage = self.get_from_kef()
+        for voyage in all_voyage[1:]:
+            d = voyage.departure.replace("T", "-").replace(":", "-").split("-")
+            voyage_date_dept = datetime(int(d[0]), int(d[1]), int(d[2]), int(d[3]), int(d[4]))
+            if voyage_date_dept.date() == date.date():
+                
+                if voyage.captain != "":
+                    staff_list.append(voyage.captain)
+                if voyage.copilot != "":
+                    staff_list.append(voyage.copilot)
+                if voyage.fsm != "":
+                    staff_list.append(voyage.fsm)
+                if voyage.fa1 != "":
+                    staff_list.append(voyage.fa1)
+                if voyage.fa2 != "":
+                    staff_list.append(voyage.fa2)
+        return staff_list
+
+
 
     def generate_flight_number(self):
         return_str = 'NA'
@@ -88,44 +126,44 @@ class UpcomingVoyageLogic:
     def update_voyage(self, updatedvoyage):  
         VoyageData()._update_voyage(updatedvoyage)
 
-    def get_next_flight(self, flight_number):
-        all_voyage = VoyageData().get_voyage()
-        with open("./Repo/UpcomingFlights2.csv", "r", newline="") as employee_file:
-            line = Upcomingflights('ekkert','ekkert','ekkert','ekkert','ekkert')
-        for voy in all_voyage:
-            if voy.flight_number == flight_number:
-                line = next(voy)
-                flight_number = line[0]
-                departing_from = line[1]
-                arriving_at = line[2]
-                departure = line[3]
-                arrival = line[4]
-                try:
-                    airplane = line[5]
-                except:
-                    airplane = None
-                try:
-                    captain = line[6]
-                except:
-                    captain = None
-                try:
-                    copilot = line[7]
-                except:
-                    copilot = None
-                try:
-                    fsm = line[8]
-                except:
-                    fsm = None 
-                try:
-                    fa1 = line[8]
-                except:
-                    fa1 = None
-                new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
-                departure, arrival)
+    # def get_next_flight(self, flight_number):
+    #     all_voyage = VoyageData().get_voyage()
+    #     with open("./Repo/UpcomingFlights2.csv", "r", newline="") as employee_file:
+    #         line = Upcomingflights('ekkert','ekkert','ekkert','ekkert','ekkert')
+    #     for voy in all_voyage:
+    #         if voy.flight_number == flight_number:
+    #             line = next(voy)
+    #             flight_number = line[0]
+    #             departing_from = line[1]
+    #             arriving_at = line[2]
+    #             departure = line[3]
+    #             arrival = line[4]
+    #             try:
+    #                 airplane = line[5]
+    #             except:
+    #                 airplane = None
+    #             try:
+    #                 captain = line[6]
+    #             except:
+    #                 captain = None
+    #             try:
+    #                 copilot = line[7]
+    #             except:
+    #                 copilot = None
+    #             try:
+    #                 fsm = line[8]
+    #             except:
+    #                 fsm = None 
+    #             try:
+    #                 fa1 = line[8]
+    #             except:
+    #                 fa1 = None
+    #             new_voyage = Upcomingflights(flight_number, departing_from, arriving_at,
+    #             departure, arrival)
                 
-        new_voyage = Upcomingflights(line.flight_number, line.departing_from, line.arriving_at,
-        line.departure, line.arrival)
+    #     new_voyage = Upcomingflights(line.flight_number, line.departing_from, line.arriving_at,
+    #     line.departure, line.arrival)
 
-        return new_voyage
+    #     return new_voyage
             
 
