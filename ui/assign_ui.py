@@ -13,6 +13,7 @@ class AssignUI:
             print('\n---Assign employees to a voyage---\n')
             print('Press "1" to assign staff members to a voyage')
             print('Press "2" to print employees working on a speciffic date')
+            print('Press "2" to print employees NOT working on a speciffic date')
             print('Press "q" to Quit')
             print('Press "b" to go back to Main Menu\n')
             choice_str = input('Choose an option: ')
@@ -23,6 +24,8 @@ class AssignUI:
                 self.assign_staff_menu()
             elif choice_str == '2':
                 self.get_employee_by_date()
+            elif choice_str == '3':
+                self.get_employee_not_working()
             elif choice_str == 'b':
                 return choice_str
 
@@ -40,6 +43,13 @@ class AssignUI:
                 pass
             else:
                 EmployeeUI().print_by_ssn(employee)
+    
+    def get_employee_not_working(self):
+        date = self.get_date()
+        employee_lis = UpcomingVoyageLogic().get_not_working(date)
+        for employee in employee_lis:
+            print(employee)
+
 
 
     def assign_staff_menu(self):

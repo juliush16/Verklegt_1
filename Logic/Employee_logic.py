@@ -3,11 +3,8 @@ from Data.EmployeeData import EmployeeData
 
 class EmployeeLogic:
     def all_employees(self):
-        all_employee_list = []
         all_employees = EmployeeData().get_employee()
-        for employee in all_employees:
-            all_employee_list.append(employee)
-        return all_employee_list
+        return all_employees
 
     def get_all_pilots(self):
         all_pilots_list = []

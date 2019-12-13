@@ -1,6 +1,7 @@
 from Data.UpcomingVoyageData import VoyageData
 from Logic.Destinations_logic import DestinationsLogic
 from Logic.Destinations2_logic import Destinations2Logic
+from Logic.Employee_logic import EmployeeLogic
 from Models.Upcomingflights import Upcomingflights
 from datetime import datetime
 import dateutil.parser
@@ -23,6 +24,18 @@ class UpcomingVoyageLogic:
             if i % 2 == 1:
                 flightsFromKefOnly.append(all_voyage[i])
         return flightsFromKefOnly
+
+    def get_not_working(self,date):
+        staff_list = []
+        all_employee = EmployeeLogic().all_employees()
+        working_employees = self.get_staff_by_date(date)
+        for employee in all_employee:
+            if employee.ssn in working_employees:
+                pass
+            else:
+                staff_list.append(employee)
+
+        return staff_list
 
     def get_staff_by_date(self,date):
         staff_list = []
