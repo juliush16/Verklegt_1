@@ -105,7 +105,7 @@ Anna: Gera uppfært wireframe
 Brynjar: Klasarit
 Dagur: Vinnuferðir
 Hildur: Hönnunarskýrsla, uppfæra stöðurit
-Júlíus: Input check og vinnuferðir
+Júlíus: Update employee og vinnuferðir
 
 Dagur 13:
 11. desember
@@ -113,7 +113,7 @@ Anna: Gera uppfært wireframe
 Brynjar: Klasarit
 Dagur: Vinnuferðir
 Hildur: Hönnunarskýrsla, uppfæra stöðurit
-Júlíus: Update employee
+Júlíus: Update employee og Upcoming flight
 
 Dagur 13:
 12. desember
