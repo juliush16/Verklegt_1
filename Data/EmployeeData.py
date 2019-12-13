@@ -1,6 +1,5 @@
 
 from Models.employee import Employee
-from Data.inputCheck import InputCheck
 import os
 import csv
 clear = lambda: os.system('cls')

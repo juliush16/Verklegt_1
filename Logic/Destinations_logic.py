@@ -2,7 +2,7 @@ from Data.destinationsData import DestinationsData
 from Data.Destinations2Data import Destinations2Data
 from Logic.Destinations2_logic import Destinations2Logic
 from Models.Destinations import Destinations
-from Data.inputCheck import *
+from Data.inputCheck import InputCheck
 import os
 clear = lambda: os.system('cls')
 

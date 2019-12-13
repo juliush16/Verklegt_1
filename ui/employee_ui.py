@@ -41,7 +41,7 @@ class EmployeeUI:
 
     def reg_employee_menu(self):
         print('\n-----Register new employee-----\n')
-        new_emp_SSN = InputCheck().check_ssn()
+        new_emp_SSN = InputCheck().check_ssn_exist()
         new_emp_name = input('Enter employee name: ').capitalize()
         print('- - - - - - - - - - - - - - - - - - - - - - - - - -')
         new_emp_role = InputCheck().check_role()
